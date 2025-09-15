@@ -19,7 +19,7 @@ export default function WhatsAppFloat() {
     return () => clearTimeout(timer)
   }, [])
 
-  const whatsappNumber = '5551040638129' // Número oficial da ServitecPoa
+  const whatsappNumber = '555140638129' // Número oficial da ServitecPoa
   const message = 'Olá! Gostaria de solicitar um orçamento para assistência técnica.'
 
   const handleWhatsAppClick = () => {

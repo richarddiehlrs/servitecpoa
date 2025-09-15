@@ -35,7 +35,7 @@ export default function ContatoPage() {
 *Problema:* ${formData.problema}
 *Mensagem:* ${formData.mensagem || 'Não informado'}`
 
-    const whatsappUrl = `https://wa.me/5551040638129?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/555140638129?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 
