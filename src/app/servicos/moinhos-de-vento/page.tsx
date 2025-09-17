@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
-import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Assistência Técnica Moinhos de Vento | ServitecPoa - Porto Alegre',
@@ -39,10 +38,6 @@ export default function MoinhosDeVentoPage() {
 
   return (
     <div>
-      <Breadcrumbs items={[
-        { label: 'Serviços', href: '/servicos' },
-        { label: 'Moinhos de Vento' }
-      ]} />
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A73] text-white py-16">
