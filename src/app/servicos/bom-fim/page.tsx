@@ -29,10 +29,34 @@ export default function BomFimPage() {
       problems: ['Bocas não acendem', 'Forno não aquece', 'Vazamento gás', 'Chamas fracas']
     },
     {
+      name: 'Conserto de Micro-ondas',
+      description: 'Reparo de micro-ondas e fornos elétricos',
+      icon: '⚡',
+      problems: ['Não aquece', 'Não liga', 'Barulho excessivo', 'Porta não fecha']
+    },
+    {
+      name: 'Conserto de Lava e Seca',
+      description: 'Assistência técnica em lava e seca',
+      icon: '🌪️',
+      problems: ['Não seca', 'Ciclo incompleto', 'Vazamento', 'Não centrifuga']
+    },
+    {
+      name: 'Conserto de Purificadores',
+      description: 'Reparo de purificadores de água',
+      icon: '💧',
+      problems: ['Não filtra', 'Vazamento', 'Não liga', 'Gotejamento']
+    },
+    {
       name: 'Instalação de Coifas',
       description: 'Instalação profissional de coifas e depuradores',
       icon: '💨',
       problems: ['Instalação em parede', 'Conexão elétrica', 'Sistema exaustão', 'Nivelamento']
+    },
+    {
+      name: 'Eletroportáteis em Geral',
+      description: 'Conserto de todos os tipos de eletroportáteis',
+      icon: '🔌',
+      problems: ['Não liga', 'Aquecimento', 'Falhas elétricas', 'Manutenção geral']
     }
   ]
 
@@ -141,7 +165,7 @@ export default function BomFimPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
                 <div className="text-4xl mb-4">{service.icon}</div>
