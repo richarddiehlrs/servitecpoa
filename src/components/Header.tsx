@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X, Phone, MapPin } from 'lucide-react'
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import ServicesDropdown from './ServicesDropdown'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -76,9 +77,7 @@ export default function Header() {
             <Link href="/" className="text-gray-700 hover:text-[#1E3A5F] font-medium transition-colors">
               Início
             </Link>
-            <Link href="/servicos" className="text-gray-700 hover:text-[#1E3A5F] font-medium transition-colors">
-              Serviços
-            </Link>
+            <ServicesDropdown />
             <Link href="/sobre" className="text-gray-700 hover:text-[#1E3A5F] font-medium transition-colors">
               Sobre Nós
             </Link>
