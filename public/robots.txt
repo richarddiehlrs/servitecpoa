@@ -1,4 +1,33 @@
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://servitecpoa.com.br/sitemap.xml
+
+# Google Search Console
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow all public pages
+Allow: /
+Allow: /servicos
+Allow: /sobre
+Allow: /contato
+Allow: /depoimentos
+
+# Crawl-delay for better server performance
+Crawl-delay: 1

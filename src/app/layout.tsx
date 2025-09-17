@@ -50,6 +50,22 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="SUBSTITUA_PELO_CODIGO_DO_GOOGLE" />
+        
+        {/* Google Analytics 4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'GA_MEASUREMENT_ID');
+            `,
+          }}
+        />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
