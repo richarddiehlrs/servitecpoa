@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 export default function CentroPortoAlegrePage() {
-    const services = [
+      const services = [
     {
       name: 'Conserto de Geladeiras',
       description: 'Reparo completo em geladeiras e freezers em Centro',

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 export default function MontserratPage() {
-    const services = [
+      const services = [
     {
       name: 'Conserto de Geladeiras',
       description: 'Reparo completo em geladeiras e freezers em Mont&apos;Serrat',
