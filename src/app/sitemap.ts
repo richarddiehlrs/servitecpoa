@@ -2,7 +2,6 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://servitecpoa.com.br'
-  const currentDate = new Date().toISOString().split('T')[0]
   
   return [
     {

@@ -216,7 +216,7 @@ export default function JardimDoSalsoPage() {
                     <Star key={i} className="w-5 h-5 fill-[#FF8C00] text-[#FF8C00]" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4">"{testimonial.comment}"</p>
+                <p className="text-gray-700 mb-4">&ldquo;{testimonial.comment}&rdquo;</p>
                 <div className="font-semibold text-[#1E3A5F]">{testimonial.name}</div>
                 <div className="text-sm text-[#FF8C00]">{testimonial.service}</div>
               </div>
