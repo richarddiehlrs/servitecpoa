@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Phone, MapPin, CheckCircle } from 'lucide-react'
+import { Phone, MapPin, Clock, CheckCircle, Star } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Assistência Técnica Jardim do Salso | ServitecPoa - Porto Alegre',
