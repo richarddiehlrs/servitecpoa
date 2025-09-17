@@ -3,13 +3,13 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Centro Porto Alegre | ServitecPoa - Eletrodomésticos',
-  description: 'Assistência técnica de eletrodomésticos no Centro de Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica centro porto alegre, conserto eletrodomésticos centro, técnico geladeira centro, reparo máquina lavar centro, instalação coifa centro, porto alegre centro, servitecpoa'
+  title: 'Assistência Técnica Centro | ServitecPoa - Porto Alegre',
+  description: 'Assistência técnica de eletrodomésticos em Centro, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
+  keywords: 'assistência técnica centro-porto-alegre, conserto eletrodomésticos centro-porto-alegre, técnico geladeira centro-porto-alegre, reparo máquina lavar centro-porto-alegre, instalação coifa centro-porto-alegre, porto alegre, servitecpoa'
 }
 
-export default function CentroPortoAlegrePage() {
-      const services = [
+export default function CentroPage() {
+  const services = [
     {
       name: 'Conserto de Geladeiras',
       description: 'Reparo completo em geladeiras e freezers em Centro',
@@ -59,51 +59,19 @@ export default function CentroPortoAlegrePage() {
       problems: ['Não liga', 'Aquecimento', 'Falhas elétricas', 'Manutenção geral']
     }
   ]
-    },
-    {
-      name: 'Conserto de Máquinas de Lavar',
-      description: 'Assistência técnica especializada em lavadoras no centro',
-      icon: '👕',
-      problems: ['Não centrifuga', 'Vazamento', 'Não liga', 'Ciclo incompleto']
-    },
-    {
-      name: 'Conserto de Fogões',
-      description: 'Reparo de fogões e cooktops no Centro de Porto Alegre',
-      icon: '🔥',
-      problems: ['Bocas não acendem', 'Forno não aquece', 'Vazamento gás', 'Chamas fracas']
-    },
-    {
-      name: 'Instalação de Coifas',
-      description: 'Instalação profissional de coifas e depuradores',
-      icon: '💨',
-      problems: ['Instalação em parede', 'Conexão elétrica', 'Sistema exaustão', 'Nivelamento']
-    }
-  ]
-
-  const neighborhoods = [
-    'Centro Histórico',
-    'Cidade Baixa',
-    'Bom Fim',
-    'Farroupilha',
-    'Santana',
-    'Independência',
-    'Floresta',
-    'Rio Branco'
-  ]
 
   return (
     <div>
-      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A73] text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica no
-              <span className="text-[#FF8C00]"> Centro de Porto Alegre</span>
+              Assistência Técnica em
+              <span className="text-[#FF8C00]"> Centro</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no Centro de Porto Alegre. 
+              Serviços especializados em eletrodomésticos no bairro Centro, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -125,78 +93,58 @@ export default function CentroPortoAlegrePage() {
         </div>
       </section>
 
-      {/* Coverage Area */}
+      {/* Local Info */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-[#1E3A5F] mb-4">
-                Atendemos Todo o Centro de Porto Alegre
-              </h2>
-              <p className="text-xl text-gray-600">
-                Nossa equipe se desloca para atender você em qualquer bairro do centro
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {neighborhoods.map((neighborhood, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-md p-4 text-center">
-                  <CheckCircle className="w-6 h-6 text-[#FF8C00] mx-auto mb-2" />
-                  <p className="font-semibold text-[#1E3A5F]">{neighborhood}</p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-6">
-                    Nossa Sede
-                  </h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <MapPin className="w-6 h-6 text-[#FF8C00]" />
-                      <div>
-                        <p className="font-semibold">Endereço:</p>
-                        <p className="text-gray-600">Rua São Simão, 505 - Jardim do Salso</p>
-                        <p className="text-gray-600">Porto Alegre - RS</p>
-                      </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <h2 className="text-2xl font-bold text-[#1E3A5F] mb-6">
+                  Atendimento em Centro
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-6 h-6 text-[#FF8C00]" />
+                    <div>
+                      <p className="font-semibold">Nossa Sede:</p>
+                      <p className="text-gray-600">Rua São Simão, 505 - Jardim do Salso</p>
+                      <p className="text-gray-600">Porto Alegre - RS</p>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-6 h-6 text-[#FF8C00]" />
-                      <div>
-                        <p className="font-semibold">Telefone:</p>
-                        <p className="text-gray-600">(51) 4063-8129</p>
-                      </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-6 h-6 text-[#FF8C00]" />
+                    <div>
+                      <p className="font-semibold">Telefone:</p>
+                      <p className="text-gray-600">(51) 4063-8129</p>
                     </div>
                   </div>
                 </div>
-                
-                <div>
-                  <h3 className="text-2xl font-bold text-[#1E3A5F] mb-6">
-                    Por que Escolher a ServitecPoa?
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
-                      <span>Atendimento em domicílio no centro</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
-                      <span>15 anos de experiência</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
-                      <span>Peças originais Electrolux</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
-                      <span>Garantia de 90 dias</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
-                      <span>Técnicos qualificados</span>
-                    </div>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <h3 className="text-2xl font-bold text-[#1E3A5F] mb-6">
+                  Por que Escolher a ServitecPoa?
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
+                    <span>Atendimento em domicílio em Centro</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
+                    <span>15 anos de experiência</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
+                    <span>Peças originais Electrolux</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
+                    <span>Garantia de 90 dias</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-[#FF8C00]" />
+                    <span>Técnicos qualificados</span>
                   </div>
                 </div>
               </div>
@@ -210,7 +158,7 @@ export default function CentroPortoAlegrePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              Nossos Serviços no Centro de Porto Alegre
+              Nossos Serviços em Centro
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Atendemos todos os tipos de eletrodomésticos com qualidade e agilidade
@@ -250,10 +198,10 @@ export default function CentroPortoAlegrePage() {
       <section className="bg-[#FF8C00] text-white py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Precisa de Assistência Técnica no Centro?
+            Precisa de Assistência Técnica em Centro?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Nossa equipe está pronta para atender você em qualquer bairro do centro. 
+            Nossa equipe está pronta para atender você no bairro. 
             Orçamento sem compromisso!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

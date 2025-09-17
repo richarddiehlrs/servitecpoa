@@ -5,11 +5,11 @@ import { Phone, MapPin, CheckCircle } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Assistência Técnica Moinhos de Vento | ServitecPoa - Porto Alegre',
   description: 'Assistência técnica de eletrodomésticos em Moinhos de Vento, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica moinhos de vento, conserto eletrodomésticos moinhos de vento, técnico geladeira moinhos de vento, reparo máquina lavar moinhos de vento, instalação coifa moinhos de vento, porto alegre, servitecpoa'
+  keywords: 'assistência técnica moinhos-de-vento, conserto eletrodomésticos moinhos-de-vento, técnico geladeira moinhos-de-vento, reparo máquina lavar moinhos-de-vento, instalação coifa moinhos-de-vento, porto alegre, servitecpoa'
 }
 
-export default function MoinhosDeVentoPage() {
-      const services = [
+export default function MoinhosdeVentoPage() {
+  const services = [
     {
       name: 'Conserto de Geladeiras',
       description: 'Reparo completo em geladeiras e freezers em Moinhos de Vento',
@@ -59,30 +59,9 @@ export default function MoinhosDeVentoPage() {
       problems: ['Não liga', 'Aquecimento', 'Falhas elétricas', 'Manutenção geral']
     }
   ]
-    },
-    {
-      name: 'Conserto de Máquinas de Lavar',
-      description: 'Assistência técnica especializada em lavadoras no bairro',
-      icon: '👕',
-      problems: ['Não centrifuga', 'Vazamento', 'Não liga', 'Ciclo incompleto']
-    },
-    {
-      name: 'Conserto de Fogões',
-      description: 'Reparo de fogões e cooktops em Moinhos de Vento',
-      icon: '🔥',
-      problems: ['Bocas não acendem', 'Forno não aquece', 'Vazamento gás', 'Chamas fracas']
-    },
-    {
-      name: 'Instalação de Coifas',
-      description: 'Instalação profissional de coifas e depuradores',
-      icon: '💨',
-      problems: ['Instalação em parede', 'Conexão elétrica', 'Sistema exaustão', 'Nivelamento']
-    }
-  ]
 
   return (
     <div>
-      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A73] text-white py-16">
         <div className="container mx-auto px-4">

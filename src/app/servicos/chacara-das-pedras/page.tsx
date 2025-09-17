@@ -5,11 +5,11 @@ import { Phone, MapPin, CheckCircle } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Assistência Técnica Chácara das Pedras | ServitecPoa - Porto Alegre',
   description: 'Assistência técnica de eletrodomésticos em Chácara das Pedras, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica chácara das pedras, conserto eletrodomésticos chácara das pedras, técnico geladeira chácara das pedras, reparo máquina lavar chácara das pedras, instalação coifa chácara das pedras, porto alegre, servitecpoa'
+  keywords: 'assistência técnica chacara-das-pedras, conserto eletrodomésticos chacara-das-pedras, técnico geladeira chacara-das-pedras, reparo máquina lavar chacara-das-pedras, instalação coifa chacara-das-pedras, porto alegre, servitecpoa'
 }
 
-export default function ChacaraDasPedrasPage() {
-      const services = [
+export default function ChcaradasPedrasPage() {
+  const services = [
     {
       name: 'Conserto de Geladeiras',
       description: 'Reparo completo em geladeiras e freezers em Chácara das Pedras',
@@ -57,26 +57,6 @@ export default function ChacaraDasPedrasPage() {
       description: 'Conserto de todos os tipos de eletroportáteis',
       icon: '🔌',
       problems: ['Não liga', 'Aquecimento', 'Falhas elétricas', 'Manutenção geral']
-    }
-  ]
-    },
-    {
-      name: 'Conserto de Máquinas de Lavar',
-      description: 'Assistência técnica especializada em lavadoras no bairro',
-      icon: '👕',
-      problems: ['Não centrifuga', 'Vazamento', 'Não liga', 'Ciclo incompleto']
-    },
-    {
-      name: 'Conserto de Fogões',
-      description: 'Reparo de fogões e cooktops em Chácara das Pedras',
-      icon: '🔥',
-      problems: ['Bocas não acendem', 'Forno não aquece', 'Vazamento gás', 'Chamas fracas']
-    },
-    {
-      name: 'Instalação de Coifas',
-      description: 'Instalação profissional de coifas e depuradores',
-      icon: '💨',
-      problems: ['Instalação em parede', 'Conexão elétrica', 'Sistema exaustão', 'Nivelamento']
     }
   ]
 

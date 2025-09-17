@@ -5,11 +5,11 @@ import { Phone, MapPin, CheckCircle } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Assistência Técnica Bela Vista | ServitecPoa - Porto Alegre',
   description: 'Assistência técnica de eletrodomésticos em Bela Vista, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica bela vista, conserto eletrodomésticos bela vista, técnico geladeira bela vista, reparo máquina lavar bela vista, instalação coifa bela vista, porto alegre, servitecpoa'
+  keywords: 'assistência técnica bela-vista, conserto eletrodomésticos bela-vista, técnico geladeira bela-vista, reparo máquina lavar bela-vista, instalação coifa bela-vista, porto alegre, servitecpoa'
 }
 
 export default function BelaVistaPage() {
-      const services = [
+  const services = [
     {
       name: 'Conserto de Geladeiras',
       description: 'Reparo completo em geladeiras e freezers em Bela Vista',
@@ -57,26 +57,6 @@ export default function BelaVistaPage() {
       description: 'Conserto de todos os tipos de eletroportáteis',
       icon: '🔌',
       problems: ['Não liga', 'Aquecimento', 'Falhas elétricas', 'Manutenção geral']
-    }
-  ]
-    },
-    {
-      name: 'Conserto de Máquinas de Lavar',
-      description: 'Assistência técnica especializada em lavadoras no bairro',
-      icon: '👕',
-      problems: ['Não centrifuga', 'Vazamento', 'Não liga', 'Ciclo incompleto']
-    },
-    {
-      name: 'Conserto de Fogões',
-      description: 'Reparo de fogões e cooktops em Bela Vista',
-      icon: '🔥',
-      problems: ['Bocas não acendem', 'Forno não aquece', 'Vazamento gás', 'Chamas fracas']
-    },
-    {
-      name: 'Instalação de Coifas',
-      description: 'Instalação profissional de coifas e depuradores',
-      icon: '💨',
-      problems: ['Instalação em parede', 'Conexão elétrica', 'Sistema exaustão', 'Nivelamento']
     }
   ]
 

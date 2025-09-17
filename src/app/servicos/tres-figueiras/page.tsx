@@ -5,11 +5,11 @@ import { Phone, MapPin, CheckCircle } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Assistência Técnica Três Figueiras | ServitecPoa - Porto Alegre',
   description: 'Assistência técnica de eletrodomésticos em Três Figueiras, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica três figueiras, conserto eletrodomésticos três figueiras, técnico geladeira três figueiras, reparo máquina lavar três figueiras, instalação coifa três figueiras, porto alegre, servitecpoa'
+  keywords: 'assistência técnica tres-figueiras, conserto eletrodomésticos tres-figueiras, técnico geladeira tres-figueiras, reparo máquina lavar tres-figueiras, instalação coifa tres-figueiras, porto alegre, servitecpoa'
 }
 
-export default function TresFigueirasPage() {
-      const services = [
+export default function TrsFigueirasPage() {
+  const services = [
     {
       name: 'Conserto de Geladeiras',
       description: 'Reparo completo em geladeiras e freezers em Três Figueiras',
@@ -57,26 +57,6 @@ export default function TresFigueirasPage() {
       description: 'Conserto de todos os tipos de eletroportáteis',
       icon: '🔌',
       problems: ['Não liga', 'Aquecimento', 'Falhas elétricas', 'Manutenção geral']
-    }
-  ]
-    },
-    {
-      name: 'Conserto de Máquinas de Lavar',
-      description: 'Assistência técnica especializada em lavadoras no bairro',
-      icon: '👕',
-      problems: ['Não centrifuga', 'Vazamento', 'Não liga', 'Ciclo incompleto']
-    },
-    {
-      name: 'Conserto de Fogões',
-      description: 'Reparo de fogões e cooktops em Três Figueiras',
-      icon: '🔥',
-      problems: ['Bocas não acendem', 'Forno não aquece', 'Vazamento gás', 'Chamas fracas']
-    },
-    {
-      name: 'Instalação de Coifas',
-      description: 'Instalação profissional de coifas e depuradores',
-      icon: '💨',
-      problems: ['Instalação em parede', 'Conexão elétrica', 'Sistema exaustão', 'Nivelamento']
     }
   ]
 
