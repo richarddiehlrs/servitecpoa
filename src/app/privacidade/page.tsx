@@ -61,7 +61,7 @@ export default function PrivacidadePage() {
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
               <h2 className="text-2xl font-bold text-[#1E3A5F] mb-4">1. Introdução</h2>
               <p className="text-gray-700 mb-4">
-                A ServitecPoa Assistência Técnica ("nós", "nosso" ou "empresa") respeita sua privacidade e está comprometida em proteger suas informações pessoais. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos suas informações quando você utiliza nossos serviços.
+                A ServitecPoa Assistência Técnica (&ldquo;nós&rdquo;, &ldquo;nosso&rdquo; ou &ldquo;empresa&rdquo;) respeita sua privacidade e está comprometida em proteger suas informações pessoais. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos suas informações quando você utiliza nossos serviços.
               </p>
               <p className="text-gray-700">
                 Esta política está em conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018) e outras legislações aplicáveis de proteção de dados.

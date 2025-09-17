@@ -61,10 +61,10 @@ export default function TermosPage() {
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
               <h2 className="text-2xl font-bold text-[#1E3A5F] mb-4">1. Introdução</h2>
               <p className="text-gray-700 mb-4">
-                Estes Termos de Uso ("Termos") regem o uso dos serviços oferecidos pela ServitecPoa Assistência Técnica ("Empresa", "nós" ou "nosso"), empresa especializada em assistência técnica de eletrodomésticos em Porto Alegre.
+                Estes Termos de Uso (&ldquo;Termos&rdquo;) regem o uso dos serviços oferecidos pela ServitecPoa Assistência Técnica (&ldquo;Empresa&rdquo;, &ldquo;nós&rdquo; ou &ldquo;nosso&rdquo;), empresa especializada em assistência técnica de eletrodomésticos em Porto Alegre.
               </p>
               <p className="text-gray-700">
-                Ao solicitar nossos serviços, você ("Cliente" ou "usuário") concorda em cumprir e estar vinculado a estes Termos. Se você não concordar com qualquer parte destes termos, não deve utilizar nossos serviços.
+                Ao solicitar nossos serviços, você (&ldquo;Cliente&rdquo; ou &ldquo;usuário&rdquo;) concorda em cumprir e estar vinculado a estes Termos. Se você não concordar com qualquer parte destes termos, não deve utilizar nossos serviços.
               </p>
             </div>
 
