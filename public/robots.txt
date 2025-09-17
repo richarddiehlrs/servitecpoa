@@ -1,8 +1,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://servitecpoa.com.br/sitemap.xml
+Sitemap: https://servitecpoa.com.br/sitemap-index.xml
 
 # Google Search Console
 User-agent: Googlebot
