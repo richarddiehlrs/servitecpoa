@@ -153,18 +153,32 @@ export default function ServicesDropdown() {
                 >
                   Petrópolis
                 </Link>
-                <Link
-                  href="/servicos/tres-figueiras"
-                  className="block py-1 text-xs text-gray-600 hover:text-[#FF8C00] transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Três Figueiras
-                </Link>
-              </div>
+                        <Link
+                          href="/servicos/tres-figueiras"
+                          className="block py-1 text-xs text-gray-600 hover:text-[#FF8C00] transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Três Figueiras
+                        </Link>
+                        <Link
+                          href="/servicos/menino-deus"
+                          className="block py-1 text-xs text-gray-600 hover:text-[#FF8C00] transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Menino Deus
+                        </Link>
+                        <Link
+                          href="/servicos/bom-fim"
+                          className="block py-1 text-xs text-gray-600 hover:text-[#FF8C00] transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          Bom Fim
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
-        </div>
-      )}
-    </div>
-  )
-}
+          )
+        }
