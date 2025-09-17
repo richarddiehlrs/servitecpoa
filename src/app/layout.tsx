@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <head>
         {/* Google Search Console Verification */}
-        <meta name="google-site-verification" content="SUBSTITUA_PELO_CODIGO_DO_GOOGLE" />
+        <meta name="google-site-verification" content="google94eb8cc8cfdd2ecc" />
         
         {/* Google Analytics 4 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
