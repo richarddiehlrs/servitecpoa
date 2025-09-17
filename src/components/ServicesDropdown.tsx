@@ -109,7 +109,7 @@ export default function ServicesDropdown() {
                   className="block py-1 text-xs text-gray-600 hover:text-[#FF8C00] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  Passo d'Areia
+                  Passo d&apos;Areia
                 </Link>
                 <Link
                   href="/servicos/bela-vista"
@@ -123,7 +123,7 @@ export default function ServicesDropdown() {
                   className="block py-1 text-xs text-gray-600 hover:text-[#FF8C00] transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  Mont'Serrat
+                  Mont&apos;Serrat
                 </Link>
                 <Link
                   href="/servicos/jardim-botanico"
