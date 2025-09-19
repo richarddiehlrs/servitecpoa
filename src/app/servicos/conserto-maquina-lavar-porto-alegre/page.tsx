@@ -29,8 +29,9 @@ export default function ConsertoMaquinaLavarPage() {
   ]
 
   const marcas = [
-    'Electrolux', 'Brastemp', 'Consul', 'Whirlpool', 'LG', 'Samsung',
-    'Panasonic', 'Midea', 'Continental', 'Prosdócimo', 'Colormaq'
+    'Electrolux', 'Brastemp', 'Consul', 'Samsung', 'Britânia', 'Midea', 
+    'Mondial', 'Whirlpool', 'LG', 'Panasonic', 'Continental', 'Prosdócimo', 
+    'Colormaq', 'Esmaltec', 'Atlas', 'Fischer', 'Bosch', 'Electrolux'
   ]
 
   const bairros = [
@@ -111,19 +112,46 @@ export default function ConsertoMaquinaLavarPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                Marcas que Atendemos
+                Marcas que Atendemos em Porto Alegre
               </h2>
               <p className="text-xl text-gray-600">
-                Conserto de máquina de lavar de todas as principais marcas
+                Conserto de máquina de lavar de todas as principais marcas com peças originais
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
               {marcas.map((marca, index) => (
-                <div key={index} className="bg-white rounded-lg shadow p-4 text-center">
+                <div key={index} className="bg-white rounded-lg shadow-lg p-4 text-center border-l-4 border-[#FF8C00]">
                   <span className="font-semibold text-gray-800">{marca}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Informações Locais */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                Por que Escolher a ServitecPoa para Conserto de Máquina de Lavar?
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-lg font-semibold text-[#FF8C00] mb-3">🏆 Especialistas em Porto Alegre</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• 15 anos de experiência em conserto de máquina de lavar</li>
+                    <li>• Técnicos certificados pelas principais marcas</li>
+                    <li>• Atendimento em todos os bairros de Porto Alegre</li>
+                    <li>• Peças originais com garantia de 90 dias</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-[#FF8C00] mb-3">⚡ Atendimento Rápido</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    <li>• Diagnóstico no mesmo dia</li>
+                    <li>• Reparo em até 24 horas</li>
+                    <li>• Atendimento de emergência</li>
+                    <li>• Orçamento sem compromisso</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -192,12 +220,42 @@ export default function ConsertoMaquinaLavarPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
               {bairros.map((bairro, index) => (
-                <div key={index} className="bg-white rounded-lg shadow p-4 text-center">
+                <div key={index} className="bg-white rounded-lg shadow-lg p-4 text-center border-l-4 border-[#FF8C00]">
                   <span className="font-semibold text-gray-800">{bairro}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Informações Específicas de Porto Alegre */}
+            <div className="bg-white rounded-lg shadow-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                Conserto de Máquina de Lavar em Porto Alegre - RS
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="bg-[#FF8C00] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">🏠</span>
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Atendimento Domiciliar</h4>
+                  <p className="text-gray-600">Vamos até sua casa em qualquer bairro de Porto Alegre para conserto de máquina de lavar</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-[#FF8C00] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">⚙️</span>
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Peças Originais</h4>
+                  <p className="text-gray-600">Trabalhamos com peças originais de todas as marcas para garantir qualidade no conserto</p>
+                </div>
+                <div className="text-center">
+                  <div className="bg-[#FF8C00] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <span className="text-white text-2xl">🛡️</span>
+                  </div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Garantia 90 Dias</h4>
+                  <p className="text-gray-600">Todos os consertos de máquina de lavar possuem garantia de 90 dias</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

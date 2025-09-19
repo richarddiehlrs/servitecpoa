@@ -29,8 +29,7 @@ export default function ConsertoMicroondasPage() {
   ]
 
   const marcas = [
-    'Electrolux', 'Brastemp', 'Consul', 'Whirlpool', 'LG', 'Samsung',
-    'Panasonic', 'Midea', 'Continental', 'Prosdócimo', 'Colormaq'
+    'Electrolux', 'Brastemp', 'Consul', 'Samsung', 'Britânia', 'Midea', 'Mondial', 'Whirlpool', 'LG', 'Panasonic', 'Continental', 'Prosdócimo', 'Colormaq', 'Esmaltec', 'Atlas', 'Fischer', 'Bosch', 'Electrolux'
   ]
 
   const bairros = [
@@ -111,16 +110,16 @@ export default function ConsertoMicroondasPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                Marcas que Atendemos
+                Marcas que Atendemos em Porto Alegre
               </h2>
               <p className="text-xl text-gray-600">
-                Conserto de microondas de todas as principais marcas
+                Conserto de eletrodomésticos de todas as principais marcas com peças originais
               </p>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
               {marcas.map((marca, index) => (
-                <div key={index} className="bg-white rounded-lg shadow p-4 text-center">
+                <div key={index} className="bg-white rounded-lg shadow-lg p-4 text-center border-l-4 border-[#FF8C00]">
                   <span className="font-semibold text-gray-800">{marca}</span>
                 </div>
               ))}
