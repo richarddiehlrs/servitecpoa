@@ -9,6 +9,9 @@ export default function ContatoPage() {
     nome: '',
     telefone: '',
     email: '',
+    cep: '',
+    endereco: '',
+    numero: '',
     equipamento: '',
     problema: '',
     mensagem: ''
@@ -22,6 +25,53 @@ export default function ContatoPage() {
     }))
   }
 
+  const handleCepChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    let cep = e.target.value.replace(/\D/g, '') // Remove caracteres não numéricos
+    
+    // Formatar CEP com hífen
+    if (cep.length > 5) {
+      cep = cep.substring(0, 5) + '-' + cep.substring(5, 8)
+    }
+    
+    setFormData(prev => ({
+      ...prev,
+      cep: cep
+    }))
+
+    // Buscar endereço quando CEP tiver 8 dígitos (sem hífen)
+    const cepNumerico = cep.replace(/\D/g, '')
+    if (cepNumerico.length === 8) {
+      try {
+        const response = await fetch(`https://viacep.com.br/ws/${cepNumerico}/json/`)
+        const data = await response.json()
+        
+        if (!data.erro) {
+          setFormData(prev => ({
+            ...prev,
+            endereco: `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`
+          }))
+        } else {
+          setFormData(prev => ({
+            ...prev,
+            endereco: ''
+          }))
+        }
+      } catch (error) {
+        console.error('Erro ao buscar CEP:', error)
+        setFormData(prev => ({
+          ...prev,
+          endereco: ''
+        }))
+      }
+    } else if (cepNumerico.length < 8) {
+      // Limpar endereço se CEP for incompleto
+      setFormData(prev => ({
+        ...prev,
+        endereco: ''
+      }))
+    }
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     
@@ -31,6 +81,8 @@ export default function ContatoPage() {
 *Nome:* ${formData.nome}
 *Telefone:* ${formData.telefone}
 *Email:* ${formData.email}
+*CEP:* ${formData.cep}
+*Endereço:* ${formData.endereco}, ${formData.numero}
 *Equipamento:* ${formData.equipamento}
 *Problema:* ${formData.problema}
 *Mensagem:* ${formData.mensagem || 'Não informado'}`
@@ -136,6 +188,54 @@ export default function ContatoPage() {
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                     placeholder="seu@email.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="cep" className="block text-sm font-medium text-gray-700 mb-2">
+                    CEP *
+                  </label>
+                  <input
+                    type="text"
+                    id="cep"
+                    name="cep"
+                    required
+                    value={formData.cep}
+                    onChange={handleCepChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder="00000-000"
+                    maxLength={9}
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="endereco" className="block text-sm font-medium text-gray-700 mb-2">
+                    Endereço
+                  </label>
+                  <input
+                    type="text"
+                    id="endereco"
+                    name="endereco"
+                    value={formData.endereco}
+                    readOnly
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-600"
+                    placeholder="Endereço será preenchido automaticamente"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="numero" className="block text-sm font-medium text-gray-700 mb-2">
+                    Número da Casa/Apartamento *
+                  </label>
+                  <input
+                    type="text"
+                    id="numero"
+                    name="numero"
+                    required
+                    value={formData.numero}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                    placeholder="Ex: 123 ou 123A"
                   />
                 </div>
 
