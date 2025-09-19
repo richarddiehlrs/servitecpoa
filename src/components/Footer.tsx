@@ -22,11 +22,11 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">ServitecPoa</h3>
-                <p className="text-[#FF8C00]">Única Assistência Técnica Oficial | Parceiro Electrolux</p>
+                <p className="text-[#FF8C00]">Assistência Técnica | Parceiro Electrolux</p>
               </div>
             </div>
             <p className="text-gray-300 mb-4">
-              Única assistência técnica oficial de Porto Alegre há 15 anos oferecendo serviços especializados em eletrodomésticos. 
+              Assistência técnica de Porto Alegre há 15 anos oferecendo serviços especializados em eletrodomésticos. 
               Nossa equipe de técnicos qualificados garante reparo rápido e eficiente para seus equipamentos.
             </p>
             <div className="flex items-center space-x-2 text-[#FF8C00]">

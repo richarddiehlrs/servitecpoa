@@ -68,7 +68,7 @@ export default function Header() {
             </div>
             <div>
               <h1 className="text-2xl font-bold text-[#1E3A5F]">ServitecPoa</h1>
-              <p className="text-sm text-[#FF8C00]">Única Assistência Técnica Oficial | Parceiro Electrolux</p>
+              <p className="text-sm text-[#FF8C00]">Assistência Técnica | Parceiro Electrolux</p>
             </div>
           </Link>
 
