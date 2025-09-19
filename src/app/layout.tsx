@@ -9,9 +9,9 @@ import WhatsAppFloat from '@/components/WhatsAppFloat'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ServitecPoa - Assistência Técnica de Eletrodomésticos | Parceiro Electrolux',
-  description: 'Única assistência técnica oficial especializada em eletrodomésticos em Porto Alegre. 15 anos de experiência, técnicos qualificados. Parceiro Electrolux. Atendemos geladeiras, fogões, máquinas de lavar, micro-ondas, purificadores de água, eletroportáteis, instalação de coifas e mais.',
-  keywords: 'assistência técnica, eletrodomésticos, Porto Alegre, Electrolux, geladeira, fogão, máquina de lavar, micro-ondas, lava-louças, purificador água, eletroportáteis, cafeteira, liquidificador, técnico qualificado, instalação coifa, instalação eletrodomésticos, aspirador central, jardim do salso',
+  title: 'Conserto de Eletrodomésticos Porto Alegre | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Porto Alegre, conserto geladeira Porto Alegre, conserto microondas Porto Alegre, conserto purificador água Porto Alegre, reparo eletrodomésticos Porto Alegre, assistência técnica domiciliar, técnico eletrodomésticos, conserto fogão Porto Alegre, conserto lava-louças, instalação coifa Porto Alegre',
   authors: [{ name: 'ServitecPoa' }],
   creator: 'ServitecPoa',
   publisher: 'ServitecPoa',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://servitecpoa.com.br',
     siteName: 'ServitecPoa',
-    title: 'ServitecPoa - Assistência Técnica de Eletrodomésticos',
-    description: 'Assistência técnica especializada em eletrodomésticos em Porto Alegre. 15 anos de experiência, técnicos qualificados.',
+    title: 'Conserto de Eletrodomésticos Porto Alegre | Máquina de Lavar, Geladeira, Microondas',
+    description: 'Conserto de eletrodomésticos em Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar.',
     images: [
       {
         url: '/logo.png',
@@ -76,7 +76,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "ServitecPoa Assistência Técnica",
               "image": "https://servitecpoa.com.br/logo.png",
-              "description": "Única assistência técnica oficial especializada em eletrodomésticos em Porto Alegre",
+              "description": "Conserto de eletrodomésticos em Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Rua São Simão, 505",
@@ -101,48 +101,48 @@ export default function RootLayout({
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "Serviços de Assistência Técnica",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Assistência Técnica de Geladeiras e Freezers",
-                      "description": "Reparo completo em geladeiras, freezers e refrigeradores de todas as marcas"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Conserto de Máquinas de Lavar",
-                      "description": "Conserto de máquinas de lavar roupas, centrífugas e tanquinhos"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Reparo de Fogões e Cooktops",
-                      "description": "Assistência técnica para fogões, cooktops e fornos elétricos/a gás"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Instalação de Coifas",
-                      "description": "Instalação profissional de coifas e depuradores de todas as marcas"
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Instalação de Eletrodomésticos",
-                      "description": "Instalação completa de eletrodomésticos em geral com garantia"
-                    }
-                  }
-                ]
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conserto de Máquina de Lavar Porto Alegre",
+              "description": "Conserto de máquina de lavar em Porto Alegre. Reparo de centrífugas e tanquinhos com garantia 90 dias"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conserto de Geladeira Porto Alegre",
+              "description": "Conserto de geladeira em Porto Alegre. Reparo de freezers e refrigeradores com peças originais"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conserto de Microondas Porto Alegre",
+              "description": "Conserto de microondas em Porto Alegre. Reparo de fornos de microondas com atendimento domiciliar"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conserto de Purificador de Água Porto Alegre",
+              "description": "Conserto de purificador de água em Porto Alegre. Reparo de filtros e bebedouros com garantia"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Conserto de Fogão Porto Alegre",
+              "description": "Conserto de fogão em Porto Alegre. Reparo de cooktops e fornos elétricos/a gás"
+            }
+          }
+        ]
               }
             })
           }}
