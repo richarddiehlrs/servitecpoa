@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Bom Fim | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Bom Fim, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica bom fim, conserto eletrodomésticos bom fim, técnico geladeira bom fim, reparo máquina lavar bom fim, instalação coifa bom fim, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Bom Fim | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Bom Fim, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Bom Fim, conserto geladeira Bom Fim, conserto microondas Bom Fim, conserto purificador água Bom Fim, reparo eletrodomésticos Bom Fim, assistência técnica domiciliar Bom Fim, técnico eletrodomésticos Bom Fim, conserto fogão Bom Fim, conserto lava-louças Bom Fim, instalação coifa Bom Fim'
 }
 
 export default function BomFimPage() {
@@ -67,11 +67,11 @@ export default function BomFimPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Bom Fim</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Bom Fim, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Bom Fim, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

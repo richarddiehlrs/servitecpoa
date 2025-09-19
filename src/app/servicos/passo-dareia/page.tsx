@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Passo d&apos;Areia | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Passo d&apos;Areia, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica passo-dareia, conserto eletrodomésticos passo-dareia, técnico geladeira passo-dareia, reparo máquina lavar passo-dareia, instalação coifa passo-dareia, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Passo d'Areia | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Passo d'Areia, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Passo d'Areia, conserto geladeira Passo d'Areia, conserto microondas Passo d'Areia, conserto purificador água Passo d'Areia, reparo eletrodomésticos Passo d'Areia, assistência técnica domiciliar Passo d'Areia, técnico eletrodomésticos Passo d'Areia, conserto fogão Passo d'Areia, conserto lava-louças Passo d'Areia, instalação coifa Passo d'Areia'
 }
 
 export default function PassodaposAreiaPage() {
@@ -67,11 +67,11 @@ export default function PassodaposAreiaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Passo d&apos;Areia</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Passo d&apos;Areia, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Passo d&apos;Areia, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Petrópolis | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Petrópolis, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica petropolis, conserto eletrodomésticos petropolis, técnico geladeira petropolis, reparo máquina lavar petropolis, instalação coifa petropolis, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Petrópolis | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Petrópolis, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Petrópolis, conserto geladeira Petrópolis, conserto microondas Petrópolis, conserto purificador água Petrópolis, reparo eletrodomésticos Petrópolis, assistência técnica domiciliar Petrópolis, técnico eletrodomésticos Petrópolis, conserto fogão Petrópolis, conserto lava-louças Petrópolis, instalação coifa Petrópolis'
 }
 
 export default function PetrpolisPage() {
@@ -67,11 +67,11 @@ export default function PetrpolisPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Petrópolis</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Petrópolis, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Petrópolis, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Três Figueiras | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Três Figueiras, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica tres-figueiras, conserto eletrodomésticos tres-figueiras, técnico geladeira tres-figueiras, reparo máquina lavar tres-figueiras, instalação coifa tres-figueiras, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Três Figueiras | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Três Figueiras, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Três Figueiras, conserto geladeira Três Figueiras, conserto microondas Três Figueiras, conserto purificador água Três Figueiras, reparo eletrodomésticos Três Figueiras, assistência técnica domiciliar Três Figueiras, técnico eletrodomésticos Três Figueiras, conserto fogão Três Figueiras, conserto lava-louças Três Figueiras, instalação coifa Três Figueiras'
 }
 
 export default function TrsFigueirasPage() {
@@ -67,11 +67,11 @@ export default function TrsFigueirasPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Três Figueiras</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Três Figueiras, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Três Figueiras, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

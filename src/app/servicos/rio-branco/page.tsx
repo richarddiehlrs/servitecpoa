@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Rio Branco | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Rio Branco, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica rio-branco, conserto eletrodomésticos rio-branco, técnico geladeira rio-branco, reparo máquina lavar rio-branco, instalação coifa rio-branco, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Rio Branco | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Rio Branco, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Rio Branco, conserto geladeira Rio Branco, conserto microondas Rio Branco, conserto purificador água Rio Branco, reparo eletrodomésticos Rio Branco, assistência técnica domiciliar Rio Branco, técnico eletrodomésticos Rio Branco, conserto fogão Rio Branco, conserto lava-louças Rio Branco, instalação coifa Rio Branco'
 }
 
 export default function RioBrancoPage() {
@@ -67,11 +67,11 @@ export default function RioBrancoPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Rio Branco</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Rio Branco, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Rio Branco, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

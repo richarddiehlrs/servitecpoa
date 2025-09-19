@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Chácara das Pedras | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Chácara das Pedras, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica chacara-das-pedras, conserto eletrodomésticos chacara-das-pedras, técnico geladeira chacara-das-pedras, reparo máquina lavar chacara-das-pedras, instalação coifa chacara-das-pedras, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Chácara das Pedras | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Chácara das Pedras, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Chácara das Pedras, conserto geladeira Chácara das Pedras, conserto microondas Chácara das Pedras, conserto purificador água Chácara das Pedras, reparo eletrodomésticos Chácara das Pedras, assistência técnica domiciliar Chácara das Pedras, técnico eletrodomésticos Chácara das Pedras, conserto fogão Chácara das Pedras, conserto lava-louças Chácara das Pedras, instalação coifa Chácara das Pedras'
 }
 
 export default function ChcaradasPedrasPage() {
@@ -67,11 +67,11 @@ export default function ChcaradasPedrasPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Chácara das Pedras</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Chácara das Pedras, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Chácara das Pedras, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

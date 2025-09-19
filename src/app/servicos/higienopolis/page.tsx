@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Higienópolis | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Higienópolis, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica higienopolis, conserto eletrodomésticos higienopolis, técnico geladeira higienopolis, reparo máquina lavar higienopolis, instalação coifa higienopolis, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Higienópolis | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Higienópolis, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Higienópolis, conserto geladeira Higienópolis, conserto microondas Higienópolis, conserto purificador água Higienópolis, reparo eletrodomésticos Higienópolis, assistência técnica domiciliar Higienópolis, técnico eletrodomésticos Higienópolis, conserto fogão Higienópolis, conserto lava-louças Higienópolis, instalação coifa Higienópolis'
 }
 
 export default function HigienpolisPage() {
@@ -67,11 +67,11 @@ export default function HigienpolisPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Higienópolis</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Higienópolis, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Higienópolis, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

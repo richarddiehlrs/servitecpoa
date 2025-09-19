@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Bela Vista | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Bela Vista, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica bela-vista, conserto eletrodomésticos bela-vista, técnico geladeira bela-vista, reparo máquina lavar bela-vista, instalação coifa bela-vista, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Bela Vista | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Bela Vista, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Bela Vista, conserto geladeira Bela Vista, conserto microondas Bela Vista, conserto purificador água Bela Vista, reparo eletrodomésticos Bela Vista, assistência técnica domiciliar Bela Vista, técnico eletrodomésticos Bela Vista, conserto fogão Bela Vista, conserto lava-louças Bela Vista, instalação coifa Bela Vista'
 }
 
 export default function BelaVistaPage() {
@@ -67,11 +67,11 @@ export default function BelaVistaPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Bela Vista</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Bela Vista, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Bela Vista, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

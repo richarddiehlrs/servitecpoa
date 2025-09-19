@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, Clock, CheckCircle, Star } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Jardim do Salso | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos no Jardim do Salso, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Técnicos qualificados, peças originais, garantia 90 dias.',
-  keywords: 'assistência técnica jardim do salso, conserto eletrodomésticos jardim do salso, técnico geladeira jardim do salso, reparo máquina lavar jardim do salso, instalação coifa jardim do salso, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Jardim do Salso | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Jardim do Salso, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Jardim do Salso, conserto geladeira Jardim do Salso, conserto microondas Jardim do Salso, conserto purificador água Jardim do Salso, reparo eletrodomésticos Jardim do Salso, assistência técnica domiciliar Jardim do Salso, técnico eletrodomésticos Jardim do Salso, conserto fogão Jardim do Salso, conserto lava-louças Jardim do Salso, instalação coifa Jardim do Salso'
 }
 
 export default function JardimDoSalsoPage() {
@@ -87,7 +87,7 @@ export default function JardimDoSalsoPage() {
               <span className="text-[#FF8C00]"> Jardim do Salso</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Jardim do Salso, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Jardim do Salso, Porto Alegre. 
               Técnicos qualificados, peças originais e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

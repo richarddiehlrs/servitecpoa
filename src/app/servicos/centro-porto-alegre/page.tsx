@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Centro | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Centro, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica centro-porto-alegre, conserto eletrodomésticos centro-porto-alegre, técnico geladeira centro-porto-alegre, reparo máquina lavar centro-porto-alegre, instalação coifa centro-porto-alegre, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Centro Porto Alegre | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Centro Porto Alegre, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Centro Porto Alegre, conserto geladeira Centro Porto Alegre, conserto microondas Centro Porto Alegre, conserto purificador água Centro Porto Alegre, reparo eletrodomésticos Centro Porto Alegre, assistência técnica domiciliar Centro Porto Alegre, técnico eletrodomésticos Centro Porto Alegre, conserto fogão Centro Porto Alegre, conserto lava-louças Centro Porto Alegre, instalação coifa Centro Porto Alegre'
 }
 
 export default function CentroPage() {
@@ -67,11 +67,11 @@ export default function CentroPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Centro</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Centro, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Centro, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

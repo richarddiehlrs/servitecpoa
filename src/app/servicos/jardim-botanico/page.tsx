@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Assistência Técnica Jardim Botânico | ServitecPoa - Porto Alegre',
-  description: 'Assistência técnica de eletrodomésticos em Jardim Botânico, Porto Alegre. Conserto de geladeiras, máquinas de lavar, fogões, micro-ondas. Atendimento em domicílio, técnicos qualificados, garantia 90 dias.',
-  keywords: 'assistência técnica jardim-botanico, conserto eletrodomésticos jardim-botanico, técnico geladeira jardim-botanico, reparo máquina lavar jardim-botanico, instalação coifa jardim-botanico, porto alegre, servitecpoa'
+  title: 'Conserto de Eletrodomésticos Jardim Botânico | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Jardim Botânico, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Jardim Botânico, conserto geladeira Jardim Botânico, conserto microondas Jardim Botânico, conserto purificador água Jardim Botânico, reparo eletrodomésticos Jardim Botânico, assistência técnica domiciliar Jardim Botânico, técnico eletrodomésticos Jardim Botânico, conserto fogão Jardim Botânico, conserto lava-louças Jardim Botânico, instalação coifa Jardim Botânico'
 }
 
 export default function JardimBotnicoPage() {
@@ -67,11 +67,11 @@ export default function JardimBotnicoPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Assistência Técnica em
+              Conserto de Eletrodomésticos em
               <span className="text-[#FF8C00]"> Jardim Botânico</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Serviços especializados em eletrodomésticos no bairro Jardim Botânico, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Jardim Botânico, Porto Alegre. 
               Atendimento em domicílio, técnicos qualificados e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
