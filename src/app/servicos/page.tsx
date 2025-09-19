@@ -350,7 +350,7 @@ export default function ServicosPage() {
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Nossa equipe especializada está pronta para diagnosticar e resolver qualquer problema. 
-            Orçamento gratuito e sem compromisso!
+            Orçamento especializado e oficial!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

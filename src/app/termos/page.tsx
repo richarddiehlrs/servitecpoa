@@ -149,7 +149,7 @@ export default function TermosPage() {
                 
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">4.1 Orçamento:</h3>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
-                  <li>Orçamento gratuito para diagnóstico inicial</li>
+                  <li>Orçamento especializado para diagnóstico inicial</li>
                   <li>Preços podem variar conforme complexidade do serviço</li>
                   <li>Valores incluem mão de obra e peças (quando aplicável)</li>
                   <li>Orçamento válido por 30 dias</li>

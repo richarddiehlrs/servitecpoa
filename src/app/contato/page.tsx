@@ -26,7 +26,7 @@ export default function ContatoPage() {
     e.preventDefault()
     
     // Criar mensagem para WhatsApp
-    const message = `Olá! Gostaria de solicitar um orçamento:
+    const message = `Olá! Gostaria de solicitar um orçamento para assistência técnica:
     
 *Nome:* ${formData.nome}
 *Telefone:* ${formData.telefone}
@@ -70,7 +70,7 @@ export default function ContatoPage() {
               <span className="text-[#FF8C00]"> Contato</span>
             </h1>
             <p className="text-xl text-gray-300">
-              Solicite seu orçamento sem compromisso. Atendemos toda Porto Alegre!
+              Solicite seu orçamento. Única assistência técnica oficial de Porto Alegre!
             </p>
           </div>
         </div>
