@@ -9,9 +9,9 @@ import WhatsAppFloat from '@/components/WhatsAppFloat'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Conserto de Eletrodomésticos Porto Alegre | Máquina de Lavar, Geladeira, Microondas',
-  description: 'Conserto de eletrodomésticos em Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
-  keywords: 'conserto máquina de lavar Porto Alegre, conserto geladeira Porto Alegre, conserto microondas Porto Alegre, conserto purificador água Porto Alegre, reparo eletrodomésticos Porto Alegre, assistência técnica domiciliar, técnico eletrodomésticos, conserto fogão Porto Alegre, conserto lava-louças, instalação coifa Porto Alegre',
+  title: 'ServitecPoa - Assistência Técnica de Eletrodomésticos | Parceiro Electrolux',
+  description: 'Assistência técnica especializada em eletrodomésticos em Porto Alegre. 15 anos de experiência, técnicos qualificados. Parceiro Electrolux. Atendemos geladeiras, fogões, máquinas de lavar, micro-ondas, purificadores de água, eletroportáteis, instalação de coifas e mais.',
+  keywords: 'assistência técnica, eletrodomésticos, Porto Alegre, Electrolux, geladeira, fogão, máquina de lavar, micro-ondas, lava-louças, purificador água, eletroportáteis, cafeteira, liquidificador, técnico qualificado, instalação coifa, instalação eletrodomésticos, aspirador central, jardim do salso',
   authors: [{ name: 'ServitecPoa' }],
   creator: 'ServitecPoa',
   publisher: 'ServitecPoa',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: 'https://servitecpoa.com.br',
     siteName: 'ServitecPoa',
-    title: 'Conserto de Eletrodomésticos Porto Alegre | Máquina de Lavar, Geladeira, Microondas',
-    description: 'Conserto de eletrodomésticos em Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar.',
+    title: 'ServitecPoa - Assistência Técnica de Eletrodomésticos',
+    description: 'Assistência técnica especializada em eletrodomésticos em Porto Alegre. 15 anos de experiência, técnicos qualificados.',
     images: [
       {
         url: '/logo.png',
@@ -76,7 +76,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "name": "ServitecPoa Assistência Técnica",
               "image": "https://servitecpoa.com.br/logo.png",
-              "description": "Conserto de eletrodomésticos em Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar.",
+              "description": "Assistência técnica especializada em eletrodomésticos em Porto Alegre. 15 anos de experiência, técnicos qualificados. Parceiro Electrolux.",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Rua São Simão, 505",
