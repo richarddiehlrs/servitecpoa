@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Conserto de Eletrodomésticos Passo d'Areia | Máquina de Lavar, Geladeira, Microondas',
-  description: 'Conserto de eletrodomésticos em Passo d'Areia, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
-  keywords: 'conserto máquina de lavar Passo d'Areia, conserto geladeira Passo d'Areia, conserto microondas Passo d'Areia, conserto purificador água Passo d'Areia, reparo eletrodomésticos Passo d'Areia, assistência técnica domiciliar Passo d'Areia, técnico eletrodomésticos Passo d'Areia, conserto fogão Passo d'Areia, conserto lava-louças Passo d'Areia, instalação coifa Passo d'Areia'
+  title: 'Conserto de Eletrodomésticos Passo d&apos;Areia | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Passo d&apos;Areia, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Passo d&apos;Areia, conserto geladeira Passo d&apos;Areia, conserto microondas Passo d&apos;Areia, conserto purificador água Passo d&apos;Areia, reparo eletrodomésticos Passo d&apos;Areia, assistência técnica domiciliar Passo d&apos;Areia, técnico eletrodomésticos Passo d&apos;Areia, conserto fogão Passo d&apos;Areia, conserto lava-louças Passo d&apos;Areia, instalação coifa Passo d&apos;Areia'
 }
 
 export default function PassodaposAreiaPage() {

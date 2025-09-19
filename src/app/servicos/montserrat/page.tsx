@@ -3,9 +3,9 @@ import Link from 'next/link'
 import { Phone, MapPin, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Conserto de Eletrodomésticos Mont'Serrat | Máquina de Lavar, Geladeira, Microondas',
-  description: 'Conserto de eletrodomésticos em Mont'Serrat, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
-  keywords: 'conserto máquina de lavar Mont'Serrat, conserto geladeira Mont'Serrat, conserto microondas Mont'Serrat, conserto purificador água Mont'Serrat, reparo eletrodomésticos Mont'Serrat, assistência técnica domiciliar Mont'Serrat, técnico eletrodomésticos Mont'Serrat, conserto fogão Mont'Serrat, conserto lava-louças Mont'Serrat, instalação coifa Mont'Serrat'
+  title: 'Conserto de Eletrodomésticos Mont&apos;Serrat | Máquina de Lavar, Geladeira, Microondas',
+  description: 'Conserto de eletrodomésticos em Mont&apos;Serrat, Porto Alegre. Especialista em máquina de lavar, geladeira, microondas, purificador de água. Atendimento domiciliar, peças originais, garantia 90 dias. (51) 4063-8129',
+  keywords: 'conserto máquina de lavar Mont&apos;Serrat, conserto geladeira Mont&apos;Serrat, conserto microondas Mont&apos;Serrat, conserto purificador água Mont&apos;Serrat, reparo eletrodomésticos Mont&apos;Serrat, assistência técnica domiciliar Mont&apos;Serrat, técnico eletrodomésticos Mont&apos;Serrat, conserto fogão Mont&apos;Serrat, conserto lava-louças Mont&apos;Serrat, instalação coifa Mont&apos;Serrat'
 }
 
 export default function MontaposSerratPage() {
