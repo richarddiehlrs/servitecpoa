@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { logVisitor, VisitorLog } from '@/lib/vis-tracker'
+import { UAParser } from 'ua-parser-js'
 
 export function middleware(request: NextRequest) {
     // Skip during build
@@ -32,15 +34,21 @@ export function middleware(request: NextRequest) {
         utmTerm: request.nextUrl.searchParams.get('utm_term') || undefined,
     }
 
-    // In a real edge environment we can't write to filesystem directly from middleware
-    // So we call an internal API route to handle the logging (which runs in Node runtime)
-    fetch(`${request.nextUrl.origin}/api/visitors`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(trackingData),
-    }).catch(err => console.error('Tracking failed', err))
+    // Extract browser/os/device info
+    const parser = new UAParser(trackingData.userAgent)
+    const result = parser.getResult()
+
+    const logEntry: VisitorLog = {
+        ...trackingData,
+        timestamp: new Date().toISOString(),
+        browser: `${result.browser.name || 'Unknown'} ${result.browser.version || ''}`,
+        os: `${result.os.name || 'Unknown'} ${result.os.version || ''}`,
+        device: `${result.device.vendor || ''} ${result.device.model || ''} (${result.device.type || 'Desktop'})`.trim(),
+    }
+
+    // Call logVisitor directly (Wait only if we really have to, but fire-and-forget in Edge is better with waitUntil)
+    // In many Next.js versions, we can just await it or not. For maximum speed, we don't await.
+    logVisitor(logEntry).catch(err => console.error('Tracking failed', err))
 
     return NextResponse.next()
 }
