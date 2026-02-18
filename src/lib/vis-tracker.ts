@@ -15,6 +15,9 @@ export interface VisitorLog {
     device: string
     path: string
     referer: string
+    utmSource?: string
+    utmMedium?: string
+    utmCampaign?: string
 }
 
 export interface EventLog {

@@ -26,6 +26,9 @@ export function middleware(request: NextRequest) {
         userAgent: request.headers.get('user-agent') || 'unknown',
         path: request.nextUrl.pathname,
         referer: request.headers.get('referer') || 'direct',
+        utmSource: request.nextUrl.searchParams.get('utm_source') || undefined,
+        utmMedium: request.nextUrl.searchParams.get('utm_medium') || undefined,
+        utmCampaign: request.nextUrl.searchParams.get('utm_campaign') || undefined,
     }
 
     // In a real edge environment we can't write to filesystem directly from middleware

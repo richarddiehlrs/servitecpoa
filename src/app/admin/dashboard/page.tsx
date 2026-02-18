@@ -173,7 +173,16 @@ export default function DashboardPage() {
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                             <div className="truncate max-w-xs" title={log.path}>{log.path}</div>
-                                            <div className="text-xs text-gray-400 truncate max-w-xs" title={log.referer}>{log.referer !== 'direct' ? log.referer : 'Direto'}</div>
+                                            <div className="flex flex-col gap-1 mt-1">
+                                                <div className="text-xs text-gray-400 truncate max-w-xs" title={log.referer}>
+                                                    Ref: {log.referer !== 'direct' ? log.referer : 'Direto'}
+                                                </div>
+                                                {log.utmSource && (
+                                                    <div className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 w-fit">
+                                                        UTM: {log.utmSource} {log.utmMedium ? `/ ${log.utmMedium}` : ''}
+                                                    </div>
+                                                )}
+                                            </div>
                                         </td>
                                     </tr>
                                 ))}
