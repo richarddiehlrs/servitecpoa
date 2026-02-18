@@ -4,7 +4,7 @@ import { useEffect, useState, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import {
     LogOut, Users, Globe, Smartphone, Monitor, MessageSquare,
-    Download, Trash2, TrendingUp, Calendar, Clock, Search
+    Download, Trash2, TrendingUp, Calendar, Clock, Search, Phone
 } from 'lucide-react'
 import {
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
@@ -96,6 +96,7 @@ export default function DashboardPage() {
     const mobileCount = visitors.filter(v => v.device.toLowerCase().includes('mobile')).length
     const desktopCount = visitors.length - mobileCount
     const whatsappClicks = events.filter(e => e.name === 'whatsapp_click').length
+    const callClicks = events.filter(e => e.name === 'call_click').length
 
     // Chart Data Preparation
     const chartData = useMemo(() => {
@@ -199,7 +200,7 @@ export default function DashboardPage() {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 group transition-all hover:shadow-md">
                         <div className="flex items-center justify-between mb-4">
                             <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
@@ -227,10 +228,21 @@ export default function DashboardPage() {
                             <div className="p-2 bg-green-50 rounded-lg group-hover:bg-green-100 transition-colors">
                                 <MessageSquare className="w-6 h-6 text-green-600" />
                             </div>
-                            <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded">Conversão</span>
+                            <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded">Zap</span>
                         </div>
                         <p className="text-sm text-gray-500 font-medium">Cliques WhatsApp</p>
                         <p className="text-2xl font-bold text-gray-800">{loading ? '...' : whatsappClicks}</p>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 group transition-all hover:shadow-md">
+                        <div className="flex items-center justify-between mb-4">
+                            <div className="p-2 bg-yellow-50 rounded-lg group-hover:bg-yellow-100 transition-colors">
+                                <Phone className="w-6 h-6 text-yellow-600" />
+                            </div>
+                            <span className="text-xs font-medium text-yellow-600 bg-yellow-50 px-2 py-1 rounded">Ligar</span>
+                        </div>
+                        <p className="text-sm text-gray-500 font-medium">Cliques Ligar</p>
+                        <p className="text-2xl font-bold text-gray-800">{loading ? '...' : callClicks}</p>
                     </div>
 
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 group transition-all hover:shadow-md">
@@ -242,10 +254,10 @@ export default function DashboardPage() {
                                 <Smartphone className="w-3 h-3 text-gray-400" /> {mobileCount} / <Monitor className="w-3 h-3 text-gray-400" /> {desktopCount}
                             </div>
                         </div>
-                        <p className="text-sm text-gray-500 font-medium">Dispositivos</p>
+                        <p className="text-sm text-gray-500 font-medium">Mobile</p>
                         <div className="flex items-end gap-2">
                             <p className="text-2xl font-bold text-gray-800">{Math.round((mobileCount / (totalVisitors || 1)) * 100)}%</p>
-                            <span className="text-xs text-gray-400 mb-1">Mobile</span>
+                            <span className="text-xs text-gray-400 mb-1">Acessos</span>
                         </div>
                     </div>
                 </div>
