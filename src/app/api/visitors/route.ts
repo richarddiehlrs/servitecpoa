@@ -45,3 +45,17 @@ export async function GET(_request: NextRequest) {
     const visitors = await getVisitors()
     return NextResponse.json(visitors)
 }
+
+// DELETE: Clear all logs (Protected)
+export async function DELETE(_request: NextRequest) {
+    const cookieStore = await cookies()
+    const session = cookieStore.get('admin_session')
+
+    if (!session || session.value !== 'authenticated') {
+        return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    const { clearLogs } = await import('@/lib/vis-tracker')
+    await clearLogs()
+    return NextResponse.json({ success: true })
+}

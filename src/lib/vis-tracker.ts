@@ -67,3 +67,12 @@ export async function getEvents(): Promise<EventLog[]> {
         return []
     }
 }
+
+export async function clearLogs() {
+    try {
+        await kv.del(VISITORS_KEY)
+        await kv.del(EVENTS_KEY)
+    } catch (error) {
+        console.error('Failed to clear logs in KV:', error)
+    }
+}
