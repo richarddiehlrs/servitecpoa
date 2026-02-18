@@ -12,6 +12,55 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
   },
+  other: {
+    'script:ld+json': JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      'serviceType': 'Conserto de Geladeira',
+      'provider': {
+        '@type': 'LocalBusiness',
+        'name': 'ServitecPoa Assistência Técnica',
+        'telephone': '+555140638129',
+        'address': {
+          '@type': 'PostalAddress',
+          'addressLocality': 'Porto Alegre',
+          'addressRegion': 'RS',
+          'addressCountry': 'BR'
+        }
+      },
+      'areaServed': {
+        '@type': 'City',
+        'name': 'Porto Alegre'
+      },
+      'hasOfferCatalog': {
+        '@type': 'OfferCatalog',
+        'name': 'Serviços de Geladeira',
+        'itemListElement': [
+          {
+            '@type': 'Offer',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'Conserto de Geladeira Não Gela'
+            }
+          },
+          {
+            '@type': 'Offer',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'Troca de Borracha de Geladeira'
+            }
+          },
+          {
+            '@type': 'Offer',
+            'itemOffered': {
+              '@type': 'Service',
+              'name': 'Carga de Gás Geladeira'
+            }
+          }
+        ]
+      }
+    })
+  }
 }
 
 export default function ConsertoGeladeiraPage() {
@@ -50,7 +99,7 @@ export default function ConsertoGeladeiraPage() {
               <span className="text-[#FF8C00]"> Porto Alegre</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Especialista em reparo de geladeiras, freezers e refrigeradores. 
+              Especialista em reparo de geladeiras, freezers e refrigeradores.
               Atendimento domiciliar em toda Porto Alegre com garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

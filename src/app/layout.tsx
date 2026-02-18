@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: 'Assistência técnica especializada em eletrodomésticos em Porto Alegre. 15 anos de experiência.',
   },
   alternates: {
-    canonical: 'https://servitecpoa.com.br',
+    canonical: './',
   },
 }
 
@@ -58,7 +58,7 @@ export default function RootLayout({
       <head>
         {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="google94eb8cc8cfdd2ecc" />
-        
+
         {/* Google Analytics 4 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-XWX14N5T89"
@@ -72,7 +72,7 @@ export default function RootLayout({
             gtag('config', 'G-XWX14N5T89');
           `}
         </Script>
-        
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -106,48 +106,48 @@ export default function RootLayout({
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
                 "name": "Serviços de Assistência Técnica",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Conserto de Máquina de Lavar Porto Alegre",
-              "description": "Conserto de máquina de lavar em Porto Alegre. Reparo de centrífugas e tanquinhos com garantia 90 dias"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Conserto de Geladeira Porto Alegre",
-              "description": "Conserto de geladeira em Porto Alegre. Reparo de freezers e refrigeradores com peças originais"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Conserto de Microondas Porto Alegre",
-              "description": "Conserto de microondas em Porto Alegre. Reparo de fornos de microondas com atendimento domiciliar"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Conserto de Purificador de Água Porto Alegre",
-              "description": "Conserto de purificador de água em Porto Alegre. Reparo de filtros e bebedouros com garantia"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Conserto de Fogão Porto Alegre",
-              "description": "Conserto de fogão em Porto Alegre. Reparo de cooktops e fornos elétricos/a gás"
-            }
-          }
-        ]
+                "itemListElement": [
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Conserto de Máquina de Lavar Porto Alegre",
+                      "description": "Conserto de máquina de lavar em Porto Alegre. Reparo de centrífugas e tanquinhos com garantia 90 dias"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Conserto de Geladeira Porto Alegre",
+                      "description": "Conserto de geladeira em Porto Alegre. Reparo de freezers e refrigeradores com peças originais"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Conserto de Microondas Porto Alegre",
+                      "description": "Conserto de microondas em Porto Alegre. Reparo de fornos de microondas com atendimento domiciliar"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Conserto de Purificador de Água Porto Alegre",
+                      "description": "Conserto de purificador de água em Porto Alegre. Reparo de filtros e bebedouros com garantia"
+                    }
+                  },
+                  {
+                    "@type": "Offer",
+                    "itemOffered": {
+                      "@type": "Service",
+                      "name": "Conserto de Fogão Porto Alegre",
+                      "description": "Conserto de fogão em Porto Alegre. Reparo de cooktops e fornos elétricos/a gás"
+                    }
+                  }
+                ]
               }
             })
           }}
