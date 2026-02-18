@@ -139,7 +139,8 @@ export default function DashboardPage() {
 
     const getRefererLabel = (referer: string) => {
         if (!referer || referer === 'direct') return 'Acesso Direto'
-        if (referer.includes('google.com')) return 'Google Search'
+        if (referer.includes('googleadservices.com')) return 'Google Ads'
+        if (referer.includes('google.')) return 'Google Search'
         if (referer.includes('facebook.com')) return 'Facebook'
         if (referer.includes('instagram.com')) return 'Instagram'
         if (referer.includes('wa.me') || referer.includes('whatsapp.com')) return 'WhatsApp'
@@ -340,15 +341,22 @@ export default function DashboardPage() {
                                     const refLabel = getRefererLabel(log.referer)
                                     const isGoogle = refLabel === 'Google Search' || log.utmSource === 'google'
 
+                                    const isOnline = new Date(log.timestamp).getTime() > fiveMinutesAgo
+
                                     return (
-                                        <tr key={index} className="hover:bg-gray-50 transition-colors">
+                                        <tr key={index} className={`transition-colors ${isOnline ? 'bg-green-50/30' : 'hover:bg-gray-50'}`}>
                                             <td className="px-6 py-4 whitespace-nowrap">
-                                                <div className="flex flex-col">
-                                                    <div className="text-sm font-semibold text-gray-700">
-                                                        {new Date(log.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
-                                                    </div>
-                                                    <div className="text-[10px] text-gray-400">
-                                                        {new Date(log.timestamp).toLocaleDateString('pt-BR')}
+                                                <div className="flex items-center gap-3">
+                                                    {isOnline && (
+                                                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(34,197,94,0.6)]" title="Online agora" />
+                                                    )}
+                                                    <div className="flex flex-col">
+                                                        <div className="text-sm font-semibold text-gray-700">
+                                                            {new Date(log.timestamp).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
+                                                        </div>
+                                                        <div className="text-[10px] text-gray-400">
+                                                            {new Date(log.timestamp).toLocaleDateString('pt-BR')}
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </td>
