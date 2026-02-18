@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
             referer: data.referer
         }
 
-        logVisitor(logEntry)
+        await logVisitor(logEntry)
         return NextResponse.json({ success: true })
     } catch (error) {
         console.error('API Log Error:', error)
@@ -42,6 +42,6 @@ export async function GET(_request: NextRequest) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const visitors = getVisitors()
+    const visitors = await getVisitors()
     return NextResponse.json(visitors)
 }

@@ -1,8 +1,4 @@
-import fs from 'fs'
-import path from 'path'
-
-const DB_PATH = path.join(process.cwd(), 'data', 'visitors.json')
-const DB_EVENTS_PATH = path.join(process.cwd(), 'data', 'events.json')
+import { kv } from '@vercel/kv'
 
 export interface VisitorLog {
     timestamp: string
@@ -28,86 +24,46 @@ export interface EventLog {
     path: string
 }
 
-function ensureDir() {
-    const dir = path.dirname(DB_PATH)
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true })
+const VISITORS_KEY = 'visitors_log'
+const EVENTS_KEY = 'events_log'
+const MAX_LOGS = 1000
+
+export async function logVisitor(data: VisitorLog) {
+    try {
+        // Push to the list in Redis
+        await kv.lpush(VISITORS_KEY, data)
+        // Trim to keep only the last MAX_LOGS
+        await kv.ltrim(VISITORS_KEY, 0, MAX_LOGS - 1)
+    } catch (error) {
+        console.error('Failed to log visitor to KV:', error)
     }
 }
 
-export function logVisitor(data: VisitorLog) {
+export async function getVisitors(): Promise<VisitorLog[]> {
     try {
-        ensureDir()
-        let logs: VisitorLog[] = []
-
-        if (fs.existsSync(DB_PATH)) {
-            const fileContent = fs.readFileSync(DB_PATH, 'utf-8')
-            try {
-                logs = JSON.parse(fileContent)
-            } catch {
-                console.error('Error parsing visitors DB, resetting')
-                logs = []
-            }
-        }
-
-        // Keep only last 1000 logs to prevent file from growing too large in this simple implementation
-        if (logs.length > 1000) {
-            logs = logs.slice(-999)
-        }
-
-        logs.push(data)
-        fs.writeFileSync(DB_PATH, JSON.stringify(logs, null, 2))
+        const logs = await kv.lrange<VisitorLog>(VISITORS_KEY, 0, -1)
+        return logs || []
     } catch (error) {
-        console.error('Failed to log visitor:', error)
-    }
-}
-
-export function getVisitors(): VisitorLog[] {
-    try {
-        if (!fs.existsSync(DB_PATH)) {
-            return []
-        }
-        const fileContent = fs.readFileSync(DB_PATH, 'utf-8')
-        const logs = JSON.parse(fileContent)
-        return logs.reverse() // Newest first
-    } catch (error) {
-        console.error('Failed to read visitors:', error)
+        console.error('Failed to read visitors from KV:', error)
         return []
     }
 }
 
-export function logEvent(data: EventLog) {
+export async function logEvent(data: EventLog) {
     try {
-        const dir = path.dirname(DB_EVENTS_PATH)
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true })
-        }
-
-        let events: EventLog[] = []
-        if (fs.existsSync(DB_EVENTS_PATH)) {
-            const fileContent = fs.readFileSync(DB_EVENTS_PATH, 'utf-8')
-            try {
-                events = JSON.parse(fileContent)
-            } catch {
-                events = []
-            }
-        }
-
-        events.push(data)
-        fs.writeFileSync(DB_EVENTS_PATH, JSON.stringify(events, null, 2))
+        await kv.lpush(EVENTS_KEY, data)
+        await kv.ltrim(EVENTS_KEY, 0, MAX_LOGS - 1)
     } catch (error) {
-        console.error('Failed to log event:', error)
+        console.error('Failed to log event to KV:', error)
     }
 }
 
-export function getEvents(): EventLog[] {
+export async function getEvents(): Promise<EventLog[]> {
     try {
-        if (!fs.existsSync(DB_EVENTS_PATH)) {
-            return []
-        }
-        const fileContent = fs.readFileSync(DB_EVENTS_PATH, 'utf-8')
-        return JSON.parse(fileContent).reverse()
-    } catch {
+        const events = await kv.lrange<EventLog>(EVENTS_KEY, 0, -1)
+        return events || []
+    } catch (error) {
+        console.error('Failed to read events from KV:', error)
         return []
     }
 }

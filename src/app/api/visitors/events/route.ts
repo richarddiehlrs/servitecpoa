@@ -10,6 +10,6 @@ export async function GET(_request: NextRequest) {
         return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const events = getEvents()
+    const events = await getEvents()
     return NextResponse.json(events)
 }

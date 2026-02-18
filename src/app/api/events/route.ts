@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
             path: data.path || '/'
         }
 
-        logEvent(eventEntry)
+        await logEvent(eventEntry)
         return NextResponse.json({ success: true })
     } catch (error) {
         console.error('API Event Error:', error)
