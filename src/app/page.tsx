@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import HeroBanner from '@/components/HeroBanner'
-import { 
-  Clock, 
-  Shield, 
-  Users, 
+import {
+  Clock,
+  Shield,
+  Users,
   Phone,
   CheckCircle,
   MapPin,
@@ -104,16 +104,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Assistência Técnica 
+              Assistência Técnica
               <span className="text-[#FF8C00]"> Oficial</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-300">
-              Única assistência técnica oficial de Porto Alegre. 15 anos de experiência em reparo de eletrodomésticos. 
+              Única assistência técnica oficial de Porto Alegre. 15 anos de experiência em reparo de eletrodomésticos.
               Técnicos qualificados e peças originais.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="tel:5140638129"
+                title="Ligar para ServitecPoa"
                 className="bg-[#FF8C00] hover:bg-[#E67C00] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-flex items-center justify-center"
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -121,6 +122,7 @@ export default function Home() {
               </Link>
               <Link
                 href="/servicos"
+                title="Ver todos nossos serviços de conserto"
                 className="border-2 border-white hover:bg-white hover:text-[#1E3A5F] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               >
                 Ver Serviços
@@ -144,7 +146,7 @@ export default function Home() {
               Somos a única assistência técnica oficial de eletrodomésticos em Porto Alegre
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
               <div key={index} className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
@@ -174,7 +176,7 @@ export default function Home() {
               Atendemos todos os tipos de eletrodomésticos com qualidade e agilidade
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
@@ -197,7 +199,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          
+
           <div className="text-center mt-12">
             <Link
               href="/servicos"
@@ -218,7 +220,7 @@ export default function Home() {
               Tire suas dúvidas sobre nossos serviços de assistência técnica
             </p>
           </div>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {[
@@ -264,7 +266,7 @@ export default function Home() {
             Precisa de Assistência Técnica?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Nossa equipe de técnicos especializados está pronta para atender você. 
+            Nossa equipe de técnicos especializados está pronta para atender você.
             Orçamento especializado!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -298,7 +300,7 @@ export default function Home() {
                 Estamos no bairro Jardim do Salso, atendendo toda Porto Alegre
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="bg-white p-8 rounded-lg shadow-lg">
@@ -330,7 +332,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-gray-300 rounded-lg h-64 lg:h-80 flex items-center justify-center">
                 <div className="text-center text-gray-600">
                   <MapPin className="w-12 h-12 mx-auto mb-2" />
