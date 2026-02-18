@@ -19,7 +19,7 @@ export default function DashboardPage() {
 
     const fetchVisitors = async () => {
         try {
-            const res = await fetch('/api/visitors')
+            const res = await fetch('/api/visitors', { cache: 'no-store' })
             if (res.status === 401) {
                 router.push('/admin/login')
                 return
@@ -28,7 +28,7 @@ export default function DashboardPage() {
             setVisitors(data)
 
             // Fetch events
-            const eventsRes = await fetch('/api/visitors/events')
+            const eventsRes = await fetch('/api/visitors/events', { cache: 'no-store' })
             if (eventsRes.ok) {
                 const eventsData = await eventsRes.json()
                 setEvents(eventsData)
