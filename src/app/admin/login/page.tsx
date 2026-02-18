@@ -30,7 +30,7 @@ export default function LoginPage() {
             } else {
                 setError(data.message || 'Credenciais inválidas')
             }
-        } catch (err) {
+        } catch (_err) {
             setError('Ocorreu um erro ao tentar fazer login')
         } finally {
             setLoading(false)

@@ -40,8 +40,8 @@ export function logVisitor(data: VisitorLog) {
             const fileContent = fs.readFileSync(DB_PATH, 'utf-8')
             try {
                 logs = JSON.parse(fileContent)
-            } catch (e) {
-                console.error('Error parsing visitors DB, resetting:', e)
+            } catch {
+                console.error('Error parsing visitors DB, resetting')
                 logs = []
             }
         }
@@ -84,7 +84,7 @@ export function logEvent(data: EventLog) {
             const fileContent = fs.readFileSync(DB_EVENTS_PATH, 'utf-8')
             try {
                 events = JSON.parse(fileContent)
-            } catch (e) {
+            } catch {
                 events = []
             }
         }
@@ -103,7 +103,7 @@ export function getEvents(): EventLog[] {
         }
         const fileContent = fs.readFileSync(DB_EVENTS_PATH, 'utf-8')
         return JSON.parse(fileContent).reverse()
-    } catch (error) {
+    } catch {
         return []
     }
 }

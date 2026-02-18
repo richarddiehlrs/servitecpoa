@@ -1,5 +1,11 @@
 'use client'
 
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
+
 import { useState, useEffect } from 'react'
 import { MessageCircle, X } from 'lucide-react'
 
@@ -23,12 +29,19 @@ export default function WhatsAppFloat() {
   const message = 'Olá! Gostaria de solicitar um orçamento para assistência técnica.'
 
   const handleWhatsAppClick = () => {
-    // Record the event
+    // Record the internal event
     fetch('/api/events', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: 'whatsapp_click', path: window.location.pathname }),
     }).catch(err => console.error('Failed to track whatsapp click', err))
+
+    // Google Ads Conversion tracking
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17558585326/Ean0CJbn28obEO7_yrRB'
+      });
+    }
 
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')

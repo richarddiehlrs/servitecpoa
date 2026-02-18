@@ -334,5 +334,17 @@
     "device": "(Desktop)",
     "path": "/manifest.webmanifest",
     "referer": "http://localhost:3000/admin/dashboard"
+  },
+  {
+    "timestamp": "2026-02-18T05:05:13.182Z",
+    "ip": "::1",
+    "city": "Unknown",
+    "country": "Unknown",
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+    "browser": "Chrome 144.0.0.0",
+    "os": "Linux ",
+    "device": "(Desktop)",
+    "path": "/admin/dashboard",
+    "referer": "direct"
   }
 ]

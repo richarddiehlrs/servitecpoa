@@ -77,7 +77,7 @@ export default function JardimDoSalsoPage() {
 
   return (
     <div>
-      
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#1E3A5F] to-[#2D4A73] text-white py-16">
         <div className="container mx-auto px-4">
@@ -87,7 +87,7 @@ export default function JardimDoSalsoPage() {
               <span className="text-[#FF8C00]"> Jardim do Salso</span>
             </h1>
             <p className="text-xl mb-8 text-gray-300">
-              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Jardim do Salso, Porto Alegre. 
+              Especialista em conserto de máquina de lavar, geladeira, microondas e purificador de água no bairro Jardim do Salso, Porto Alegre.
               Técnicos qualificados, peças originais e garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -144,7 +144,7 @@ export default function JardimDoSalsoPage() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-[#1E3A5F] mb-6">
                   Por que Escolher a ServitecPoa?
@@ -188,7 +188,7 @@ export default function JardimDoSalsoPage() {
               Atendemos todos os tipos de eletrodomésticos com qualidade e agilidade
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
@@ -226,7 +226,7 @@ export default function JardimDoSalsoPage() {
               O que Dizem Nossos Clientes do Jardim do Salso
             </h2>
           </div>
-          
+
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg p-6">
@@ -251,7 +251,7 @@ export default function JardimDoSalsoPage() {
             Precisa de Assistência Técnica no Jardim do Salso?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Nossa equipe está pronta para atender você no bairro. 
+            Nossa equipe está pronta para atender você no bairro.
             Orçamento especializado!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

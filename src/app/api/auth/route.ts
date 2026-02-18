@@ -17,12 +17,12 @@ export async function POST(request: NextRequest) {
 
         await createSession()
         return NextResponse.json({ success: true })
-    } catch (error) {
+    } catch (_error) {
         return NextResponse.json({ success: false, message: 'Erro interno' }, { status: 500 })
     }
 }
 
-export async function DELETE(request: NextRequest) {
+export async function DELETE(_request: NextRequest) {
     await deleteSession()
     return NextResponse.json({ success: true })
 }

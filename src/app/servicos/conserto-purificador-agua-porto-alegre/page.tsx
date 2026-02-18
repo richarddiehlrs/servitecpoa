@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Phone, Wrench, Clock, Star, CheckCircle, MapPin } from 'lucide-react'
+import { Phone, Wrench, Clock, CheckCircle, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -50,7 +50,7 @@ export default function ConsertoPurificadorAguaPage() {
               <span className="text-[#FF8C00]"> Porto Alegre</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Especialista em reparo de purificadores, filtros e bebedouros. 
+              Especialista em reparo de purificadores, filtros e bebedouros.
               Atendimento domiciliar em toda Porto Alegre com garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

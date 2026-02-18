@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
 }
 
 // GET: Retrieve visitors (Protected)
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
     const cookieStore = await cookies()
     const session = cookieStore.get('admin_session')
 

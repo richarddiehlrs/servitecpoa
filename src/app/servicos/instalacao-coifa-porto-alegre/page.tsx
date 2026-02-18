@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Phone, Wrench, Clock, Star, CheckCircle, MapPin } from 'lucide-react'
+import { Phone, Wrench, Clock, CheckCircle, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -29,8 +29,8 @@ export default function InstalacaoCoifaPage() {
   ]
 
   const marcas = [
-    'Electrolux', 'Brastemp', 'Consul', 'Samsung', 'Britânia', 'Midea', 
-    'Mondial', 'Whirlpool', 'LG', 'Panasonic', 'Continental', 'Prosdócimo', 
+    'Electrolux', 'Brastemp', 'Consul', 'Samsung', 'Britânia', 'Midea',
+    'Mondial', 'Whirlpool', 'LG', 'Panasonic', 'Continental', 'Prosdócimo',
     'Colormaq', 'Esmaltec', 'Atlas', 'Fischer', 'Bosch', 'Electrolux'
   ]
 
@@ -52,7 +52,7 @@ export default function InstalacaoCoifaPage() {
               <span className="text-[#FF8C00]"> Porto Alegre</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8">
-              Especialista em instalação de coifas, depuradores e exaustores. 
+              Especialista em instalação de coifas, depuradores e exaustores.
               Atendimento domiciliar em toda Porto Alegre com garantia de 90 dias.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

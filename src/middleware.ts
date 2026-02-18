@@ -1,8 +1,12 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { UAParser } from 'ua-parser-js'
 
 export function middleware(request: NextRequest) {
+    // Skip during build
+    if (process.env.NEXT_PHASE === 'phase-action-build') {
+        return NextResponse.next()
+    }
+
     // Skip static assets, API auth routes, and internal next paths
     if (
         request.nextUrl.pathname.startsWith('/_next') ||
@@ -16,9 +20,9 @@ export function middleware(request: NextRequest) {
     // We will fire and forget the tracking request to our own API
     // This avoids blocking the main response
     const trackingData = {
-        ip: request.headers.get('x-forwarded-for') || request.ip || 'unknown',
-        city: request.geo?.city || 'Unknown',
-        country: request.geo?.country || 'Unknown',
+        ip: request.headers.get('x-forwarded-for') || 'unknown',
+        city: request.headers.get('x-vercel-ip-city') || 'Unknown',
+        country: request.headers.get('x-vercel-ip-country') || 'Unknown',
         userAgent: request.headers.get('user-agent') || 'unknown',
         path: request.nextUrl.pathname,
         referer: request.headers.get('referer') || 'direct',

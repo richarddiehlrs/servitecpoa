@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Phone, Wrench, Clock, Star, CheckCircle, MapPin } from 'lucide-react'
+import { Phone, Wrench, Clock, CheckCircle, MapPin } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
