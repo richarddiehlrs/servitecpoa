@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   creator: 'ServitecPoa',
   publisher: 'ServitecPoa',
   robots: 'index, follow',
+  metadataBase: new URL('https://servitecpoa.com.br'),
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
@@ -37,10 +38,14 @@ export const metadata: Metadata = {
     title: 'ServitecPoa - Assistência Técnica de Eletrodomésticos',
     description: 'Assistência técnica especializada em eletrodomésticos em Porto Alegre. 15 anos de experiência.',
   },
-  viewport: 'width=device-width, initial-scale=1',
   alternates: {
     canonical: 'https://servitecpoa.com.br',
   },
+}
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
