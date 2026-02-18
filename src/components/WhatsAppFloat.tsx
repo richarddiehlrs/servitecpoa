@@ -23,6 +23,13 @@ export default function WhatsAppFloat() {
   const message = 'Olá! Gostaria de solicitar um orçamento para assistência técnica.'
 
   const handleWhatsAppClick = () => {
+    // Record the event
+    fetch('/api/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: 'whatsapp_click', path: window.location.pathname }),
+    }).catch(err => console.error('Failed to track whatsapp click', err))
+
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
   }
