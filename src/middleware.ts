@@ -9,16 +9,32 @@ export async function middleware(request: NextRequest) {
         return NextResponse.next()
     }
 
-    // Skip static assets, API auth routes, and internal next paths
+    // Skip prefetch requests from Next.js
+    const isPrefetch = request.headers.get('next-purpose') === 'prefetch' ||
+        request.headers.get('purpose') === 'prefetch' ||
+        request.headers.get('x-middleware-prefetch') === '1';
+
+    // Skip static assets, API auth routes, internal next paths, and bot probes
+    const isAsset = request.nextUrl.pathname.match(/\.(jpg|jpeg|png|gif|svg|css|js|webp|ico|avif|woff|woff2|json|xml|txt)$/);
+
     if (
+        isPrefetch ||
+        isAsset ||
         request.nextUrl.pathname.startsWith('/_next') ||
         request.nextUrl.pathname.startsWith('/api/') ||
-        request.nextUrl.pathname.startsWith('/admin') || // Don't track admin dashboard
-        request.nextUrl.pathname.includes('favicon.ico') ||
-        request.nextUrl.pathname.match(/\.(jpg|jpeg|png|gif|svg|css|js)$/)
+        request.nextUrl.pathname.startsWith('/admin')
     ) {
         return NextResponse.next()
     }
+
+    // Set a temporary cookie to de-duplicate logs for the same page view (expires in 10s)
+    const logCookieName = `logged_${encodeURIComponent(request.nextUrl.pathname)}`;
+    if (request.cookies.has(logCookieName)) {
+        return NextResponse.next()
+    }
+
+    const response = NextResponse.next();
+    response.cookies.set(logCookieName, '1', { maxAge: 10, path: request.nextUrl.pathname });
 
     // We will fire and forget the tracking request to our own API
     // This avoids blocking the main response
@@ -50,7 +66,7 @@ export async function middleware(request: NextRequest) {
     // Call logVisitor directly and await to ensure it completes in the Edge environment
     await logVisitor(logEntry).catch(err => console.error('Tracking failed', err))
 
-    return NextResponse.next()
+    return response
 }
 
 export const config = {
