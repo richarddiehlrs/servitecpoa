@@ -29,6 +29,7 @@ export function middleware(request: NextRequest) {
         utmSource: request.nextUrl.searchParams.get('utm_source') || undefined,
         utmMedium: request.nextUrl.searchParams.get('utm_medium') || undefined,
         utmCampaign: request.nextUrl.searchParams.get('utm_campaign') || undefined,
+        utmTerm: request.nextUrl.searchParams.get('utm_term') || undefined,
     }
 
     // In a real edge environment we can't write to filesystem directly from middleware

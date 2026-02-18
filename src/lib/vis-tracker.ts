@@ -18,6 +18,7 @@ export interface VisitorLog {
     utmSource?: string
     utmMedium?: string
     utmCampaign?: string
+    utmTerm?: string
 }
 
 export interface EventLog {
