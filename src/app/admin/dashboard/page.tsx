@@ -374,7 +374,7 @@ export default function DashboardPage() {
                                             </td>
                                             <td className="px-6 py-4 whitespace-nowrap">
                                                 <div className="text-sm text-gray-700 font-medium">
-                                                    {log.city !== 'Unknown' ? `${log.city}, ${log.country}` : 'Localização Indisponível'}
+                                                    {log.city && log.city !== 'Unknown' ? `${decodeURIComponent(log.city).replace(/%/g, ' ')}, ${log.country}` : 'Localização Indisponível'}
                                                 </div>
                                                 <div className="text-xs text-gray-400">{log.ip}</div>
                                             </td>

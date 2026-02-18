@@ -27,14 +27,20 @@ export async function middleware(request: NextRequest) {
         return NextResponse.next()
     }
 
-    // Set a temporary cookie to de-duplicate logs for the same page view (expires in 10s)
-    const logCookieName = `logged_${encodeURIComponent(request.nextUrl.pathname)}`;
-    if (request.cookies.has(logCookieName)) {
+    // Session-based de-duplication (30 minutes)
+    // This ensures we only log the START of a visit/session, not every single click
+    const sessionCookieName = 'v_session_tracked';
+    if (request.cookies.has(sessionCookieName)) {
         return NextResponse.next()
     }
 
     const response = NextResponse.next();
-    response.cookies.set(logCookieName, '1', { maxAge: 10, path: request.nextUrl.pathname });
+    // Set cookie for 30 minutes to mark this session as already logged
+    response.cookies.set(sessionCookieName, '1', {
+        maxAge: 60 * 30,
+        path: '/',
+        sameSite: 'lax'
+    });
 
     // We will fire and forget the tracking request to our own API
     // This avoids blocking the main response
