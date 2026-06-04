@@ -35,13 +35,7 @@ Isso limpa o cache (`.next`) e reinicia o servidor na porta 3000.
 ## Deploy na Vercel
 
 1. Crie uma conta em [vercel.com](https://vercel.com)
-2. Importe este repositório (GitHub/GitLab) ou use a CLI:
-
-```bash
-npm i -g vercel
-vercel
-```
-
+2. Importe este repositório **servitecpoa2** no GitHub
 3. Configure o domínio `www.servitecpoa.com.br` nas configurações do projeto
 4. Em `lib/site.ts`, confirme que `url` aponta para seu domínio final
 
