@@ -1,56 +1,70 @@
-# ServitecPoa — Consertos em Eletrodomésticos
+# servitecpoa2 — ServitecPoa
 
-Site profissional da ServitecPoa, assistência técnica de eletrodomésticos em Porto Alegre. Desenvolvido com Next.js 15, otimizado para SEO e deploy na Vercel.
+Site oficial da **ServitecPoa** — consertos em eletrodomésticos em Porto Alegre.
 
-## Recursos
+Repositório principal: **[github.com/richarddiehlrs/servitecpoa2](https://github.com/richarddiehlrs/servitecpoa2)**
 
-- Design profissional com cores **azul** e **laranja**
-- SEO: meta tags, Open Graph, sitemap, robots.txt, JSON-LD (LocalBusiness, FAQ, WebSite)
-- Atendimento a domicílio, marcas nacionais e importadas
-- WhatsApp flutuante e CTAs de contato
-- Responsivo (mobile-first)
+Stack: **Next.js 15** · TypeScript · Tailwind CSS · deploy na **Vercel**
 
-## Contato configurado
+## O que o site inclui
 
-- Telefone / WhatsApp: **(51) 3051-4255**
-- CNPJ: **56.001.021/0001-86**
+- Design premium (azul e laranja)
+- SEO: meta tags, Open Graph, `sitemap.xml`, `robots.txt`, JSON-LD
+- Formulário de solicitação com busca de endereço por CEP
+- Botão WhatsApp com mensagem padrão e animação pulsante
+- Marcas nacionais e importadas · atendimento a domicílio
 
-## Desenvolvimento local
+## Contato (configurado no site)
+
+| Item | Valor |
+|------|--------|
+| WhatsApp / telefone | (51) 3051-4255 |
+| CNPJ | 56.001.021/0001-86 |
+| Site | www.servitecpoa.com.br |
+
+## Rodar localmente
+
+Clone o repositório e, na pasta do projeto:
 
 ```bash
+git clone https://github.com/richarddiehlrs/servitecpoa2.git
+cd servitecpoa2
 npm install
 npm run dev
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000).
+Abra a URL exibida no terminal (geralmente [http://localhost:3000](http://localhost:3000)).
 
-Se aparecer **Internal Server Error** ou página em branco, feche terminais antigos do `npm run dev` e rode:
+Cache corrompido no dev? Use:
 
 ```bash
 npm run dev:fresh
 ```
 
-Isso limpa o cache (`.next`) e reinicia o servidor na porta 3000.
-
 ## Deploy na Vercel
 
-1. Crie uma conta em [vercel.com](https://vercel.com)
-2. Importe este repositório **servitecpoa2** no GitHub
-3. Configure o domínio `www.servitecpoa.com.br` nas configurações do projeto
-4. Em `lib/site.ts`, confirme que `url` aponta para seu domínio final
+1. Acesse [vercel.com](https://vercel.com) → **Add New Project**
+2. Importe o repositório **richarddiehlrs/servitecpoa2**
+3. Framework: **Next.js** (detecção automática)
+4. Domínio customizado: `www.servitecpoa.com.br`
+5. Confirme em `lib/site.ts` que `url` aponta para o domínio final
 
-## SEO pós-deploy (recomendado)
+## SEO após publicar
 
-1. [Google Search Console](https://search.google.com/search-console) — verifique o domínio e envie o sitemap: `https://www.servitecpoa.com.br/sitemap.xml`
-2. [Google Business Profile](https://business.google.com) — mantenha NAP (nome, endereço, telefone) idêntico ao site
-3. Solicite avaliações de clientes no Google
-4. Adicione `google-site-verification` em `app/layout.tsx` → `metadata.verification.google` quando tiver o código
+1. [Google Search Console](https://search.google.com/search-console) — envie `https://www.servitecpoa.com.br/sitemap.xml`
+2. [Google Business Profile](https://business.google.com) — dados iguais ao site
+3. Peça avaliações de clientes no Google
 
-## Estrutura
+## Estrutura do projeto
 
 ```
-app/           → páginas, layout, SEO (sitemap, robots, OG image)
-components/    → Header, Hero, Serviços, Marcas, FAQ, Contato
-lib/           → configuração do site e dados estruturados
-public/        → ícones estáticos
+app/           → páginas, layout, SEO
+components/    → UI (Header, Hero, formulário, etc.)
+lib/           → configuração, WhatsApp, ViaCEP
+public/        → ícones
 ```
+
+## Repositório
+
+- **GitHub:** [servitecpoa2](https://github.com/richarddiehlrs/servitecpoa2)
+- Branch principal: `main`
