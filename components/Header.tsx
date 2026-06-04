@@ -8,7 +8,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 const navLinks = [
   { href: "#inicio", label: "Início" },
   { href: "#diferenciais", label: "Sobre" },
-  { href: "#servicos", label: "Serviços" },
+  { href: "/servicos", label: "Serviços" },
   { href: "#marcas", label: "Marcas" },
   { href: "#faq", label: "FAQ" },
   { href: "#solicitar-atendimento", label: "Solicitar" },

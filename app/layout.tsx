@@ -2,11 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import {
-  getFaqJsonLd,
-  getLocalBusinessJsonLd,
-  getWebSiteJsonLd,
-} from "@/lib/json-ld";
+import { getAllHomeJsonLd } from "@/lib/json-ld";
+import { seoKeywords } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -36,20 +33,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
-  keywords: [
-    "conserto eletrodomésticos Porto Alegre",
-    "assistência técnica eletrodomésticos",
-    "reparo geladeira Porto Alegre",
-    "conserto máquina de lavar",
-    "atendimento domicílio eletrodomésticos",
-    "ServitecPoa",
-    "conserto Electrolux",
-    "conserto Brastemp",
-    "conserto Samsung",
-    "conserto Bertazzoni",
-    "conserto Sub-Zero",
-    "assistência técnica importados",
-  ],
+  keywords: [...seoKeywords],
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
@@ -94,11 +78,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = [
-    getWebSiteJsonLd(),
-    getLocalBusinessJsonLd(),
-    getFaqJsonLd(),
-  ];
+  const structuredData = getAllHomeJsonLd();
 
   return (
     <html lang="pt-BR" className={`${sans.variable} ${display.variable}`}>

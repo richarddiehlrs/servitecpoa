@@ -55,7 +55,7 @@ export function Footer() {
               </p>
               <ul className="mt-3 space-y-2">
                 {[
-                  { href: "#servicos", label: "Serviços" },
+                  { href: "/servicos", label: "Serviços" },
                   { href: "#marcas", label: "Marcas" },
                   { href: "#faq", label: "FAQ" },
                   { href: "#solicitar-atendimento", label: "Solicitar atendimento" },

@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "ServitecPoa",
   title: "ServitecPoa — Consertos em Eletrodomésticos",
   description:
-    "Assistência técnica especializada em eletrodomésticos nacionais e importados em Porto Alegre. Atendimento a domicílio, peças originais e técnicos qualificados. Marcas: Electrolux, Brastemp, Samsung, LG, Bertazzoni, Sub-Zero e mais.",
+    "Assistência técnica e conserto de eletrodomésticos em Porto Alegre: geladeiras, máquinas de lavar, lava e seca, coifas, adegas e linha premium. Atendimento a domicílio, peças originais e garantia de 90 dias.",
   url: "https://www.servitecpoa.com.br",
   locale: "pt_BR",
   phone: "5130514255",
@@ -131,5 +131,15 @@ export const faqs = [
     question: "Como solicitar orçamento ou agendar visita?",
     answer:
       "Preencha o formulário de solicitação no site com seus dados, endereço, produto e turno preferencial (manhã ou tarde). Você será direcionado ao WhatsApp (51) 3051-4255 para confirmar o agendamento.",
+  },
+  {
+    question: "Quais serviços de conserto vocês oferecem?",
+    answer:
+      "Conserto de geladeiras e freezers, máquinas de lavar, lava e seca, lava-louças, secadoras, coifas, adegas climatizadas, instalação de eletrodomésticos e assistência para fogões e cooktops premium. Todos com atendimento a domicílio em Porto Alegre.",
+  },
+  {
+    question: "Vocês consertam eletrodomésticos importados premium?",
+    answer:
+      "Sim. Somos especializados em marcas como Bertazzoni, Sub-Zero, Gorenje, Falmec, Lofra, Smeg e outras linhas built-in, além das marcas nacionais mais vendidas no Brasil.",
   },
 ] as const;
