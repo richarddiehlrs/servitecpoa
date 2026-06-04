@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteConfig.url,
+    types: {
+      "application/xml": [{ url: "/sitemap.xml", title: "Sitemap" }],
+    },
   },
   openGraph: {
     type: "website",
@@ -83,6 +86,14 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR" className={`${sans.variable} ${display.variable}`}>
+      <head>
+        <link
+          rel="sitemap"
+          type="application/xml"
+          title="Sitemap"
+          href="/sitemap.xml"
+        />
+      </head>
       <body className="font-sans">
         <JsonLd data={structuredData} />
         {children}
