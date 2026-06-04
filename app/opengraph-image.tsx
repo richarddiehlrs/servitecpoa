@@ -29,7 +29,7 @@ export default function OgImage() {
           Servitec<span style={{ color: "#f97316" }}>Poa</span>
         </h1>
         <p style={{ fontSize: 36, marginTop: 12, color: "#94a3b8", fontFamily: "system-ui" }}>
-          Consertos em Eletrodomésticos
+          Consertos Em Eletrodomésticos
         </p>
         <p style={{ fontSize: 22, marginTop: 40, color: "#64748b", maxWidth: 700, fontFamily: "system-ui" }}>
           Nacionais e importados · Atendimento a domicílio · {siteConfig.phoneDisplay}

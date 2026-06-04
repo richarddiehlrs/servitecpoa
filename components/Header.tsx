@@ -2,17 +2,18 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { BrandLogo } from "@/components/BrandLogo";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const navLinks = [
-  { href: "#inicio", label: "Início" },
-  { href: "#diferenciais", label: "Sobre" },
+  { href: "/#inicio", label: "Início" },
+  { href: "/#diferenciais", label: "Sobre" },
   { href: "/servicos", label: "Serviços" },
-  { href: "#marcas", label: "Marcas" },
-  { href: "#faq", label: "FAQ" },
-  { href: "#solicitar-atendimento", label: "Solicitar" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#marcas", label: "Marcas" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/#solicitar-atendimento", label: "Solicitar" },
+  { href: "/#contato", label: "Contato" },
 ];
 
 export function Header() {
@@ -34,23 +35,8 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 lg:px-8">
-        <Link href="#inicio" className="group flex items-center gap-3">
-          <span
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-brand-orange/40 bg-ink-light font-display text-lg font-semibold text-white transition group-hover:border-brand-orange"
-            aria-hidden
-          >
-            S
-          </span>
-          <div className="leading-none">
-            <span className="block font-display text-xl font-semibold tracking-tight text-white">
-              Servitec<span className="text-brand-orange">Poa</span>
-            </span>
-            <span className="mt-1 block text-[10px] uppercase tracking-[0.18em] text-slate-500">
-              Eletrodomésticos
-            </span>
-          </div>
-        </Link>
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-3 lg:px-8">
+        <BrandLogo href="/#inicio" showTagline />
 
         <nav
           className={`absolute left-0 right-0 top-full border-b border-white/10 bg-ink px-5 py-6 shadow-2xl lg:static lg:flex lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none ${

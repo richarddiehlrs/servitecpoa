@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
@@ -10,11 +11,17 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-md">
-            <p className="font-display text-3xl font-semibold text-white">
-              Servitec<span className="text-brand-orange">Poa</span>
-            </p>
-            <p className="mt-2 text-sm uppercase tracking-[0.15em] text-slate-500">
-              Consertos em Eletrodomésticos
+            <Link href="/#inicio" className="inline-block">
+              <Image
+                src={siteConfig.logo.src}
+                alt={siteConfig.logo.alt}
+                width={160}
+                height={56}
+                className="h-12 w-auto object-contain sm:h-14"
+              />
+            </Link>
+            <p className="mt-3 text-sm font-medium uppercase tracking-[0.12em] text-slate-500">
+              {siteConfig.tagline}
             </p>
             <p className="mt-5 text-sm leading-relaxed">
               Assistência técnica especializada em Porto Alegre. Marcas nacionais e

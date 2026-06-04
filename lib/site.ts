@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "ServitecPoa",
-  title: "ServitecPoa — Consertos em Eletrodomésticos",
+  tagline: "Consertos Em Eletrodomésticos",
+  title: "ServitecPoa — Consertos Em Eletrodomésticos",
   description:
     "Assistência técnica e conserto de eletrodomésticos em Porto Alegre: geladeiras, máquinas de lavar, lava e seca, coifas, adegas e linha premium. Atendimento a domicílio, peças originais e garantia de 90 dias.",
   url: "https://www.servitecpoa.com.br",
@@ -20,6 +21,12 @@ export const siteConfig = {
   serviceArea: "Porto Alegre e Região Metropolitana",
   warranty: "90 dias",
   experience: "15+ anos",
+  logo: {
+    src: "/logo.png",
+    alt: "ServitecPoa — Consertos Em Eletrodomésticos",
+    width: 160,
+    height: 56,
+  },
 } as const;
 
 export const nationalBrands = [
