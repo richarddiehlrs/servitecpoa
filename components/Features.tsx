@@ -53,7 +53,7 @@ const features: {
 
 export function Features() {
   return (
-    <section id="diferenciais" className="section-light py-24 sm:py-28">
+    <section id="diferenciais" className="section-surface py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           label="Nossa expertise"
@@ -63,19 +63,19 @@ export function Features() {
 
         <ul className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => (
-            <li key={feature.num} className="card-light group p-8">
+            <li key={feature.num} className="card-elevated group p-8">
               <div className="flex items-start justify-between">
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-ink text-brand-orange transition group-hover:bg-brand-orange group-hover:text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy text-gold-light transition group-hover:bg-brand-orange group-hover:text-white">
                   <FeatureIcon name={feature.icon} className="h-5 w-5" />
                 </span>
-                <span className="font-display text-4xl font-light text-slate-200">
+                <span className="font-display text-4xl font-light text-cream-dark">
                   {feature.num}
                 </span>
               </div>
               <h3 className="mt-6 font-display text-xl font-semibold text-ink">
                 {feature.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 text-sm leading-relaxed text-slate-700">
                 {feature.description}
               </p>
             </li>

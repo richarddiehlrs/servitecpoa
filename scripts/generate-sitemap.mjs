@@ -9,6 +9,7 @@ const lastmod = new Date().toISOString().slice(0, 10);
 const paths = [
   { path: "", priority: "1.0", changefreq: "weekly" },
   { path: "/servicos", priority: "0.9", changefreq: "weekly" },
+  { path: "/atendimento-domicilio", priority: "0.95", changefreq: "weekly" },
   { path: "/servicos/conserto-geladeira-freezer-porto-alegre", priority: "0.8", changefreq: "monthly" },
   { path: "/servicos/conserto-maquina-de-lavar-porto-alegre", priority: "0.8", changefreq: "monthly" },
   { path: "/servicos/conserto-lava-e-seca-porto-alegre", priority: "0.8", changefreq: "monthly" },

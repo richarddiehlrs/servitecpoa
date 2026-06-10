@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --gold: 201 164 92;
+    --ink: 15 20 25;
+    --cream: 245 242 236;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -12,40 +18,155 @@
   }
 
   ::selection {
-    @apply bg-brand-orange/30 text-ink;
+    @apply text-white;
+    background-color: rgb(var(--gold) / 0.45);
   }
 }
 
 @layer components {
-  .section-dark {
-    @apply bg-ink text-slate-300;
+  .section-premium {
+    @apply bg-hero-gradient bg-grid-pattern bg-grid text-slate-200;
   }
 
-  .section-light {
-    @apply bg-cream text-slate-700;
+  .section-surface {
+    @apply bg-cream text-slate-800;
+  }
+
+  .section-muted {
+    @apply bg-cream-dark text-slate-800;
+  }
+
+  .section-services {
+    @apply relative overflow-hidden text-slate-200;
+    background: linear-gradient(
+      155deg,
+      #0c1628 0%,
+      #152238 35%,
+      #1a3358 70%,
+      #152238 100%
+    );
+  }
+
+  .section-services::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 55%;
+    height: 70%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(var(--gold) / 0.14) 0%, transparent 68%);
+    pointer-events: none;
+  }
+
+  .section-services::after {
+    content: "";
+    position: absolute;
+    bottom: -30%;
+    left: -15%;
+    width: 50%;
+    height: 60%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(37 99 235 / 0.12) 0%, transparent 70%);
+    pointer-events: none;
   }
 
   .accent-line {
-    @apply h-px w-12 bg-brand-orange;
+    @apply h-px w-10;
+    background-color: rgb(var(--gold));
   }
 
-  .card-dark {
-    @apply rounded-2xl border border-white/10 bg-ink-light/80 backdrop-blur-sm transition duration-300 hover:border-brand-orange/30 hover:bg-ink-muted/50;
+  .gold-rule {
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(var(--gold) / 0.7) 20%,
+      rgb(var(--gold)) 50%,
+      rgb(var(--gold) / 0.7) 80%,
+      transparent
+    );
   }
 
-  .card-light {
-    @apply rounded-2xl border border-slate-200/80 bg-white shadow-elegant transition duration-300 hover:border-brand-orange/20 hover:shadow-elegant-lg;
+  .card-premium {
+    @apply rounded-2xl bg-ink-light/80 backdrop-blur-sm transition duration-300;
+    border: 1px solid rgb(255 255 255 / 0.12);
+    box-shadow:
+      0 8px 32px -8px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgb(var(--gold) / 0.18);
+  }
+
+  .card-premium:hover {
+    border-color: rgb(var(--gold) / 0.45);
+  }
+
+  .card-service {
+    @apply relative rounded-2xl bg-white shadow-elegant-lg transition duration-300;
+    border: 1px solid rgb(var(--ink) / 0.06);
+  }
+
+  .card-service::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 3px;
+    border-radius: 9999px 9999px 0 0;
+    background: linear-gradient(90deg, rgb(var(--gold) / 0.3), rgb(var(--gold)), rgb(var(--gold) / 0.3));
+  }
+
+  .card-service:hover {
+    @apply shadow-elegant-lg;
+    border-color: rgb(var(--gold) / 0.45);
+    transform: translateY(-2px);
+  }
+
+  .card-elevated {
+    @apply rounded-2xl bg-white shadow-elegant transition duration-300;
+    border: 1px solid rgb(var(--ink) / 0.06);
+  }
+
+  .card-elevated:hover {
+    @apply shadow-elegant-lg;
+    border-color: rgb(var(--gold) / 0.35);
+  }
+
+  .panel-dark {
+    @apply rounded-3xl bg-navy text-slate-100 shadow-premium;
+    border: 1px solid rgb(var(--gold) / 0.28);
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold tracking-wide text-white transition hover:bg-brand-orange-dark focus:outline-none focus:ring-2 focus:ring-brand-orange/50 focus:ring-offset-2 focus:ring-offset-ink;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-7 py-3.5 text-sm font-semibold tracking-wide text-white shadow-sm transition hover:bg-brand-orange-dark focus:outline-none focus:ring-2 focus:ring-brand-orange/40 focus:ring-offset-2;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-transparent px-7 py-3.5 text-sm font-semibold tracking-wide text-white transition hover:border-brand-orange hover:text-brand-orange;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition;
+    border: 1px solid rgb(var(--gold) / 0.55);
+    color: rgb(var(--gold) / 1);
+    background-color: transparent;
+  }
+
+  .btn-outline:hover {
+    background-color: rgb(var(--gold) / 0.1);
+    border-color: rgb(var(--gold));
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide text-white transition;
+    border: 1px solid rgb(255 255 255 / 0.35);
+    background-color: rgb(255 255 255 / 0.08);
+  }
+
+  .btn-outline-light:hover {
+    border-color: rgb(var(--gold) / 0.7);
+    background-color: rgb(var(--gold) / 0.12);
+    color: rgb(var(--gold) / 1);
   }
 
   .btn-outline-dark {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-transparent px-7 py-3.5 text-sm font-semibold tracking-wide text-ink transition hover:border-brand-orange hover:text-brand-orange;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-transparent px-7 py-3.5 text-sm font-semibold tracking-wide text-ink transition hover:border-gold-dark hover:text-gold-dark;
+    border: 1px solid rgb(var(--ink) / 0.15);
   }
 }

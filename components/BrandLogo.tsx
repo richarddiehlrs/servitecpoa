@@ -6,6 +6,7 @@ type BrandLogoProps = {
   href?: string;
   showTagline?: boolean;
   size?: "header" | "footer";
+  theme?: "light" | "dark";
   className?: string;
 };
 
@@ -13,11 +14,13 @@ export function BrandLogo({
   href = "/#inicio",
   showTagline = true,
   size = "header",
+  theme = "dark",
   className = "",
 }: BrandLogoProps) {
   const isHeader = size === "header";
   const logoHeight = isHeader ? 44 : 52;
   const logoWidth = isHeader ? 130 : 150;
+  const isLight = theme === "light";
 
   const content = (
     <div className={`flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3 ${className}`}>
@@ -32,10 +35,18 @@ export function BrandLogo({
       />
       {showTagline && (
         <div className="leading-tight">
-          <span className="block font-display text-base font-semibold tracking-tight text-white sm:text-lg">
+          <span
+            className={`block font-display text-base font-semibold tracking-tight sm:text-lg ${
+              isLight ? "text-ink" : "text-white"
+            }`}
+          >
             Servitec<span className="text-brand-orange">Poa</span>
           </span>
-          <span className="block text-[10px] font-medium uppercase tracking-[0.1em] text-slate-400 sm:text-[11px]">
+          <span
+            className={`block text-[10px] font-medium uppercase tracking-[0.1em] sm:text-[11px] ${
+              isLight ? "text-gold-dark" : "text-slate-400"
+            }`}
+          >
             Consertos Em Eletrodomésticos
           </span>
         </div>

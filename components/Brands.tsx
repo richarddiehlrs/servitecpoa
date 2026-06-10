@@ -3,7 +3,7 @@ import { importedBrands, nationalBrands } from "@/lib/site";
 
 export function Brands() {
   return (
-    <section id="marcas" className="section-light py-24 sm:py-28">
+    <section id="marcas" className="section-muted py-24 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           label="Marcas"
@@ -42,16 +42,16 @@ function BrandPanel({
 }) {
   return (
     <article
-      className={`rounded-3xl p-8 sm:p-10 ${
+      className={
         featured
-          ? "bg-ink text-white shadow-elegant-lg"
-          : "border border-slate-200/80 bg-white shadow-elegant"
-      }`}
+          ? "panel-dark p-8 sm:p-10"
+          : "card-elevated p-8 sm:p-10"
+      }
     >
       <header>
         <p
           className={`text-xs font-semibold uppercase tracking-[0.2em] ${
-            featured ? "text-brand-orange" : "text-slate-500"
+            featured ? "text-gold-light" : "text-gold-dark"
           }`}
         >
           {subtitle}
@@ -75,7 +75,7 @@ function BrandPanel({
             <span className="inline-flex items-center gap-2">
               <span
                 className={`h-1 w-1 rounded-full ${
-                  featured ? "bg-brand-orange" : "bg-brand-orange/60"
+                  featured ? "bg-gold-light" : "bg-gold-dark"
                 }`}
                 aria-hidden
               />

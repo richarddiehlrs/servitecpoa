@@ -36,7 +36,11 @@ const initialState: ServiceRequestPayload = {
   turno: "manha",
 };
 
-export function ContactForm() {
+type ContactFormProps = {
+  showHeader?: boolean;
+};
+
+export function ContactForm({ showHeader = true }: ContactFormProps) {
   const [form, setForm] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -162,21 +166,23 @@ export function ContactForm() {
     <form
       id="solicitar-atendimento"
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-elegant sm:p-8 lg:p-10"
+      className="card-elevated p-6 sm:p-8 lg:p-10"
       noValidate
     >
-      <div className="border-b border-slate-100 pb-6">
-        <h3 className="font-display text-2xl font-semibold text-ink">
-          Solicitar atendimento a domicílio
-        </h3>
-        <p className="mt-2 text-sm text-slate-600">
-          Informe o CEP para preencher o endereço automaticamente. Visitas das{" "}
-          <strong>9h às 12h</strong> ou <strong>13h30 às 17h30</strong>.
-        </p>
-      </div>
+      {showHeader && (
+        <div className="border-b border-gold/15 pb-6">
+          <h3 className="font-display text-2xl font-semibold text-ink">
+            Solicitar atendimento a domicílio
+          </h3>
+          <p className="mt-2 text-sm text-slate-600">
+            Informe o CEP para preencher o endereço automaticamente. Visitas das{" "}
+            <strong>9h às 12h</strong> ou <strong>13h30 às 17h30</strong>.
+          </p>
+        </div>
+      )}
 
-      <fieldset className="mt-8">
-        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange">
+      <fieldset className={showHeader ? "mt-8" : "mt-0"}>
+        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
           Dados do cliente
         </legend>
         <div className="mt-4 grid gap-5 sm:grid-cols-2">
@@ -220,7 +226,7 @@ export function ContactForm() {
       </fieldset>
 
       <fieldset className="mt-10">
-        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange">
+        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
           Local do atendimento
         </legend>
         <div className="mt-4 grid gap-5 sm:grid-cols-2">
@@ -310,7 +316,7 @@ export function ContactForm() {
       </fieldset>
 
       <fieldset className="mt-10">
-        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange">
+        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
           Aparelho e defeito
         </legend>
         <div className="mt-4 grid gap-5 sm:grid-cols-2">
@@ -359,7 +365,7 @@ export function ContactForm() {
       </fieldset>
 
       <fieldset className="mt-10">
-        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-orange">
+        <legend className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
           Turno de atendimento
         </legend>
         <p className="mt-2 text-sm text-slate-600">Selecione o período de preferência para a visita.</p>

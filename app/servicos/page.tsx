@@ -78,20 +78,20 @@ export default function ServicosPage() {
             ))}
           </ul>
 
-          <div className="mt-14 rounded-3xl bg-ink p-8 text-center sm:p-10">
+          <div className="panel-dark mt-14 p-8 text-center sm:p-10">
             <h2 className="font-display text-2xl font-semibold text-white">
               Agende visita técnica a domicílio
             </h2>
             <p className="mt-2 text-slate-400">{siteConfig.phoneDisplay}</p>
             <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link href="/#solicitar-atendimento" className="btn-primary">
+              <Link href="/atendimento-domicilio" className="btn-primary">
                 Solicitar atendimento
               </Link>
               <a
                 href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline"
+                className="btn-outline-light"
               >
                 WhatsApp
               </a>

@@ -43,8 +43,8 @@ export function HeroVideo() {
   }
 
   return (
-    <div className="relative mx-auto w-full max-w-7xl px-5 pt-24 lg:px-8 lg:pt-28">
-      <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-ink-light shadow-elegant-lg ring-1 ring-white/5">
+    <div className="relative mx-auto w-full max-w-7xl px-5 pb-2 pt-24 lg:px-8 lg:pt-28">
+      <div className="group relative overflow-hidden rounded-2xl shadow-premium ring-1 ring-gold/25">
         <div className="relative aspect-[16/9] w-full sm:aspect-[2/1] lg:aspect-[21/9]">
           <video
             ref={videoRef}
@@ -60,16 +60,16 @@ export function HeroVideo() {
           </video>
 
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/40"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy/20 to-navy-deep/30"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink/50 via-transparent to-transparent"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-r from-navy-deep/60 via-transparent to-transparent"
             aria-hidden
           />
 
           <div className="absolute left-4 top-4 sm:left-6 sm:top-6">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-ink/60 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md sm:text-xs">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/35 bg-navy-deep/80 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-gold-light backdrop-blur-md sm:text-xs">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-orange" />
@@ -91,7 +91,7 @@ export function HeroVideo() {
             <button
               type="button"
               onClick={togglePlay}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-ink/70 text-white backdrop-blur-md transition hover:border-brand-orange hover:bg-ink"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-navy-deep/75 text-white backdrop-blur-md transition hover:border-gold/50"
               aria-label={playing ? "Pausar vídeo" : "Reproduzir vídeo"}
             >
               {playing ? (
@@ -107,7 +107,7 @@ export function HeroVideo() {
             <button
               type="button"
               onClick={toggleMute}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-ink/70 text-white backdrop-blur-md transition hover:border-brand-orange hover:bg-ink"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-navy-deep/75 text-white backdrop-blur-md transition hover:border-gold/50"
               aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
             >
               {muted ? (

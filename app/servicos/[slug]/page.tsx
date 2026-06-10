@@ -64,7 +64,7 @@ export default async function ServicoDetalhePage({ params }: Props) {
           </nav>
 
           <header className="mt-8">
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-ink text-brand-orange">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/35 bg-gold/10 text-gold-dark">
               <ServiceIcon name={service.icon} className="h-6 w-6" />
             </span>
             <h1 className="mt-6 font-display text-4xl font-semibold text-ink sm:text-5xl">
@@ -96,7 +96,7 @@ export default async function ServicoDetalhePage({ params }: Props) {
           </div>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link href="/#solicitar-atendimento" className="btn-primary text-center">
+            <Link href="/atendimento-domicilio" className="btn-primary text-center">
               Solicitar orçamento
             </Link>
             <a
