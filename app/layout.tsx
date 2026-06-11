@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { JsonLd } from "@/components/JsonLd";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
@@ -97,6 +98,7 @@ export default function RootLayout({
         <JsonLd data={structuredData} />
         {children}
         <WhatsAppFloat />
+        <SpeedInsights />
       </body>
     </html>
   );
