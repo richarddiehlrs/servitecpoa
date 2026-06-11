@@ -49,10 +49,30 @@ npm run dev:fresh
 4. Domínio customizado: `www.servitecpoa.com.br`
 5. Confirme em `lib/site.ts` que `url` aponta para o domínio final
 
-## SEO após publicar
+## SEO (já implementado no site)
+
+- Meta tags, Open Graph, geo tags e canonical em todas as páginas
+- `sitemap.xml` dinâmico (`app/sitemap.ts`) — 50+ URLs indexáveis
+- JSON-LD: LocalBusiness, FAQ, Service, Breadcrumb, BlogPosting
+- Páginas por serviço, marca, região/bairro e blog
+- Seção de avaliações + link Google Meu Negócio
+- Google Analytics (configure `NEXT_PUBLIC_GA_ID` na Vercel)
+
+### Variáveis de ambiente (Vercel → Settings → Environment Variables)
+
+Copie de `.env.example`:
+
+| Variável | Uso |
+|----------|-----|
+| `GOOGLE_SITE_VERIFICATION` | Verificação Search Console |
+| `NEXT_PUBLIC_GA_ID` | Google Analytics 4 |
+| `NEXT_PUBLIC_GOOGLE_REVIEW_COUNT` | Nº de avaliações (exibe estrelas) |
+| `NEXT_PUBLIC_GOOGLE_RATING` | Nota média Google |
+
+### Após publicar
 
 1. [Google Search Console](https://search.google.com/search-console) — envie `https://www.servitecpoa.com.br/sitemap.xml`
-2. [Google Business Profile](https://business.google.com) — dados iguais ao site
+2. Google Meu Negócio — categoria: **Assistência técnica de eletrodomésticos**
 3. Peça avaliações de clientes no Google
 
 ## Estrutura do projeto

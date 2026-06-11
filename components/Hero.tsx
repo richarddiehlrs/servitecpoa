@@ -37,16 +37,16 @@ export function Hero() {
               </p>
 
               <h1 className="mt-6 font-display text-[2.75rem] font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-                Consertos em
+                Assistência técnica de
                 <span className="mt-2 block text-brand-orange">eletrodomésticos</span>
                 <span className="mt-3 block text-2xl font-medium text-slate-700 sm:text-3xl">
-                  com excelência técnica
+                  em Porto Alegre
                 </span>
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-700">
-                Assistência especializada em marcas nacionais e importadas premium.
-                Peças originais, técnicos certificados e{" "}
+                {siteConfig.primaryCategory} com atendimento a domicílio em marcas nacionais e
+                importadas premium. Peças originais, técnicos qualificados e{" "}
                 <strong className="font-semibold text-ink">{siteConfig.warranty} de garantia</strong> em
                 cada serviço.
               </p>

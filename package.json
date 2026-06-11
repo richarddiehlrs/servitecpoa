@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "dev:fresh": "node scripts/dev-fresh.mjs",
-    "build": "next build && node scripts/generate-sitemap.mjs",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },

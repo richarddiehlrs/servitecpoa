@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { JsonLd } from "@/components/JsonLd";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { getAllHomeJsonLd } from "@/lib/json-ld";
@@ -26,6 +27,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -44,9 +47,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteConfig.url,
-    types: {
-      "application/xml": [{ url: "/sitemap.xml", title: "Sitemap" }],
-    },
   },
   openGraph: {
     type: "website",
@@ -73,8 +73,14 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {},
-  category: "technology",
+  verification: googleVerification ? { google: googleVerification } : {},
+  category: "home services",
+  other: {
+    "geo.region": `BR-${siteConfig.geo.region}`,
+    "geo.placename": siteConfig.geo.placename,
+    "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
+    ICBM: `${siteConfig.geo.latitude}, ${siteConfig.geo.longitude}`,
+  },
 };
 
 export default function RootLayout({
@@ -86,15 +92,8 @@ export default function RootLayout({
 
   return (
     <html lang="pt-BR" className={`${sans.variable} ${display.variable}`}>
-      <head>
-        <link
-          rel="sitemap"
-          type="application/xml"
-          title="Sitemap"
-          href="/sitemap.xml"
-        />
-      </head>
       <body className="font-sans">
+        <GoogleAnalytics />
         <JsonLd data={structuredData} />
         {children}
         <WhatsAppFloat />

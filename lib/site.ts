@@ -1,9 +1,9 @@
 export const siteConfig = {
   name: "ServitecPoa",
-  tagline: "Consertos Em Eletrodomésticos",
-  title: "ServitecPoa — Consertos Em Eletrodomésticos",
+  tagline: "Assistência Técnica de Eletrodomésticos",
+  title: "Assistência Técnica de Eletrodomésticos em Porto Alegre | ServitecPoa",
   description:
-    "Assistência técnica e conserto de eletrodomésticos em Porto Alegre: geladeiras, máquinas de lavar, lava e seca, coifas, adegas e linha premium. Atendimento a domicílio, peças originais e garantia de 90 dias.",
+    "Assistência técnica de eletrodomésticos em Porto Alegre com atendimento a domicílio. Conserto de geladeiras, máquinas de lavar, lava e seca, coifas, adegas e linha premium. Peças originais e garantia de 90 dias.",
   url: "https://www.servitecpoa.com.br",
   locale: "pt_BR",
   phone: "5130514255",
@@ -21,9 +21,35 @@ export const siteConfig = {
   serviceArea: "Porto Alegre e Região Metropolitana",
   warranty: "90 dias",
   experience: "15+ anos",
+  primaryCategory: "Assistência técnica de eletrodomésticos",
+  geo: {
+    latitude: -30.0346,
+    longitude: -51.2177,
+    region: "RS",
+    country: "BR",
+    placename: "Porto Alegre",
+  },
+  social: {
+    googleBusiness:
+      process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ??
+      "https://share.google/r75n3fnGNGzTJW6ez",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
+    facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
+  },
+  reviews: {
+    ratingValue: Number(process.env.NEXT_PUBLIC_GOOGLE_RATING ?? "5"),
+    reviewCount: Number(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT ?? "0"),
+    highlights: [
+      "Atendimento pontual e técnico muito educado.",
+      "Consertou minha geladeira Electrolux no mesmo dia.",
+      "Excelente serviço com minha lava e seca Samsung.",
+      "Única empresa que resolveu meu cooktop Bertazzoni.",
+      "Orçamento transparente e garantia cumprida.",
+    ],
+  },
   logo: {
     src: "/logo.png",
-    alt: "ServitecPoa — Consertos Em Eletrodomésticos",
+    alt: "ServitecPoa — Assistência técnica de eletrodomésticos em Porto Alegre",
     width: 160,
     height: 56,
   },
@@ -115,6 +141,11 @@ export const faqs = [
       "Sim. Realizamos atendimento a domicílio em toda Porto Alegre e região metropolitana. Nossa equipe vai até sua residência para diagnóstico e reparo dos eletrodomésticos.",
   },
   {
+    question: "Qual a categoria de serviço da ServitecPoa?",
+    answer:
+      "Somos especializados em assistência técnica de eletrodomésticos, com foco em conserto, manutenção e instalação a domicílio em Porto Alegre e RMS.",
+  },
+  {
     question: "Quais marcas de eletrodomésticos vocês consertam?",
     answer:
       "Atendemos marcas nacionais (Brastemp, Consul, Samsung, Electrolux, LG) e importadas premium (Bertazzoni, Sub-Zero, Gorenje, Falmec, Lofra, Cuisinart, Tecno, Eletromec, Crissair, Evol e outras).",
@@ -148,5 +179,10 @@ export const faqs = [
     question: "Vocês consertam eletrodomésticos importados premium?",
     answer:
       "Sim. Somos especializados em marcas como Bertazzoni, Sub-Zero, Gorenje, Falmec, Lofra, Smeg e outras linhas built-in, além das marcas nacionais mais vendidas no Brasil.",
+  },
+  {
+    question: "Atendem quais bairros e regiões de Porto Alegre?",
+    answer:
+      "Atendemos todas as zonas de Porto Alegre — Zona Sul, Norte, Leste e Oeste — além de cidades da RMS como Canoas, Gravataí, Novo Hamburgo, São Leopoldo, Esteio e Cachoeirinha.",
   },
 ] as const;

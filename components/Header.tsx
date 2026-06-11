@@ -8,12 +8,12 @@ import { siteConfig } from "@/lib/site";
 
 const navLinks = [
   { href: "/#inicio", label: "Início" },
-  { href: "/#diferenciais", label: "Sobre" },
+  { href: "/sobre", label: "Sobre" },
   { href: "/servicos", label: "Serviços" },
-  { href: "/#marcas", label: "Marcas" },
+  { href: "/marcas", label: "Marcas" },
+  { href: "/regioes", label: "Regiões" },
+  { href: "/blog", label: "Blog" },
   { href: "/atendimento-domicilio", label: "Atendimento" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "/#contato", label: "Contato" },
 ];
 
 export function Header() {
@@ -49,8 +49,9 @@ export function Header() {
           <ul className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-7">
             {navLinks.map((link) => {
               const isActive =
-                link.href === "/atendimento-domicilio" &&
-                pathname === "/atendimento-domicilio";
+                (link.href !== "/#inicio" && pathname === link.href) ||
+                (link.href === "/atendimento-domicilio" &&
+                  pathname === "/atendimento-domicilio");
               return (
                 <li key={link.href}>
                   <Link

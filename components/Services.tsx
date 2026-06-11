@@ -9,8 +9,8 @@ export function Services() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <SectionHeading
           label="Serviços"
-          title="Soluções completas para seu lar"
-          description="Do diagnóstico à instalação, cuidamos de cada detalhe com rigor técnico e agilidade em Porto Alegre."
+          title="Assistência técnica de eletrodomésticos em Porto Alegre"
+          description="Do diagnóstico à instalação, conserto a domicílio com rigor técnico em geladeiras, lavadoras, coifas e linha premium."
           theme="dark"
         />
 

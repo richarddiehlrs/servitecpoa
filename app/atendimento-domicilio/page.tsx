@@ -1,26 +1,21 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { JsonLd } from "@/components/JsonLd";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { getBreadcrumbJsonLd } from "@/lib/json-ld";
+import { createPageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-export const metadata: Metadata = {
-  title: "Atendimento a domicílio em Porto Alegre",
+export const metadata: Metadata = createPageMetadata({
+  title: "Atendimento a domicílio — assistência técnica Porto Alegre",
   description:
-    "Agende visita técnica a domicílio em Porto Alegre e RMS. Preencha o formulário ou fale pelo WhatsApp. Horários: 9h–12h e 13h30–17h30.",
-  alternates: {
-    canonical: `${siteConfig.url}/atendimento-domicilio`,
-  },
-  openGraph: {
-    title: "Atendimento a domicílio | ServitecPoa",
-    description:
-      "Solicite assistência técnica no seu endereço. Nacionais e importados premium.",
-    url: `${siteConfig.url}/atendimento-domicilio`,
-  },
-};
+    "Agende visita técnica a domicílio em Porto Alegre e RMS. Assistência técnica de eletrodomésticos. Preencha o formulário ou fale pelo WhatsApp.",
+  path: "/atendimento-domicilio",
+});
 
 const steps = [
   {
@@ -46,23 +41,28 @@ const steps = [
 export default function AtendimentoDomicilioPage() {
   return (
     <>
+      <JsonLd
+        data={getBreadcrumbJsonLd([
+          { name: "Início", item: siteConfig.url },
+          { name: "Atendimento a domicílio", item: `${siteConfig.url}/atendimento-domicilio` },
+        ])}
+      />
       <Header />
       <main className="section-surface pt-28">
         <div className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-16">
-          <nav className="text-sm text-slate-500" aria-label="Breadcrumb">
-            <Link href="/" className="transition hover:text-brand-orange">
-              Início
-            </Link>
-            <span className="mx-2">/</span>
-            <span className="text-ink">Atendimento a domicílio</span>
-          </nav>
+          <Breadcrumbs
+            items={[
+              { label: "Início", href: "/" },
+              { label: "Atendimento a domicílio" },
+            ]}
+          />
 
           <header className="panel-dark relative mt-8 overflow-hidden p-8 sm:p-12 lg:p-14">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">
               Visita técnica no seu endereço
             </p>
             <h1 className="mt-4 max-w-3xl font-display text-4xl font-semibold leading-tight text-white sm:text-5xl">
-              Solicitar atendimento a domicílio
+              Assistência técnica de eletrodomésticos a domicílio
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-slate-400">
               Toda assistência da ServitecPoa é realizada no conforto da sua casa em{" "}

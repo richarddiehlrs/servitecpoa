@@ -1,7 +1,11 @@
+import type { BlogPost } from "@/lib/content/blog";
+import type { BrandPage } from "@/lib/content/brands";
+import type { ZonePage } from "@/lib/content/zones";
 import { faqs, siteConfig } from "./site";
 import { seoServices } from "./seo";
 
-const { url, phone, cnpjDisplay, name, description, serviceArea } = siteConfig;
+const { url, phone, cnpjDisplay, name, description, serviceArea, geo, social, reviews } =
+  siteConfig;
 const orgId = `${url}/#organization`;
 const websiteId = `${url}/#website`;
 
@@ -10,6 +14,23 @@ function areaServed() {
     { "@type": "City", name: "Porto Alegre" },
     { "@type": "AdministrativeArea", name: serviceArea },
   ];
+}
+
+function sameAsLinks() {
+  return [social.googleBusiness, siteConfig.whatsappUrl, social.instagram, social.facebook].filter(
+    Boolean,
+  );
+}
+
+function aggregateRating() {
+  if (!reviews.reviewCount || reviews.reviewCount <= 0) return undefined;
+  return {
+    "@type": "AggregateRating",
+    ratingValue: reviews.ratingValue,
+    reviewCount: reviews.reviewCount,
+    bestRating: 5,
+    worstRating: 1,
+  };
 }
 
 function serviceSchema(service: (typeof seoServices)[number]) {
@@ -33,13 +54,13 @@ function serviceSchema(service: (typeof seoServices)[number]) {
 }
 
 export function getLocalBusinessJsonLd() {
-  return {
+  const business: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService", "HomeAndConstructionBusiness"],
     "@id": orgId,
     name: `${name} — ${siteConfig.tagline}`,
     alternateName: "ServitecPoa",
-    description: `${description} Atendimento exclusivamente a domicílio em Porto Alegre.`,
+    description: `${description} Categoria: ${siteConfig.primaryCategory}. Atendimento exclusivamente a domicílio em Porto Alegre.`,
     url,
     telephone: `+55${phone}`,
     email: siteConfig.email,
@@ -50,7 +71,15 @@ export function getLocalBusinessJsonLd() {
     currenciesAccepted: "BRL",
     paymentAccepted: "Cash, Credit Card, Debit Card, PIX",
     areaServed: areaServed(),
-    knowsAbout: seoServices.map((s) => s.title),
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: geo.latitude,
+      longitude: geo.longitude,
+    },
+    knowsAbout: [
+      siteConfig.primaryCategory,
+      ...seoServices.map((s) => s.title),
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -65,10 +94,10 @@ export function getLocalBusinessJsonLd() {
         closes: "17:30",
       },
     ],
-    sameAs: [siteConfig.whatsappUrl],
+    sameAs: sameAsLinks(),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Serviços de assistência técnica em eletrodomésticos",
+      name: "Serviços de assistência técnica de eletrodomésticos",
       itemListElement: seoServices.map((service, index) => ({
         "@type": "Offer",
         position: index + 1,
@@ -80,13 +109,18 @@ export function getLocalBusinessJsonLd() {
       itemOffered: { "@id": `${url}/servicos/${service.slug}#service` },
     })),
   };
+
+  const rating = aggregateRating();
+  if (rating) business.aggregateRating = rating;
+
+  return business;
 }
 
 export function getServicesItemListJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Serviços ServitecPoa — Conserto de eletrodomésticos",
+    name: "Serviços ServitecPoa — Assistência técnica de eletrodomésticos",
     description: "Lista completa de serviços de assistência técnica a domicílio em Porto Alegre.",
     numberOfItems: seoServices.length,
     itemListElement: seoServices.map((service, index) => ({
@@ -101,28 +135,20 @@ export function getServicesItemListJsonLd() {
 export function getServicePageJsonLd(service: (typeof seoServices)[number]) {
   return [
     serviceSchema(service),
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Início", item: url },
-        { "@type": "ListItem", position: 2, name: "Serviços", item: `${url}/servicos` },
-        {
-          "@type": "ListItem",
-          position: 3,
-          name: service.title,
-          item: `${url}/servicos/${service.slug}`,
-        },
-      ],
-    },
+    getBreadcrumbJsonLd([
+      { name: "Início", item: url },
+      { name: "Serviços", item: `${url}/servicos` },
+      { name: service.title, item: `${url}/servicos/${service.slug}` },
+    ]),
   ];
 }
 
-export function getFaqJsonLd() {
+export function getFaqJsonLd(extraFaqs?: { question: string; answer: string }[]) {
+  const allFaqs = extraFaqs ? [...faqs, ...extraFaqs] : faqs;
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: allFaqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -171,7 +197,7 @@ export function getServicosWebPageJsonLd() {
     "@type": "CollectionPage",
     "@id": `${url}/servicos#webpage`,
     url: `${url}/servicos`,
-    name: "Serviços de assistência técnica — ServitecPoa",
+    name: "Serviços de assistência técnica de eletrodomésticos — ServitecPoa",
     description:
       "Conserto de geladeiras, máquinas de lavar, lava e seca, coifas, adegas e eletrodomésticos premium em Porto Alegre.",
     isPartOf: { "@id": websiteId },
@@ -187,6 +213,97 @@ export function getServicosWebPageJsonLd() {
       })),
     },
   };
+}
+
+export function getBreadcrumbJsonLd(
+  items: { name: string; item: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((entry, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: entry.name,
+      item: entry.item,
+    })),
+  };
+}
+
+export function getBrandPageJsonLd(brand: BrandPage) {
+  const pageUrl = `${url}/marcas/${brand.slug}`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: `Conserto ${brand.name} em Porto Alegre`,
+      description: brand.seoDescription,
+      url: pageUrl,
+      provider: { "@id": orgId },
+      areaServed: areaServed(),
+      serviceType: `Assistência técnica ${brand.name}`,
+    },
+    getBreadcrumbJsonLd([
+      { name: "Início", item: url },
+      { name: "Marcas", item: `${url}/marcas` },
+      { name: brand.name, item: pageUrl },
+    ]),
+  ];
+}
+
+export function getZonePageJsonLd(zone: ZonePage) {
+  const pageUrl = `${url}/regioes/${zone.slug}`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: `Assistência técnica de eletrodomésticos em ${zone.name}`,
+      description: zone.seoDescription,
+      url: pageUrl,
+      provider: { "@id": orgId },
+      areaServed: {
+        "@type": "Place",
+        name: zone.name,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: zone.isMetro ? zone.name : "Porto Alegre",
+          addressRegion: "RS",
+          addressCountry: "BR",
+        },
+      },
+      serviceType: siteConfig.primaryCategory,
+    },
+    getBreadcrumbJsonLd([
+      { name: "Início", item: url },
+      { name: "Regiões", item: `${url}/regioes` },
+      { name: zone.name, item: pageUrl },
+    ]),
+  ];
+}
+
+export function getBlogPostJsonLd(post: BlogPost) {
+  const pageUrl = `${url}/blog/${post.slug}`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.title,
+      description: post.seoDescription,
+      url: pageUrl,
+      datePublished: post.publishedAt,
+      dateModified: post.publishedAt,
+      author: { "@id": orgId },
+      publisher: { "@id": orgId },
+      mainEntityOfPage: pageUrl,
+      inLanguage: "pt-BR",
+      about: siteConfig.primaryCategory,
+    },
+    getBreadcrumbJsonLd([
+      { name: "Início", item: url },
+      { name: "Blog", item: `${url}/blog` },
+      { name: post.title, item: pageUrl },
+    ]),
+  ];
 }
 
 export function getAllHomeJsonLd() {
