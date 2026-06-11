@@ -5,7 +5,7 @@ import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { seoZones } from "@/lib/content/zones";
+import { nobleBairros, poaZones, rmsCities } from "@/lib/content/zones";
 import { getBreadcrumbJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
@@ -13,14 +13,11 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = createPageMetadata({
   title: "Regiões atendidas — assistência técnica Porto Alegre e RMS",
   description:
-    "Assistência técnica de eletrodomésticos em todas as zonas de Porto Alegre e cidades da Região Metropolitana. Atendimento a domicílio — ServitecPoa.",
+    "Assistência técnica de eletrodomésticos em Jardim Europa, Boa Vista, Moinhos de Vento, Higienópolis e todas as zonas de Porto Alegre. Atendimento a domicílio — ServitecPoa.",
   path: "/regioes",
 });
 
 export default function RegioesPage() {
-  const poa = seoZones.filter((z) => !z.isMetro);
-  const metro = seoZones.filter((z) => z.isMetro);
-
   return (
     <>
       <JsonLd
@@ -44,13 +41,28 @@ export default function RegioesPage() {
               Assistência técnica de eletrodomésticos por região
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              A ServitecPoa atende {siteConfig.serviceArea} com visita técnica a domicílio.
-              Selecione sua região para saber mais sobre nosso atendimento local.
+              A ServitecPoa atende {siteConfig.serviceArea} com visita técnica a domicílio,
+              com destaque para bairros nobres como Jardim Europa, Boa Vista, Moinhos de Vento e
+              Higienópolis.
             </p>
           </header>
 
-          <ZoneSection title="Porto Alegre — por zona e bairro" zones={poa} />
-          <ZoneSection title="Região Metropolitana" zones={metro} />
+          <ZoneSection
+            title="Bairros nobres de Porto Alegre"
+            subtitle="Atendimento premium a domicílio"
+            zones={nobleBairros}
+            featured
+          />
+          <ZoneSection
+            title="Porto Alegre — por zona"
+            subtitle="Zona Sul, Norte, Leste e Oeste"
+            zones={poaZones}
+          />
+          <ZoneSection
+            title="Região Metropolitana"
+            subtitle="Cidades atendidas na RMS"
+            zones={rmsCities}
+          />
 
           <CtaBlock />
         </article>
@@ -62,25 +74,45 @@ export default function RegioesPage() {
 
 function ZoneSection({
   title,
+  subtitle,
   zones,
+  featured = false,
 }: {
   title: string;
-  zones: typeof seoZones;
+  subtitle: string;
+  zones: typeof nobleBairros;
+  featured?: boolean;
 }) {
   return (
     <section className="mt-14">
       <h2 className="font-display text-2xl font-semibold text-ink">{title}</h2>
+      <p className="mt-1 text-sm text-slate-500">{subtitle}</p>
       <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {zones.map((zone) => (
           <li key={zone.slug}>
-            <Link href={`/regioes/${zone.slug}`} className="card-light group block h-full p-6">
-              <h3 className="font-display text-xl font-semibold text-ink group-hover:text-brand-orange">
+            <Link
+              href={`/regioes/${zone.slug}`}
+              className={`group block h-full p-6 transition ${
+                featured ? "panel-dark hover:border-gold/50" : "card-light"
+              }`}
+            >
+              <h3
+                className={`font-display text-xl font-semibold group-hover:text-brand-orange ${
+                  featured ? "text-white" : "text-ink"
+                }`}
+              >
                 {zone.name}
               </h3>
-              <p className="mt-2 text-sm text-slate-600">{zone.intro.slice(0, 100)}…</p>
-              <p className="mt-3 text-xs text-slate-500">
-                {zone.neighborhoods.slice(0, 3).join(" · ")}
-                {zone.neighborhoods.length > 3 ? " · …" : ""}
+              <p
+                className={`mt-2 text-sm leading-relaxed ${
+                  featured ? "text-slate-400" : "text-slate-600"
+                }`}
+              >
+                {zone.intro.slice(0, 110)}…
+              </p>
+              <p className={`mt-3 text-xs ${featured ? "text-slate-500" : "text-slate-500"}`}>
+                {zone.neighborhoods.slice(0, 4).join(" · ")}
+                {zone.neighborhoods.length > 4 ? " · …" : ""}
               </p>
               <span className="mt-4 inline-block text-sm font-semibold text-brand-orange">
                 Ver atendimento →

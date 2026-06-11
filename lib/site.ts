@@ -183,6 +183,6 @@ export const faqs = [
   {
     question: "Atendem quais bairros e regiões de Porto Alegre?",
     answer:
-      "Atendemos todas as zonas de Porto Alegre — Zona Sul, Norte, Leste e Oeste — além de cidades da RMS como Canoas, Gravataí, Novo Hamburgo, São Leopoldo, Esteio e Cachoeirinha.",
+      "Atendemos todas as zonas de Porto Alegre — Zona Sul, Norte, Leste e Oeste — com destaque para bairros nobres como Jardim Europa, Boa Vista, Moinhos de Vento, Petrópolis, Higienópolis e Mont Serrat. Também atendemos cidades da RMS como Canoas, Gravataí, Novo Hamburgo, São Leopoldo e Esteio.",
   },
 ] as const;
