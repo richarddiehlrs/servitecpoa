@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 import { seoServices } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
@@ -13,18 +13,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link href="/#inicio" className="inline-block">
-              <Image
-                src={siteConfig.logo.src}
-                alt={siteConfig.logo.alt}
-                width={160}
-                height={56}
-                className="h-12 w-auto object-contain sm:h-14"
-              />
-            </Link>
-            <p className="mt-3 text-sm font-medium uppercase tracking-[0.12em] text-gold-muted">
-              {siteConfig.tagline}
-            </p>
+            <BrandLogo href="/#inicio" showTagline theme="dark" size="footer" />
             <p className="mt-5 text-sm leading-relaxed text-slate-500">
               {siteConfig.primaryCategory} em Porto Alegre. Marcas nacionais e importadas,
               atendimento a domicílio e garantia de {siteConfig.warranty}.

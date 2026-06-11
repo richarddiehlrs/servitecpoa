@@ -30,10 +30,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ${
         scrolled
-          ? "border-b border-gold/30 bg-navy-deep/97 shadow-premium backdrop-blur-xl"
-          : "border-b border-gold/20 bg-navy-deep/90 backdrop-blur-md"
+          ? "border-gold/30 bg-navy-deep shadow-premium"
+          : "border-gold/20 bg-navy-deep"
       }`}
     >
       <div className="gold-rule opacity-60" aria-hidden />
