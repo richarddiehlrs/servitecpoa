@@ -151,7 +151,7 @@ export default async function ServicoDetalhePage({ params }: Props) {
           <section className="mt-10 rounded-2xl border border-ink/8 bg-white p-6">
             <h2 className="font-display text-lg font-semibold text-ink">Atendemos sua região</h2>
             <p className="mt-2 text-sm text-slate-600">
-              Visita técnica em toda Porto Alegre e RMS.{" "}
+              Visita técnica em toda Porto Alegre.{" "}
               <Link href="/regioes" className="font-semibold text-brand-orange hover:underline">
                 Ver regiões atendidas
               </Link>

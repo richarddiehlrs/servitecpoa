@@ -56,11 +56,9 @@ export default async function RegiaoPage({ params }: Props) {
 
           <header className="mt-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">
-              {zone.category === "rms"
-                ? "Região Metropolitana"
-                : zone.category === "bairro"
-                  ? "Bairro nobre · Porto Alegre"
-                  : `${zone.name} · Porto Alegre`}
+              {zone.category === "bairro"
+                ? `Bairro nobre · ${zone.zoneLabel ?? "Porto Alegre"}`
+                : `${zone.name} · Porto Alegre`}
             </p>
             <h1 className="mt-4 font-display text-4xl font-semibold text-ink sm:text-5xl">
               {zone.seoTitle}
@@ -78,9 +76,7 @@ export default async function RegiaoPage({ params }: Props) {
             <h2 className="font-display text-2xl font-semibold text-ink">
               {zone.category === "zona"
                 ? `Bairros atendidos na ${zone.name}`
-                : zone.category === "bairro"
-                  ? `Bairros e adjacências atendidos`
-                  : `Bairros e regiões atendidas em ${zone.name}`}
+                : `Bairros e adjacências atendidos em ${zone.name}`}
             </h2>
             <ul className="list-disc columns-2 gap-x-8 pl-5 text-slate-600">
               {zone.neighborhoods.map((neighborhood) => (

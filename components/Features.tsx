@@ -11,7 +11,7 @@ const features: {
     num: "01",
     title: "Atendimento a domicílio",
     description:
-      "Técnico especializado vai até sua residência em Porto Alegre e região metropolitana para diagnóstico e reparo.",
+      "Técnico especializado vai até sua residência em Porto Alegre para diagnóstico e reparo.",
     icon: "home",
   },
   {

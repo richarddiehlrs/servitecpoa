@@ -28,7 +28,7 @@ export const seoServices: ServiceItem[] = services.map((service) => {
     slug,
     schemaName,
     seoTitle: `${service.title} em Porto Alegre — Assistência Técnica`,
-    seoDescription: `${service.description} Assistência técnica de eletrodomésticos a domicílio em Porto Alegre e RMS. Garantia de ${siteConfig.warranty}. WhatsApp ${siteConfig.phoneDisplay}.`,
+    seoDescription: `${service.description} Assistência técnica de eletrodomésticos a domicílio em Porto Alegre. Garantia de ${siteConfig.warranty}. WhatsApp ${siteConfig.phoneDisplay}.`,
   };
 });
 

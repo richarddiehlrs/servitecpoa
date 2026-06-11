@@ -263,10 +263,10 @@ export function getZonePageJsonLd(zone: ZonePage) {
       provider: { "@id": orgId },
       areaServed: {
         "@type": "Place",
-        name: zone.name,
+        name: zone.zoneLabel ? `${zone.name} — ${zone.zoneLabel}` : zone.name,
         address: {
           "@type": "PostalAddress",
-          addressLocality: zone.isMetro ? zone.name : "Porto Alegre",
+          addressLocality: "Porto Alegre",
           addressRegion: "RS",
           addressCountry: "BR",
         },

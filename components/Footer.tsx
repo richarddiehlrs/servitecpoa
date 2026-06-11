@@ -111,7 +111,7 @@ export function Footer() {
         </div>
 
         <p className="mt-12 border-t border-white/8 pt-8 text-center text-xs text-slate-600">
-          © {year} {siteConfig.name}. {siteConfig.primaryCategory} em Porto Alegre e RMS.
+          © {year} {siteConfig.name}. {siteConfig.primaryCategory} em Porto Alegre.
         </p>
       </div>
     </footer>

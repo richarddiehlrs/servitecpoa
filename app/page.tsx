@@ -6,7 +6,6 @@ import { Features } from "@/components/Features";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { LocalAreas } from "@/components/LocalAreas";
 import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
 import { createPageMetadata } from "@/lib/metadata";
@@ -27,7 +26,6 @@ export default function HomePage() {
         <Features />
         <Services />
         <Brands />
-        <LocalAreas />
         <Reviews />
         <FAQ />
         <Contact />

@@ -18,7 +18,7 @@ export const siteConfig = {
     "Segunda a Sexta: 9h às 12h — 13h30 às 17h30",
     "Sábado: 9h às 12h — 13h30 às 17h30",
   ],
-  serviceArea: "Porto Alegre e Região Metropolitana",
+  serviceArea: "Porto Alegre",
   warranty: "90 dias",
   experience: "15+ anos",
   primaryCategory: "Assistência técnica de eletrodomésticos",
@@ -138,12 +138,12 @@ export const faqs = [
   {
     question: "Vocês atendem em domicílio em Porto Alegre?",
     answer:
-      "Sim. Realizamos atendimento a domicílio em toda Porto Alegre e região metropolitana. Nossa equipe vai até sua residência para diagnóstico e reparo dos eletrodomésticos.",
+      "Sim. Realizamos atendimento a domicílio em toda Porto Alegre. Nossa equipe vai até sua residência para diagnóstico e reparo dos eletrodomésticos.",
   },
   {
     question: "Qual a categoria de serviço da ServitecPoa?",
     answer:
-      "Somos especializados em assistência técnica de eletrodomésticos, com foco em conserto, manutenção e instalação a domicílio em Porto Alegre e RMS.",
+      "Somos especializados em assistência técnica de eletrodomésticos, com foco em conserto, manutenção e instalação a domicílio em Porto Alegre.",
   },
   {
     question: "Quais marcas de eletrodomésticos vocês consertam?",
@@ -183,6 +183,6 @@ export const faqs = [
   {
     question: "Atendem quais bairros e regiões de Porto Alegre?",
     answer:
-      "Atendemos todas as zonas de Porto Alegre — Zona Sul, Norte, Leste e Oeste — com destaque para bairros nobres como Jardim Europa, Boa Vista, Moinhos de Vento, Petrópolis, Higienópolis e Mont Serrat. Também atendemos cidades da RMS como Canoas, Gravataí, Novo Hamburgo, São Leopoldo e Esteio.",
+      "Atendemos todas as zonas de Porto Alegre — Zona Norte, Sul, Leste e Oeste, além do Centro Histórico. Destaque para bairros nobres como Jardim Europa, Boa Vista, Higienópolis e Auxiliadora (Zona Norte); Moinhos de Vento, Petrópolis, Três Figueiras e Bela Vista (Zona Leste); e Tristeza, Ipanema e Cristal (Zona Sul).",
   },
 ] as const;

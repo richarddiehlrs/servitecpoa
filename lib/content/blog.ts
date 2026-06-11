@@ -97,7 +97,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Por que o diagnóstico a domicílio vale a pena",
         paragraphs: [
-          "Levar a máquina a uma assistência gera transtorno e custo de transporte. Com atendimento a domicílio, o técnico identifica o problema no local e você decide com segurança. A ServitecPoa atende Porto Alegre e RMS com garantia de 90 dias.",
+          "Levar a máquina a uma assistência gera transtorno e custo de transporte. Com atendimento a domicílio, o técnico identifica o problema no local e você decide com segurança. A ServitecPoa atende Porto Alegre com garantia de 90 dias.",
         ],
       },
     ],

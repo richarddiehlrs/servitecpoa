@@ -66,7 +66,7 @@ export default function SobrePage() {
           <div className="prose prose-slate mt-8 max-w-none">
             <p className="text-lg leading-relaxed text-slate-700">
               A <strong>ServitecPoa</strong> é uma empresa especializada em{" "}
-              {siteConfig.primaryCategory.toLowerCase()} em Porto Alegre e Região Metropolitana.
+              {siteConfig.primaryCategory.toLowerCase()} em Porto Alegre.
               Atuamos com foco em conserto, manutenção e instalação de eletrodomésticos nacionais e
               importados premium, sempre com atendimento a domicílio.
             </p>

@@ -13,7 +13,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 export const metadata: Metadata = createPageMetadata({
   title: "Atendimento a domicílio — assistência técnica Porto Alegre",
   description:
-    "Agende visita técnica a domicílio em Porto Alegre e RMS. Assistência técnica de eletrodomésticos. Preencha o formulário ou fale pelo WhatsApp.",
+    "Agende visita técnica a domicílio em Porto Alegre. Assistência técnica de eletrodomésticos. Preencha o formulário ou fale pelo WhatsApp.",
   path: "/atendimento-domicilio",
 });
 

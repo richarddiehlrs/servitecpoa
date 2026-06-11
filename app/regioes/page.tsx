@@ -5,15 +5,15 @@ import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { nobleBairros, poaZones, rmsCities } from "@/lib/content/zones";
+import { nobleBairros, poaZones } from "@/lib/content/zones";
 import { getBreadcrumbJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Regiões atendidas — assistência técnica Porto Alegre e RMS",
+  title: "Regiões atendidas — assistência técnica Porto Alegre",
   description:
-    "Assistência técnica de eletrodomésticos em Jardim Europa, Boa Vista, Moinhos de Vento, Higienópolis e todas as zonas de Porto Alegre. Atendimento a domicílio — ServitecPoa.",
+    "Assistência técnica de eletrodomésticos em Jardim Europa, Boa Vista, Moinhos de Vento, Petrópolis e todas as zonas de Porto Alegre. Atendimento a domicílio — ServitecPoa.",
   path: "/regioes",
 });
 
@@ -35,33 +35,28 @@ export default function RegioesPage() {
 
           <header className="mt-6 max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">
-              Cobertura local
+              Cobertura em Porto Alegre
             </p>
             <h1 className="mt-4 font-display text-4xl font-semibold text-ink sm:text-5xl">
               Assistência técnica de eletrodomésticos por região
             </h1>
             <p className="mt-4 text-lg leading-relaxed text-slate-600">
-              A ServitecPoa atende {siteConfig.serviceArea} com visita técnica a domicílio,
-              com destaque para bairros nobres como Jardim Europa, Boa Vista, Moinhos de Vento e
-              Higienópolis.
+              A ServitecPoa atende {siteConfig.serviceArea} com visita técnica a domicílio.
+              Jardim Europa e Boa Vista ficam na Zona Norte; Moinhos de Vento, Petrópolis e
+              Três Figueiras na Zona Leste; Tristeza e Ipanema na Zona Sul.
             </p>
           </header>
 
           <ZoneSection
-            title="Bairros nobres de Porto Alegre"
+            title="Bairros nobres"
             subtitle="Atendimento premium a domicílio"
             zones={nobleBairros}
             featured
           />
           <ZoneSection
-            title="Porto Alegre — por zona"
-            subtitle="Zona Sul, Norte, Leste e Oeste"
+            title="Zonas de Porto Alegre"
+            subtitle="Norte, Sul, Leste, Oeste e Centro Histórico"
             zones={poaZones}
-          />
-          <ZoneSection
-            title="Região Metropolitana"
-            subtitle="Cidades atendidas na RMS"
-            zones={rmsCities}
           />
 
           <CtaBlock />
@@ -103,6 +98,11 @@ function ZoneSection({
               >
                 {zone.name}
               </h3>
+              {zone.zoneLabel && (
+                <p className={`mt-1 text-xs ${featured ? "text-gold-light" : "text-brand-orange"}`}>
+                  {zone.zoneLabel}
+                </p>
+              )}
               <p
                 className={`mt-2 text-sm leading-relaxed ${
                   featured ? "text-slate-400" : "text-slate-600"
@@ -110,7 +110,7 @@ function ZoneSection({
               >
                 {zone.intro.slice(0, 110)}…
               </p>
-              <p className={`mt-3 text-xs ${featured ? "text-slate-500" : "text-slate-500"}`}>
+              <p className="mt-3 text-xs text-slate-500">
                 {zone.neighborhoods.slice(0, 4).join(" · ")}
                 {zone.neighborhoods.length > 4 ? " · …" : ""}
               </p>

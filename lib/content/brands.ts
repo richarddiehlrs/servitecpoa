@@ -42,7 +42,7 @@ const brandData: Omit<BrandPage, "slug">[] = [
       "Consul é sinônimo de confiança no mercado brasileiro. Realizamos conserto Consul em Porto Alegre com foco em solução definitiva e garantia formal.",
     paragraphs: [
       "Trabalhamos com toda linha Consul residencial: refrigeradores, freezers, máquinas de lavar e fogões. Nosso diagnóstico identifica falhas em componentes mecânicos e eletrônicos.",
-      "Com mais de 15 anos de experiência, a ServitecPoa é referência em assistência técnica de eletrodomésticos na região metropolitana de Porto Alegre.",
+      "Com mais de 15 anos de experiência, a ServitecPoa é referência em assistência técnica de eletrodomésticos em Porto Alegre.",
     ],
     services: ["Geladeiras e Freezers", "Máquinas de Lavar", "Lava e Seca"],
     isPremium: false,
@@ -70,7 +70,7 @@ const brandData: Omit<BrandPage, "slug">[] = [
       "A Electrolux é uma das marcas mais solicitadas em assistência técnica. Oferecemos conserto Electrolux em Porto Alegre com atendimento profissional a domicílio.",
     paragraphs: [
       "Reparamos geladeiras Inverse, máquinas de lavar, lava-louças, secadoras e fogões Electrolux. Problemas em compressor, placa, bomba e sensores de umidade são comuns e tratados com diagnóstico técnico.",
-      "Nossa equipe atende Porto Alegre e cidades da RMS com agendamento flexível e garantia de 90 dias.",
+      "Nossa equipe atende Porto Alegre com agendamento flexível e garantia de 90 dias.",
     ],
     services: ["Geladeiras e Freezers", "Máquinas de Lavar", "Lava e Seca", "Lava-louças", "Secadoras"],
     isPremium: false,
@@ -168,7 +168,7 @@ const brandData: Omit<BrandPage, "slug">[] = [
       "Tecno oferece coifas com design e tecnologia italiana. A ServitecPoa conserta coifa Tecno em Porto Alegre com experiência em linha importada.",
     paragraphs: [
       "Reparamos motores, filtros, iluminação e controles. Instalamos coifas novas com fixação segura e teste de exaustão.",
-      "Atendimento a domicílio em toda Porto Alegre e região metropolitana.",
+      "Atendimento a domicílio em toda Porto Alegre.",
     ],
     services: ["Coifas e Depuradores", "Instalação de Eletrodomésticos"],
     isPremium: true,
@@ -210,7 +210,7 @@ const brandData: Omit<BrandPage, "slug">[] = [
       "Evol oferece soluções em climatização de vinhos e exaustão. A ServitecPoa conserta Evol em Porto Alegre com experiência em adegas e coifas.",
     paragraphs: [
       "Diagnosticamos falhas em temperatura, umidade, compressor e sistema de exaustão. Reparo com peças adequadas e garantia formal.",
-      "Atendemos Porto Alegre e região metropolitana com agendamento por WhatsApp.",
+      "Atendemos Porto Alegre com agendamento por WhatsApp.",
     ],
     services: ["Adegas Climatizadas", "Coifas e Depuradores"],
     isPremium: true,
