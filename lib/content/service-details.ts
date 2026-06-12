@@ -71,7 +71,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Roupas saindo manchadas ou com mau cheiro",
       "Porta ou tampa com defeito de travamento",
     ],
-    brands: ["Brastemp", "Consul", "Electrolux", "Samsung", "LG"],
+    brands: ["Brastemp", "Consul", "Electrolux", "Samsung", "LG", "Speed Queen"],
     process: [
       {
         title: "Inspeção completa",
@@ -227,7 +227,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Vidro trincado ou suporte danificado",
       "Erro em forno elétrico embutido",
     ],
-    brands: ["Bertazzoni", "Gorenje", "Lofra", "Smeg", "Fulgor", "Electrolux", "Brastemp"],
+    brands: ["Bertazzoni", "Gorenje", "Lofra", "Smeg", "Fulgor", "Debacco", "Electrolux", "Brastemp"],
     process: [
       {
         title: "Avaliação de segurança",
@@ -279,7 +279,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Porta não fecha corretamente",
       "Consumo de energia acima do normal",
     ],
-    brands: ["Brastemp", "Electrolux", "Samsung", "LG", "Consul"],
+    brands: ["Brastemp", "Electrolux", "Samsung", "LG", "Consul", "Speed Queen"],
     process: [
       {
         title: "Inspeção do sistema de aquecimento",

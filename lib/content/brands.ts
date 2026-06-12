@@ -229,6 +229,34 @@ const brandData: Omit<BrandPage, "slug">[] = [
     services: ["Adegas Climatizadas", "Coifas e Depuradores"],
     isPremium: true,
   },
+  {
+    name: "Debacco",
+    seoTitle: "Conserto Debacco em Porto Alegre",
+    seoDescription:
+      "Assistência técnica Debacco em Porto Alegre: fogões, cooktops e fornos premium. ServitecPoa — linha built-in a domicílio.",
+    intro:
+      "Debacco é referência em eletrodomésticos de cozinha premium. A ServitecPoa conserta Debacco em Porto Alegre com experiência em linha built-in e importada.",
+    paragraphs: [
+      "Atendemos cooktops, fornos embutidos e fogões Debacco. Diagnosticamos ignição, queimadores, módulos eletrônicos, sensores de temperatura e sistemas de segurança com procedimentos específicos da marca.",
+      "Equipamentos premium exigem técnico qualificado — trabalhamos com peças de qualidade, instalação profissional e garantia de 90 dias em todos os serviços.",
+    ],
+    services: ["Fogões e Cooktops Premium", "Instalação de Eletrodomésticos"],
+    isPremium: true,
+  },
+  {
+    name: "Speed Queen",
+    seoTitle: "Conserto Speed Queen em Porto Alegre",
+    seoDescription:
+      "Assistência técnica Speed Queen em Porto Alegre: máquinas de lavar e secadoras premium. ServitecPoa — atendimento a domicílio.",
+    intro:
+      "Speed Queen é sinônimo de lavanderia de alto desempenho. A ServitecPoa conserta Speed Queen em Porto Alegre com diagnóstico técnico especializado.",
+    paragraphs: [
+      "Atendemos lavadoras e secadoras Speed Queen residenciais e comerciais. Problemas em motor, bomba, placa eletrônica, tambor, aquecimento e sensores são identificados com testes específicos da marca.",
+      "Priorizamos peças de procedência confiável e atendimento a domicílio em Porto Alegre, com orçamento transparente e garantia de 90 dias.",
+    ],
+    services: ["Máquinas de Lavar", "Secadoras"],
+    isPremium: true,
+  },
 ];
 
 export const seoBrands: BrandPage[] = brandData.map((brand) => ({

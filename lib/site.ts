@@ -74,6 +74,8 @@ export const importedBrands = [
   "Evol",
   "Crissair",
   "Lofra",
+  "Debacco",
+  "Speed Queen",
 ] as const;
 
 export const allBrands = [...nationalBrands, ...importedBrands];
