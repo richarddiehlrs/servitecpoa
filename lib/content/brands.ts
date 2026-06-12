@@ -90,6 +90,20 @@ const brandData: Omit<BrandPage, "slug">[] = [
     isPremium: false,
   },
   {
+    name: "Midea",
+    seoTitle: "Conserto Midea em Porto Alegre",
+    seoDescription:
+      "Assistência técnica Midea em Porto Alegre: geladeiras, máquinas de lavar e lava e seca. ServitecPoa — atendimento a domicílio.",
+    intro:
+      "A Midea é uma das marcas em crescimento no mercado brasileiro. A ServitecPoa conserta Midea em Porto Alegre com diagnóstico técnico e peças de qualidade.",
+    paragraphs: [
+      "Atendemos geladeiras, máquinas de lavar e lava e seca Midea. Problemas em placa eletrônica, compressor, bomba d'água, motor e sensores são diagnosticados na visita com equipamentos adequados.",
+      "Atendimento a domicílio em toda Porto Alegre, com orçamento transparente antes do reparo e garantia de 90 dias.",
+    ],
+    services: ["Geladeiras e Freezers", "Máquinas de Lavar", "Lava e Seca"],
+    isPremium: false,
+  },
+  {
     name: "Bertazzoni",
     seoTitle: "Conserto Bertazzoni em Porto Alegre",
     seoDescription:

@@ -19,7 +19,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Porta com vedação comprometida",
       "Display ou painel eletrônico com falha",
     ],
-    brands: ["Brastemp", "Consul", "Electrolux", "Samsung", "LG", "Sub-Zero", "Gorenje"],
+    brands: ["Brastemp", "Consul", "Electrolux", "Samsung", "LG", "Midea", "Sub-Zero", "Gorenje"],
     process: [
       {
         title: "Diagnóstico no local",
@@ -71,7 +71,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Roupas saindo manchadas ou com mau cheiro",
       "Porta ou tampa com defeito de travamento",
     ],
-    brands: ["Brastemp", "Consul", "Electrolux", "Samsung", "LG", "Speed Queen"],
+    brands: ["Brastemp", "Consul", "Electrolux", "Samsung", "LG", "Midea", "Speed Queen"],
     process: [
       {
         title: "Inspeção completa",
@@ -123,7 +123,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Consumo de energia elevado",
       "Vazamento de água ou condensação",
     ],
-    brands: ["Samsung", "LG", "Electrolux", "Brastemp", "Consul"],
+    brands: ["Samsung", "LG", "Electrolux", "Brastemp", "Consul", "Midea"],
     process: [
       {
         title: "Análise do sistema de lavagem e secagem",
@@ -279,7 +279,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Porta não fecha corretamente",
       "Consumo de energia acima do normal",
     ],
-    brands: ["Brastemp", "Electrolux", "Samsung", "LG", "Consul", "Speed Queen"],
+    brands: ["Brastemp", "Electrolux", "Samsung", "LG", "Consul", "Midea", "Speed Queen"],
     process: [
       {
         title: "Inspeção do sistema de aquecimento",
@@ -435,7 +435,7 @@ export const serviceDetails: ServiceDetailContent[] = [
       "Dúvidas sobre garantia do fabricante após instalação",
       "Remanejamento de equipamento na cozinha",
     ],
-    brands: ["Bertazzoni", "Gorenje", "Falmec", "Electrolux", "Brastemp", "Samsung", "LG"],
+    brands: ["Bertazzoni", "Gorenje", "Falmec", "Electrolux", "Brastemp", "Samsung", "LG", "Midea"],
     process: [
       {
         title: "Vistoria do local",

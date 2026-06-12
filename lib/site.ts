@@ -61,6 +61,7 @@ export const nationalBrands = [
   "Samsung",
   "Electrolux",
   "LG",
+  "Midea",
 ] as const;
 
 export const importedBrands = [
