@@ -29,10 +29,14 @@ export const siteConfig = {
     country: "BR",
     placename: "Porto Alegre",
   },
+  googleBusinessCid: process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_CID ?? "10111277396737505345",
   social: {
     googleBusiness:
       process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ??
       "https://share.google/r75n3fnGNGzTJW6ez",
+    googleMaps: `https://www.google.com/maps?cid=${
+      process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_CID ?? "10111277396737505345"
+    }`,
     instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
   },

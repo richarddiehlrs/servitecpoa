@@ -17,9 +17,13 @@ function areaServed() {
 }
 
 function sameAsLinks() {
-  return [social.googleBusiness, siteConfig.whatsappUrl, social.instagram, social.facebook].filter(
-    Boolean,
-  );
+  return [
+    social.googleBusiness,
+    social.googleMaps,
+    siteConfig.whatsappUrl,
+    social.instagram,
+    social.facebook,
+  ].filter(Boolean);
 }
 
 function aggregateRating() {
@@ -76,6 +80,7 @@ export function getLocalBusinessJsonLd() {
       latitude: geo.latitude,
       longitude: geo.longitude,
     },
+    hasMap: social.googleMaps,
     knowsAbout: [
       siteConfig.primaryCategory,
       ...seoServices.map((s) => s.title),
