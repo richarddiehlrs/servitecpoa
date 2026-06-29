@@ -76,6 +76,7 @@ export const metadata: Metadata = {
   verification: googleVerification ? { google: googleVerification } : {},
   category: "home services",
   other: {
+    "msvalidate.01": "F6F1785B330AB4A5758DD023A49F1287",
     "geo.region": `BR-${siteConfig.geo.region}`,
     "geo.placename": siteConfig.geo.placename,
     "geo.position": `${siteConfig.geo.latitude};${siteConfig.geo.longitude}`,
