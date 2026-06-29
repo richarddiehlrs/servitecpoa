@@ -5,8 +5,11 @@ export type BlogPost = {
   seoDescription: string;
   excerpt: string;
   publishedAt: string;
+  updatedAt?: string;
   readTime: string;
+  tags?: string[];
   sections: { heading?: string; paragraphs: string[] }[];
+  faqs?: { question: string; answer: string }[];
   relatedServices: string[];
 };
 
@@ -20,7 +23,14 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Entenda por que sua geladeira perdeu o desempenho e quando o conserto profissional é necessário.",
     publishedAt: "2026-05-15",
+    updatedAt: "2026-06-29",
     readTime: "6 min",
+    tags: [
+      "geladeira não gela",
+      "conserto de geladeira",
+      "assistência técnica Porto Alegre",
+      "refrigeração",
+    ],
     sections: [
       {
         paragraphs: [
@@ -64,6 +74,18 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: "Quanto tempo leva para a geladeira voltar a gelar após o conserto?",
+        answer:
+          "Depende da causa. Após o reparo, uma geladeira leva em média de 4 a 6 horas para estabilizar a temperatura ideal. A ServitecPoa orienta o cliente sobre o tempo esperado em cada caso.",
+      },
+      {
+        question: "Vale a pena consertar uma geladeira antiga que não gela?",
+        answer:
+          "Depende da idade, do estado do compressor e do custo da peça. Em geladeiras com mais de 10 anos e compressor comprometido, a troca pode compensar. Fazemos o diagnóstico a domicílio em Porto Alegre antes de qualquer decisão.",
+      },
+    ],
     relatedServices: ["conserto-geladeira-freezer-porto-alegre"],
   },
   {
@@ -75,7 +97,14 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Entenda o que define o preço do conserto e como obter orçamento sem surpresas.",
     publishedAt: "2026-05-22",
+    updatedAt: "2026-06-29",
     readTime: "5 min",
+    tags: [
+      "conserto máquina de lavar",
+      "preço conserto",
+      "orçamento",
+      "assistência técnica Porto Alegre",
+    ],
     sections: [
       {
         paragraphs: [
@@ -101,6 +130,18 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: "A visita de diagnóstico é cobrada?",
+        answer:
+          "Informamos a política de visita no agendamento. O valor do reparo é sempre apresentado e aprovado antes de iniciar o serviço, sem surpresas.",
+      },
+      {
+        question: "Quanto custa, em média, trocar a placa eletrônica da máquina de lavar?",
+        answer:
+          "O valor varia conforme marca e modelo, pois a placa é uma peça específica. Por isso o diagnóstico presencial é essencial para um orçamento preciso em Porto Alegre.",
+      },
+    ],
     relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
   },
   {
@@ -112,7 +153,14 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Descubra por que a secagem falha e quando chamar assistência técnica especializada.",
     publishedAt: "2026-05-28",
+    updatedAt: "2026-06-29",
     readTime: "5 min",
+    tags: [
+      "lava e seca não seca",
+      "conserto lava e seca",
+      "secagem",
+      "assistência técnica Porto Alegre",
+    ],
     sections: [
       {
         paragraphs: [
@@ -149,7 +197,14 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Critérios essenciais para contratar um técnico confiável e evitar dor de cabeça.",
     publishedAt: "2026-06-02",
+    updatedAt: "2026-06-29",
     readTime: "7 min",
+    tags: [
+      "como escolher assistência técnica",
+      "técnico confiável",
+      "garantia",
+      "Porto Alegre",
+    ],
     sections: [
       {
         paragraphs: [
@@ -198,7 +253,14 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Cuidados simples que prolongam a vida da coifa e evitam reparos caros.",
     publishedAt: "2026-06-05",
+    updatedAt: "2026-06-29",
     readTime: "4 min",
+    tags: [
+      "manutenção de coifa",
+      "depurador",
+      "limpeza de filtros",
+      "assistência técnica Porto Alegre",
+    ],
     sections: [
       {
         paragraphs: [
@@ -229,7 +291,15 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Por que eletrodomésticos premium exigem técnico especializado e como a ServitecPoa atende.",
     publishedAt: "2026-06-08",
+    updatedAt: "2026-06-29",
     readTime: "6 min",
+    tags: [
+      "eletrodomésticos premium",
+      "Bertazzoni",
+      "Sub-Zero",
+      "Gorenje",
+      "assistência técnica Porto Alegre",
+    ],
     sections: [
       {
         paragraphs: [
@@ -255,6 +325,13 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
+    faqs: [
+      {
+        question: "Por que devo procurar um técnico especializado em linha premium?",
+        answer:
+          "Equipamentos importados como Bertazzoni, Sub-Zero e Gorenje têm peças específicas e eletrônica distinta. Um técnico sem experiência pode agravar o problema ou invalidar a garantia. A ServitecPoa é especialista nessas marcas em Porto Alegre.",
+      },
+    ],
     relatedServices: [
       "conserto-fogao-cooktop-premium-porto-alegre",
       "conserto-geladeira-freezer-porto-alegre",
@@ -264,4 +341,20 @@ export const blogPosts: BlogPost[] = [
 
 export function getBlogPostBySlug(slug: string) {
   return blogPosts.find((post) => post.slug === slug);
+}
+
+export function getRelatedPosts(post: BlogPost, limit = 3): BlogPost[] {
+  const tags = new Set(post.tags ?? []);
+  const services = new Set(post.relatedServices);
+
+  return blogPosts
+    .filter((candidate) => candidate.slug !== post.slug)
+    .map((candidate) => {
+      const sharedTags = (candidate.tags ?? []).filter((tag) => tags.has(tag)).length;
+      const sharedServices = candidate.relatedServices.filter((s) => services.has(s)).length;
+      return { candidate, score: sharedTags * 2 + sharedServices * 3 };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((entry) => entry.candidate);
 }

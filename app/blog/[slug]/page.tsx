@@ -6,12 +6,21 @@ import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
-import { blogPosts, getBlogPostBySlug } from "@/lib/content/blog";
+import { blogPosts, getBlogPostBySlug, getRelatedPosts } from "@/lib/content/blog";
 import { getBlogPostJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
 import { seoServices } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
+
+function slugifyHeading(text: string) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -26,6 +35,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.seoTitle,
     description: post.seoDescription,
     path: `/blog/${post.slug}`,
+    keywords: post.tags,
+    article: {
+      publishedTime: post.publishedAt,
+      modifiedTime: post.updatedAt ?? post.publishedAt,
+      tags: post.tags,
+    },
   });
 }
 
@@ -37,6 +52,7 @@ export default async function BlogPostPage({ params }: Props) {
   const relatedServices = seoServices.filter((s) =>
     post.relatedServices.includes(s.slug),
   );
+  const relatedPosts = getRelatedPosts(post);
 
   return (
     <>
@@ -64,6 +80,19 @@ export default async function BlogPostPage({ params }: Props) {
               })}
               {" · "}
               {post.readTime} de leitura
+              {post.updatedAt && post.updatedAt !== post.publishedAt && (
+                <>
+                  {" · "}
+                  <span className="text-slate-400">
+                    Atualizado em{" "}
+                    {new Date(post.updatedAt).toLocaleDateString("pt-BR", {
+                      day: "2-digit",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </span>
+                </>
+              )}
             </time>
             <h1 className="mt-4 font-display text-4xl font-semibold leading-tight text-ink sm:text-5xl">
               {post.title}
@@ -75,7 +104,10 @@ export default async function BlogPostPage({ params }: Props) {
             {post.sections.map((section, index) => (
               <section key={index}>
                 {section.heading && (
-                  <h2 className="font-display text-2xl font-semibold text-ink">
+                  <h2
+                    id={slugifyHeading(section.heading)}
+                    className="scroll-mt-28 font-display text-2xl font-semibold text-ink"
+                  >
                     {section.heading}
                   </h2>
                 )}
@@ -87,6 +119,27 @@ export default async function BlogPostPage({ params }: Props) {
               </section>
             ))}
           </div>
+
+          {post.faqs && post.faqs.length > 0 && (
+            <section className="mt-12">
+              <h2 className="font-display text-2xl font-semibold text-ink">
+                Perguntas frequentes
+              </h2>
+              <dl className="mt-5 space-y-5">
+                {post.faqs.map((faq) => (
+                  <div
+                    key={faq.question}
+                    className="rounded-2xl border border-ink/8 bg-white p-5"
+                  >
+                    <dt className="font-semibold text-ink">{faq.question}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-slate-600">
+                      {faq.answer}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          )}
 
           {relatedServices.length > 0 && (
             <section className="mt-10 rounded-2xl border border-ink/8 bg-white p-6">
@@ -101,6 +154,29 @@ export default async function BlogPostPage({ params }: Props) {
                       className="text-sm font-semibold text-brand-orange hover:underline"
                     >
                       {service.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {relatedPosts.length > 0 && (
+            <section className="mt-10">
+              <h2 className="font-display text-lg font-semibold text-ink">Leia também</h2>
+              <ul className="mt-4 grid gap-4 sm:grid-cols-2">
+                {relatedPosts.map((related) => (
+                  <li key={related.slug}>
+                    <Link
+                      href={`/blog/${related.slug}`}
+                      className="card-light group block h-full p-5"
+                    >
+                      <h3 className="font-display text-base font-semibold text-ink group-hover:text-brand-orange">
+                        {related.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                        {related.excerpt}
+                      </p>
                     </Link>
                   </li>
                 ))}

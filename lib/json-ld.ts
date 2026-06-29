@@ -283,25 +283,80 @@ export function getZonePageJsonLd(zone: ZonePage) {
 
 export function getBlogPostJsonLd(post: BlogPost) {
   const pageUrl = `${url}/blog/${post.slug}`;
-  return [
+  const wordCount = post.sections.reduce(
+    (total, section) =>
+      total + section.paragraphs.reduce((sum, p) => sum + p.split(/\s+/).length, 0),
+    0,
+  );
+
+  const schemas: Record<string, unknown>[] = [
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: post.title,
       description: post.seoDescription,
       url: pageUrl,
+      image: [`${url}/opengraph-image`],
       datePublished: post.publishedAt,
-      dateModified: post.publishedAt,
+      dateModified: post.updatedAt ?? post.publishedAt,
       author: { "@id": orgId },
       publisher: { "@id": orgId },
-      mainEntityOfPage: pageUrl,
+      mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+      isPartOf: { "@id": websiteId },
       inLanguage: "pt-BR",
-      about: siteConfig.primaryCategory,
+      articleSection: siteConfig.primaryCategory,
+      about: { "@id": orgId },
+      wordCount,
+      ...(post.tags && post.tags.length ? { keywords: post.tags.join(", ") } : {}),
     },
     getBreadcrumbJsonLd([
       { name: "Início", item: url },
       { name: "Blog", item: `${url}/blog` },
       { name: post.title, item: pageUrl },
+    ]),
+  ];
+
+  if (post.faqs && post.faqs.length) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: post.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+  }
+
+  return schemas;
+}
+
+export function getBlogListingJsonLd(posts: BlogPost[]) {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": `${url}/blog#blog`,
+      url: `${url}/blog`,
+      name: `Blog ${name} — assistência técnica de eletrodomésticos em Porto Alegre`,
+      description:
+        "Artigos sobre conserto, manutenção e cuidados com eletrodomésticos em Porto Alegre.",
+      inLanguage: "pt-BR",
+      isPartOf: { "@id": websiteId },
+      publisher: { "@id": orgId },
+      blogPost: posts.map((post) => ({
+        "@type": "BlogPosting",
+        headline: post.title,
+        description: post.seoDescription,
+        url: `${url}/blog/${post.slug}`,
+        datePublished: post.publishedAt,
+        dateModified: post.updatedAt ?? post.publishedAt,
+        author: { "@id": orgId },
+      })),
+    },
+    getBreadcrumbJsonLd([
+      { name: "Início", item: url },
+      { name: "Blog", item: `${url}/blog` },
     ]),
   ];
 }

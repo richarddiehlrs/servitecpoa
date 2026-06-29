@@ -5,9 +5,8 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
 import { blogPosts } from "@/lib/content/blog";
-import { getBreadcrumbJsonLd } from "@/lib/json-ld";
+import { getBlogListingJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
-import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Blog — dicas de assistência técnica em Porto Alegre",
@@ -23,12 +22,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <JsonLd
-        data={getBreadcrumbJsonLd([
-          { name: "Início", item: siteConfig.url },
-          { name: "Blog", item: `${siteConfig.url}/blog` },
-        ])}
-      />
+      <JsonLd data={getBlogListingJsonLd(sorted)} />
       <Header />
       <main className="bg-cream pt-28">
         <article className="mx-auto max-w-7xl px-5 py-12 lg:px-8 lg:py-16">
