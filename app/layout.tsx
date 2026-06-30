@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { JsonLd } from "@/components/JsonLd";
+import { WhatsAppConversion } from "@/components/WhatsAppConversion";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { getAllHomeJsonLd } from "@/lib/json-ld";
 import { seoKeywords } from "@/lib/seo";
@@ -95,6 +96,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${sans.variable} ${display.variable}`}>
       <body className="font-sans">
         <GoogleAnalytics />
+        <WhatsAppConversion />
         <JsonLd data={structuredData} />
         {children}
         <WhatsAppFloat />
