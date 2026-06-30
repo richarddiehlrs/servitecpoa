@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Footer } from "@/components/Footer";
@@ -44,7 +45,22 @@ export default function BlogPage() {
           <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {sorted.map((post) => (
               <li key={post.slug}>
-                <Link href={`/blog/${post.slug}`} className="card-light group flex h-full flex-col p-6">
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="card-light group flex h-full flex-col overflow-hidden"
+                >
+                  {post.image && (
+                    <div className="relative aspect-[16/9] w-full overflow-hidden">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col p-6">
                   <time
                     dateTime={post.publishedAt}
                     className="text-xs font-semibold uppercase tracking-wide text-slate-500"
@@ -66,6 +82,7 @@ export default function BlogPage() {
                   <span className="mt-4 text-sm font-semibold text-brand-orange">
                     Ler artigo →
                   </span>
+                  </div>
                 </Link>
               </li>
             ))}

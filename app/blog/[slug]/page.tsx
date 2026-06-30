@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -10,6 +11,7 @@ import { blogPosts, getBlogPostBySlug, getRelatedPosts } from "@/lib/content/blo
 import { getBlogPostJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
 import { seoServices } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -36,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.seoDescription,
     path: `/blog/${post.slug}`,
     keywords: post.tags,
+    image: post.image ? `${siteConfig.url}${post.image}` : undefined,
     article: {
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
@@ -99,6 +102,19 @@ export default async function BlogPostPage({ params }: Props) {
             </h1>
             <p className="mt-4 text-lg text-slate-600">{post.excerpt}</p>
           </header>
+
+          {post.image && (
+            <figure className="mt-8 overflow-hidden rounded-2xl ring-1 ring-ink/8">
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={1024}
+                height={576}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </figure>
+          )}
 
           <div className="prose prose-slate mt-10 max-w-none">
             {post.sections.map((section, index) => (

@@ -4,6 +4,7 @@ export type BlogPost = {
   seoTitle: string;
   seoDescription: string;
   excerpt: string;
+  image?: string;
   publishedAt: string;
   updatedAt?: string;
   readTime: string;
@@ -22,6 +23,7 @@ export const blogPosts: BlogPost[] = [
       "Geladeira não gela? Entenda as causas mais comuns e quando chamar assistência técnica de eletrodomésticos em Porto Alegre.",
     excerpt:
       "Entenda por que sua geladeira perdeu o desempenho e quando o conserto profissional é necessário.",
+    image: "/blog/blog-geladeira-nao-gela.png",
     publishedAt: "2026-05-15",
     updatedAt: "2026-06-29",
     readTime: "6 min",
@@ -96,6 +98,7 @@ export const blogPosts: BlogPost[] = [
       "Valores e fatores que influenciam o conserto de máquina de lavar em Porto Alegre. Orçamento transparente com ServitecPoa.",
     excerpt:
       "Entenda o que define o preço do conserto e como obter orçamento sem surpresas.",
+    image: "/blog/blog-custo-maquina-lavar.png",
     publishedAt: "2026-05-22",
     updatedAt: "2026-06-29",
     readTime: "5 min",
@@ -152,6 +155,7 @@ export const blogPosts: BlogPost[] = [
       "Sua lava e seca não seca as roupas? Causas comuns e conserto a domicílio em Porto Alegre — ServitecPoa.",
     excerpt:
       "Descubra por que a secagem falha e quando chamar assistência técnica especializada.",
+    image: "/blog/blog-lava-seca-nao-seca.png",
     publishedAt: "2026-05-28",
     updatedAt: "2026-06-29",
     readTime: "5 min",
@@ -196,6 +200,7 @@ export const blogPosts: BlogPost[] = [
       "Dicas para escolher a melhor assistência técnica de eletrodomésticos em Porto Alegre. CNPJ, garantia, avaliações e mais.",
     excerpt:
       "Critérios essenciais para contratar um técnico confiável e evitar dor de cabeça.",
+    image: "/blog/blog-escolher-assistencia.png",
     publishedAt: "2026-06-02",
     updatedAt: "2026-06-29",
     readTime: "7 min",
@@ -252,6 +257,7 @@ export const blogPosts: BlogPost[] = [
       "Como manter coifa e depurador funcionando bem. Dicas de manutenção e quando chamar técnico em Porto Alegre.",
     excerpt:
       "Cuidados simples que prolongam a vida da coifa e evitam reparos caros.",
+    image: "/blog/blog-manutencao-coifa.png",
     publishedAt: "2026-06-05",
     updatedAt: "2026-06-29",
     readTime: "4 min",
@@ -290,6 +296,7 @@ export const blogPosts: BlogPost[] = [
       "Assistência técnica para Bertazzoni, Sub-Zero, Gorenje e linha premium em Porto Alegre. ServitecPoa — especialistas a domicílio.",
     excerpt:
       "Por que eletrodomésticos premium exigem técnico especializado e como a ServitecPoa atende.",
+    image: "/blog/blog-premium.png",
     publishedAt: "2026-06-08",
     updatedAt: "2026-06-29",
     readTime: "6 min",
@@ -336,6 +343,282 @@ export const blogPosts: BlogPost[] = [
       "conserto-fogao-cooktop-premium-porto-alegre",
       "conserto-geladeira-freezer-porto-alegre",
     ],
+  },
+  {
+    slug: "geladeira-fazendo-barulho-causas-solucao-porto-alegre",
+    title: "Geladeira fazendo barulho: causas e quando se preocupar",
+    seoTitle: "Geladeira fazendo barulho: causas e solução em Porto Alegre",
+    seoDescription:
+      "Geladeira fazendo barulho estranho? Veja as causas (compressor, ventilador, dilatação) e quando chamar assistência técnica em Porto Alegre.",
+    excerpt:
+      "Estalos, zumbidos ou ronco alto? Entenda quais ruídos são normais e quais indicam defeito.",
+    image: "/blog/blog-geladeira-barulho.png",
+    publishedAt: "2026-06-12",
+    updatedAt: "2026-06-29",
+    readTime: "6 min",
+    tags: [
+      "geladeira fazendo barulho",
+      "geladeira barulhenta",
+      "compressor",
+      "assistência técnica Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Toda geladeira faz algum ruído durante o funcionamento, mas barulhos novos, altos ou intermitentes costumam assustar. Saber diferenciar o som normal de um sinal de defeito ajuda a decidir quando chamar um técnico em Porto Alegre.",
+        ],
+      },
+      {
+        heading: "Ruídos considerados normais",
+        paragraphs: [
+          "Estalos leves de dilatação dos plásticos, o ronco do compressor ligando e desligando e o som do gás refrigerante circulando são normais. Em geladeiras frost free, o ventilador interno também produz um zumbido constante e suave.",
+        ],
+      },
+      {
+        heading: "Barulho do compressor",
+        paragraphs: [
+          "Um ronco muito alto, vibração excessiva ou batidas metálicas no compressor podem indicar desgaste, fixação solta ou problema elétrico. O compressor é o coração da refrigeração e exige avaliação técnica especializada.",
+        ],
+      },
+      {
+        heading: "Ventilador e degelo",
+        paragraphs: [
+          "Em modelos frost free, ruído de raspagem ou batida geralmente vem do ventilador encostando em gelo acumulado ou com a hélice danificada. Falhas no sistema de degelo costumam estar associadas a esse sintoma.",
+        ],
+      },
+      {
+        heading: "Vibração e nivelamento",
+        paragraphs: [
+          "Uma geladeira mal nivelada ou encostada na parede transmite vibração e amplifica o barulho. Ajustar os pés e afastar o aparelho alguns centímetros da parede pode resolver casos simples.",
+        ],
+      },
+      {
+        heading: "Quando chamar um técnico",
+        paragraphs: [
+          "Se o barulho veio acompanhado de perda de refrigeração, aquecimento na lateral, cheiro de queimado ou se o compressor não desliga, agende uma visita. A ServitecPoa atende a domicílio em Porto Alegre com diagnóstico e garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "É normal a geladeira fazer barulho ao desligar?",
+        answer:
+          "Sim. Estalos leves após o compressor desligar são causados pela dilatação e contração dos materiais e não indicam defeito. Já batidas fortes ou vibração intensa merecem avaliação técnica.",
+      },
+      {
+        question: "Geladeira barulhenta gasta mais energia?",
+        answer:
+          "Pode gastar. Quando o ruído vem de compressor sobrecarregado, ventilador travado ou gelo acumulado, o aparelho trabalha mais e consome mais energia. O diagnóstico identifica a causa e evita desperdício.",
+      },
+    ],
+    relatedServices: ["conserto-geladeira-freezer-porto-alegre"],
+  },
+  {
+    slug: "maquina-de-lavar-nao-centrifuga-o-que-fazer-porto-alegre",
+    title: "Máquina de lavar não centrifuga: o que fazer",
+    seoTitle: "Máquina de lavar não centrifuga: causas e solução em POA",
+    seoDescription:
+      "Máquina de lavar não centrifuga e deixa a roupa encharcada? Veja as causas mais comuns e quando chamar assistência técnica em Porto Alegre.",
+    excerpt:
+      "Roupa saindo encharcada? Veja as causas mais comuns e o que verificar antes de chamar o técnico.",
+    image: "/blog/blog-maquina-nao-centrifuga.png",
+    publishedAt: "2026-06-15",
+    updatedAt: "2026-06-29",
+    readTime: "6 min",
+    tags: [
+      "máquina de lavar não centrifuga",
+      "roupa encharcada",
+      "conserto máquina de lavar",
+      "assistência técnica Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Quando a máquina de lavar não centrifuga, a roupa sai encharcada e o ciclo parece nunca terminar. O problema tem várias causas possíveis, de simples desequilíbrio de carga a falhas no motor ou na placa eletrônica.",
+        ],
+      },
+      {
+        heading: "1. Carga desequilibrada",
+        paragraphs: [
+          "Peças grandes ou poucas roupas pesadas de um lado fazem a máquina interromper a centrifugação por segurança. Redistribua a carga e tente novamente — é a causa mais comum e mais simples.",
+        ],
+      },
+      {
+        heading: "2. Dreno ou bomba entupidos",
+        paragraphs: [
+          "Se a água não é totalmente drenada, a máquina não inicia a centrifugação. Filtro sujo, mangueira dobrada ou bomba d'água obstruída por objetos (moedas, botões) são frequentes nesses casos.",
+        ],
+      },
+      {
+        heading: "3. Trava da porta com defeito",
+        paragraphs: [
+          "Por segurança, a máquina só centrifuga com a porta travada. Um sensor ou trava eletrônica com defeito impede o ciclo, mesmo com a porta fechada corretamente.",
+        ],
+      },
+      {
+        heading: "4. Correia, motor ou placa",
+        paragraphs: [
+          "Correia rompida (em modelos que a utilizam), escovas do motor gastas ou falha na placa de potência impedem o tambor de atingir alta rotação. Esses casos exigem diagnóstico e peças específicas.",
+        ],
+      },
+      {
+        heading: "O que verificar antes de chamar o técnico",
+        paragraphs: [
+          "Redistribua a roupa, limpe o filtro, confira se a mangueira de saída não está dobrada e teste outro ciclo. Se o problema persistir, agende uma visita. A ServitecPoa conserta máquinas de lavar a domicílio em Porto Alegre com garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que a roupa sai muito molhada mesmo após centrifugar?",
+        answer:
+          "Geralmente é drenagem parcial (filtro ou bomba obstruídos) ou centrifugação em rotação baixa por desgaste de motor/correia. Um teste de ciclo identifica a causa exata.",
+      },
+      {
+        question: "Posso usar a máquina enquanto não centrifuga?",
+        answer:
+          "Não é recomendado. Continuar usando pode sobrecarregar o motor e a placa, agravando o defeito. O ideal é diagnosticar antes de novos ciclos.",
+      },
+    ],
+    relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
+  },
+  {
+    slug: "como-limpar-maquina-de-lavar-passo-a-passo",
+    title: "Como limpar a máquina de lavar: passo a passo",
+    seoTitle: "Como limpar máquina de lavar: guia passo a passo",
+    seoDescription:
+      "Aprenda como limpar a máquina de lavar por dentro, eliminar mau cheiro e evitar mofo. Dicas de manutenção preventiva da ServitecPoa em Porto Alegre.",
+    excerpt:
+      "Mau cheiro e mofo na máquina? Veja como higienizar tambor, gaveta e borracha e prolongar a vida útil.",
+    image: "/blog/blog-limpar-maquina-lavar.png",
+    publishedAt: "2026-06-18",
+    updatedAt: "2026-06-29",
+    readTime: "5 min",
+    tags: [
+      "como limpar máquina de lavar",
+      "mau cheiro máquina de lavar",
+      "manutenção preventiva",
+      "higienização",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "A limpeza regular da máquina de lavar elimina mau cheiro, evita mofo e prolonga a vida útil do equipamento. Resíduos de sabão, fiapos e umidade acumulada são o ambiente ideal para fungos e bactérias.",
+        ],
+      },
+      {
+        heading: "1. Higienize o tambor",
+        paragraphs: [
+          "Execute um ciclo vazio com água quente (se o modelo permitir) usando vinagre branco ou um higienizador próprio para máquinas. Isso dissolve resíduos de sabão e elimina odores do tambor.",
+        ],
+      },
+      {
+        heading: "2. Limpe a borracha de vedação",
+        paragraphs: [
+          "Em máquinas de abertura frontal, a borracha da porta acumula água, fiapos e mofo. Limpe as dobras com um pano úmido e solução de água com vinagre, secando bem ao final.",
+        ],
+      },
+      {
+        heading: "3. Gaveta de sabão e filtro",
+        paragraphs: [
+          "Remova a gaveta de sabão e lave em água corrente para tirar o acúmulo de produto. Limpe também o filtro da bomba (quando acessível), onde ficam presos objetos e fiapos.",
+        ],
+      },
+      {
+        heading: "4. Mantenha seca após o uso",
+        paragraphs: [
+          "Deixe a porta e a gaveta entreabertas após lavar para arejar e evitar mofo. Não deixe roupa molhada parada dentro do tambor por longos períodos.",
+        ],
+      },
+      {
+        heading: "Com que frequência limpar",
+        paragraphs: [
+          "Faça a higienização do tambor uma vez por mês e a limpeza da borracha e gaveta a cada duas semanas. Manutenção preventiva reduz chamados e evita reparos caros. Se já houver mau cheiro persistente ou vazamento, a ServitecPoa atende a domicílio em Porto Alegre.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso usar água sanitária para limpar a máquina de lavar?",
+        answer:
+          "É possível em pequena quantidade, mas o vinagre branco é mais seguro para borrachas e componentes. Evite misturar produtos e siga sempre as orientações do fabricante.",
+      },
+      {
+        question: "Limpar a máquina resolve o mau cheiro na roupa?",
+        answer:
+          "Na maioria dos casos, sim. Se o cheiro persistir mesmo após a higienização, pode haver acúmulo no filtro, na bomba ou biofilme interno — situação que pede avaliação técnica.",
+      },
+    ],
+    relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
+  },
+  {
+    slug: "fogao-cooktop-nao-acende-causas-solucao-porto-alegre",
+    title: "Fogão ou cooktop não acende: causas e solução",
+    seoTitle: "Fogão/cooktop não acende: causas e solução em Porto Alegre",
+    seoDescription:
+      "Fogão ou cooktop não acende ou a chama apaga? Veja as causas (vela de ignição, válvula, registro) e quando chamar assistência técnica em Porto Alegre.",
+    excerpt:
+      "A faísca não sai ou a chama não mantém? Entenda as causas mais comuns e os cuidados de segurança.",
+    image: "/blog/blog-fogao-nao-acende.png",
+    publishedAt: "2026-06-22",
+    updatedAt: "2026-06-29",
+    readTime: "6 min",
+    tags: [
+      "fogão não acende",
+      "cooktop não acende",
+      "vela de ignição",
+      "assistência técnica Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Quando o fogão ou cooktop não acende, o problema pode estar na ignição, na alimentação de gás ou nos queimadores. Antes de tudo, atenção à segurança: se sentir cheiro de gás, feche o registro e ventile o ambiente.",
+        ],
+      },
+      {
+        heading: "1. Vela de ignição suja ou úmida",
+        paragraphs: [
+          "Resíduos de comida, gordura ou umidade na vela de ignição impedem a faísca. Limpe a vela e a tampa do queimador, garantindo que estejam secos e bem encaixados.",
+        ],
+      },
+      {
+        heading: "2. Queimador entupido",
+        paragraphs: [
+          "Furos do queimador obstruídos atrapalham a saída de gás e a formação da chama. A limpeza cuidadosa com escova fina costuma resolver, sem usar objetos que alarguem os furos.",
+        ],
+      },
+      {
+        heading: "3. Chama que não se mantém",
+        paragraphs: [
+          "Se a chama acende mas apaga ao soltar o botão, a falha geralmente está no termopar (sensor de segurança) ou na válvula. Esse sistema corta o gás quando não detecta chama e exige reparo técnico.",
+        ],
+      },
+      {
+        heading: "4. Ignição elétrica e cooktops",
+        paragraphs: [
+          "Em cooktops, falhas no módulo de ignição, no acendimento automático ou na fiação impedem a faísca. Em modelos de indução, o problema é eletrônico e requer diagnóstico especializado.",
+        ],
+      },
+      {
+        heading: "Segurança em primeiro lugar",
+        paragraphs: [
+          "Vazamentos de gás são perigosos. Não insista em acender se houver cheiro de gás e não tente reparar a parte interna por conta própria. A ServitecPoa atende fogões e cooktops, inclusive linha premium, a domicílio em Porto Alegre com garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que o fogão solta faísca mas não acende?",
+        answer:
+          "Normalmente é queimador entupido, peça mal encaixada ou baixa pressão de gás. Verifique o encaixe e a limpeza; se persistir, pode ser a válvula ou o registro, que pedem avaliação técnica.",
+      },
+      {
+        question: "Cooktop de indução não liga tem conserto?",
+        answer:
+          "Sim. Falhas em placa eletrônica, sensores e painel touch de cooktops de indução têm reparo. Por serem componentes específicos, o diagnóstico técnico é essencial.",
+      },
+    ],
+    relatedServices: ["conserto-fogao-cooktop-premium-porto-alegre"],
   },
 ];
 
