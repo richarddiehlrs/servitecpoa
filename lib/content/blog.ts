@@ -620,6 +620,282 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedServices: ["conserto-fogao-cooktop-premium-porto-alegre"],
   },
+  {
+    slug: "geladeira-frost-free-acumulando-gelo-causas-porto-alegre",
+    title: "Geladeira frost free acumulando gelo: por que acontece",
+    seoTitle: "Geladeira frost free juntando gelo: causas e solução em POA",
+    seoDescription:
+      "Geladeira frost free não deveria juntar gelo. Veja as causas (degelo, borracha, sensor) e quando chamar assistência técnica em Porto Alegre.",
+    excerpt:
+      "Frost free não deveria formar gelo. Entenda por que isso acontece e como resolver.",
+    image: "/blog/blog-geladeira-acumulando-gelo.png",
+    publishedAt: "2026-06-25",
+    updatedAt: "2026-06-29",
+    readTime: "6 min",
+    tags: [
+      "geladeira frost free acumulando gelo",
+      "geladeira juntando gelo",
+      "sistema de degelo",
+      "assistência técnica Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "A tecnologia frost free foi feita justamente para evitar o acúmulo de gelo. Quando o gelo volta a se formar nas paredes do freezer ou no fundo do refrigerador, é sinal de que algum componente do sistema de degelo ou de vedação não está funcionando como deveria.",
+        ],
+      },
+      {
+        heading: "1. Falha no sistema de degelo",
+        paragraphs: [
+          "O frost free tem resistência, sensor (bimetal) e timer (ou comando eletrônico) que derretem periodicamente o gelo do evaporador. Se qualquer um falha, o gelo se acumula e bloqueia a circulação de ar frio.",
+        ],
+      },
+      {
+        heading: "2. Borracha da porta ressecada",
+        paragraphs: [
+          "Uma vedação danificada deixa entrar ar quente e úmido, que vira gelo ao encontrar o interior frio. Verifique se a borracha está limpa, sem rasgos e se a porta fecha por completo.",
+        ],
+      },
+      {
+        heading: "3. Porta aberta com frequência ou mal fechada",
+        paragraphs: [
+          "Abrir muito a porta, guardar alimentos quentes ou deixar a porta encostada sem vedar aumenta a umidade interna e favorece o gelo. Em climas úmidos como o de Porto Alegre, esse efeito é ainda mais comum.",
+        ],
+      },
+      {
+        heading: "4. Dreno de degelo entupido",
+        paragraphs: [
+          "A água do degelo escoa por um dreno até uma bandeja. Quando esse dreno entope, a água pode recongelar no fundo do refrigerador, formando uma placa de gelo embaixo das gavetas.",
+        ],
+      },
+      {
+        heading: "Quando chamar um técnico",
+        paragraphs: [
+          "Se o gelo retorna mesmo após descongelar o aparelho por completo, provavelmente há falha no sistema de degelo, que exige diagnóstico técnico. A ServitecPoa atende geladeiras frost free a domicílio em Porto Alegre com garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Descongelar a geladeira resolve o acúmulo de gelo?",
+        answer:
+          "Descongelar resolve temporariamente, mas se o gelo volta é porque há um componente com defeito (resistência, sensor ou timer de degelo). Nesse caso, o reparo é necessário.",
+      },
+      {
+        question: "Gelo no frost free aumenta a conta de luz?",
+        answer:
+          "Sim. O gelo bloqueia a circulação de ar e obriga o compressor a trabalhar mais para resfriar, elevando o consumo de energia e o desgaste do aparelho.",
+      },
+    ],
+    relatedServices: ["conserto-geladeira-freezer-porto-alegre"],
+  },
+  {
+    slug: "lava-loucas-nao-seca-causas-solucao-porto-alegre",
+    title: "Lava-louças não seca: causas e como resolver",
+    seoTitle: "Lava-louças não seca: causas e solução em Porto Alegre",
+    seoDescription:
+      "Lava-louças deixando a louça molhada? Veja as causas (resistência, abrilhantador, ciclo) e quando chamar assistência técnica em Porto Alegre.",
+    excerpt:
+      "Louça saindo molhada no fim do ciclo? Veja o que checar e quando é defeito.",
+    image: "/blog/blog-lava-loucas-nao-seca.png",
+    publishedAt: "2026-06-26",
+    updatedAt: "2026-06-29",
+    readTime: "5 min",
+    tags: [
+      "lava-louças não seca",
+      "louça molhada",
+      "conserto lava-louças",
+      "assistência técnica Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Quando o lava-louças lava bem mas deixa a louça molhada, a frustração é grande. A secagem depende de fatores como temperatura, abrilhantador, ciclo escolhido e, em alguns casos, de componentes que precisam de reparo.",
+        ],
+      },
+      {
+        heading: "1. Falta de abrilhantador",
+        paragraphs: [
+          "O abrilhantador reduz a tensão da água e ajuda a escorrer das peças, acelerando a secagem. Em muitos modelos, a ausência dele é a causa mais comum de louça molhada — comece verificando o reservatório.",
+        ],
+      },
+      {
+        heading: "2. Ciclo sem secagem ou econômico",
+        paragraphs: [
+          "Ciclos rápidos ou ecológicos costumam reduzir ou eliminar a fase de secagem. Confira se o programa escolhido inclui secagem aquecida antes de concluir que há defeito.",
+        ],
+      },
+      {
+        heading: "3. Resistência de aquecimento",
+        paragraphs: [
+          "Modelos com secagem por calor usam uma resistência. Se ela queima, a louça é lavada mas não seca. Esse é um defeito que exige diagnóstico e substituição da peça.",
+        ],
+      },
+      {
+        heading: "4. Disposição da louça",
+        paragraphs: [
+          "Peças côncavas viradas para cima acumulam água. Organizar a louça inclinada e sem sobreposição melhora bastante a secagem, especialmente em copos e potes.",
+        ],
+      },
+      {
+        heading: "Quando chamar um técnico",
+        paragraphs: [
+          "Se há abrilhantador, o ciclo é correto e a louça continua encharcada, pode ser resistência, sensor de temperatura ou ventilação. A ServitecPoa atende lava-louças residenciais e premium a domicílio em Porto Alegre com garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Lava-louças sem abrilhantador seca pior?",
+        answer:
+          "Sim. O abrilhantador é essencial para a água escorrer das peças. Sem ele, a louça tende a sair com gotas e manchas, mesmo em aparelhos sem defeito.",
+      },
+      {
+        question: "É normal sair um pouco de água nas peças plásticas?",
+        answer:
+          "Sim. Plásticos retêm menos calor e secam pior que vidro e louça. Uma leve umidade em potes plásticos é comum, mas louça muito molhada indica problema a investigar.",
+      },
+    ],
+    relatedServices: ["conserto-lava-loucas-porto-alegre"],
+  },
+  {
+    slug: "secadora-nao-aquece-nao-seca-causas-porto-alegre",
+    title: "Secadora não aquece e não seca: causas comuns",
+    seoTitle: "Secadora não aquece: causas e solução em Porto Alegre",
+    seoDescription:
+      "Secadora gira mas não aquece e a roupa sai úmida? Veja as causas (resistência, fusível térmico, filtro) e quando chamar técnico em Porto Alegre.",
+    excerpt:
+      "A secadora liga e gira, mas a roupa sai úmida? Veja as causas mais frequentes.",
+    image: "/blog/blog-secadora-nao-aquece.png",
+    publishedAt: "2026-06-27",
+    updatedAt: "2026-06-29",
+    readTime: "5 min",
+    tags: [
+      "secadora não aquece",
+      "secadora não seca",
+      "conserto secadora",
+      "assistência técnica Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Uma secadora que gira normalmente mas não aquece deixa a roupa úmida e o ciclo improdutivo. O aquecimento envolve resistência, sensores e ventilação — e a maioria das falhas está nesses componentes.",
+        ],
+      },
+      {
+        heading: "1. Filtro e duto obstruídos",
+        paragraphs: [
+          "Filtro de fiapos cheio ou duto de exaustão entupido reduzem o fluxo de ar e prejudicam a secagem, podendo até desarmar a proteção térmica. Limpar o filtro a cada uso é a manutenção mais importante.",
+        ],
+      },
+      {
+        heading: "2. Resistência de aquecimento queimada",
+        paragraphs: [
+          "A resistência é responsável por aquecer o ar. Quando queima, o tambor gira mas o ar permanece frio e a roupa não seca. A troca exige peça compatível e diagnóstico técnico.",
+        ],
+      },
+      {
+        heading: "3. Fusível térmico e termostatos",
+        paragraphs: [
+          "Dispositivos de segurança cortam o aquecimento em caso de superaquecimento — muitas vezes por ventilação obstruída. Um fusível térmico rompido interrompe o calor e precisa ser avaliado junto com a causa que o acionou.",
+        ],
+      },
+      {
+        heading: "4. Sensor de umidade e placa",
+        paragraphs: [
+          "Em modelos eletrônicos, sensor de umidade ou placa com falha podem encerrar o ciclo cedo demais ou não acionar o aquecimento corretamente.",
+        ],
+      },
+      {
+        heading: "Quando chamar um técnico",
+        paragraphs: [
+          "Se o filtro está limpo e a roupa continua úmida, o problema costuma estar na resistência, no fusível térmico ou na placa. A ServitecPoa conserta secadoras elétricas e a gás a domicílio em Porto Alegre com garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Por que minha secadora gira mas não esquenta?",
+        answer:
+          "O giro do tambor e o aquecimento são sistemas diferentes. Se gira mas não aquece, a causa costuma ser resistência queimada, fusível térmico rompido ou falha no termostato.",
+      },
+      {
+        question: "Limpar o filtro melhora a secagem?",
+        answer:
+          "Muito. O filtro cheio é a causa mais comum de secagem ruim e superaquecimento. Limpe-o a cada ciclo e mantenha o duto de exaustão desobstruído.",
+      },
+    ],
+    relatedServices: ["conserto-secadora-porto-alegre"],
+  },
+  {
+    slug: "maquina-de-lavar-vazando-agua-causas-porto-alegre",
+    title: "Máquina de lavar vazando água: o que pode ser",
+    seoTitle: "Máquina de lavar vazando água: causas e solução em POA",
+    seoDescription:
+      "Máquina de lavar vazando água no chão? Veja as causas (mangueira, vedação, bomba) e quando chamar assistência técnica em Porto Alegre.",
+    excerpt:
+      "Poça d'água embaixo da máquina? Veja as causas mais comuns e os riscos de ignorar.",
+    image: "/blog/blog-maquina-vazando.png",
+    publishedAt: "2026-06-28",
+    updatedAt: "2026-06-29",
+    readTime: "5 min",
+    tags: [
+      "máquina de lavar vazando",
+      "vazamento de água",
+      "conserto máquina de lavar",
+      "assistência técnica Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Água no chão em volta da máquina de lavar não deve ser ignorada: além do risco de escorregão e dano ao piso, o vazamento costuma indicar um problema que tende a piorar. Identificar a origem ajuda a agir rápido.",
+        ],
+      },
+      {
+        heading: "1. Mangueiras de entrada e saída",
+        paragraphs: [
+          "Conexões frouxas, mangueiras ressecadas ou mal encaixadas são a causa mais frequente. Verifique a entrada de água e a mangueira de drenagem, inclusive o ponto de ligação com o ralo.",
+        ],
+      },
+      {
+        heading: "2. Vedação da porta (modelos frontais)",
+        paragraphs: [
+          "Em máquinas de abertura frontal, a borracha da porta pode acumular sujeira, rasgar ou perder a vedação, deixando a água escapar durante o ciclo.",
+        ],
+      },
+      {
+        heading: "3. Bomba d'água e dispenser",
+        paragraphs: [
+          "Bomba de drenagem trincada, filtro mal fechado ou excesso de sabão no dispenser também provocam vazamentos. Usar sabão em excesso gera espuma que transborda.",
+        ],
+      },
+      {
+        heading: "4. Cuba ou tanque com trinca",
+        paragraphs: [
+          "Vazamentos internos na cuba são mais sérios e exigem avaliação técnica. Costumam aparecer durante a centrifugação, quando a pressão da água é maior.",
+        ],
+      },
+      {
+        heading: "Cuidados e quando chamar o técnico",
+        paragraphs: [
+          "Desligue a máquina da tomada e feche o registro de água ao notar vazamento, evitando risco elétrico. Se não for uma conexão simples, agende uma visita. A ServitecPoa conserta máquinas de lavar a domicílio em Porto Alegre com garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso usar a máquina vazando até chamar o técnico?",
+        answer:
+          "Não é recomendado. Há risco elétrico e de dano ao piso e aos móveis. O ideal é desligar da tomada, fechar o registro e agendar o reparo.",
+      },
+      {
+        question: "Excesso de sabão pode causar vazamento?",
+        answer:
+          "Sim. Sabão demais gera muita espuma, que pode transbordar pelo dispenser ou pela porta. Use a dosagem recomendada pelo fabricante.",
+      },
+    ],
+    relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
+  },
 ];
 
 export function getBlogPostBySlug(slug: string) {
