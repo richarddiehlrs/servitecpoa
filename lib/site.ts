@@ -96,7 +96,7 @@ export const services = [
     icon: "washer" as const,
     title: "Máquinas de Lavar",
     description:
-      "Conserto de lavadoras, centrífugas e tanquinhos com diagnóstico preciso.",
+      "Conserto de lavadoras automáticas com diagnóstico preciso.",
   },
   {
     icon: "washer" as const,

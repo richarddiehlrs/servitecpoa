@@ -96,7 +96,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
     paragraphs: [
       "A máquina de lavar é um dos eletrodomésticos mais essenciais do lar. Quando apresenta falhas, o dia a dia da família é prejudicado. A ServitecPoa oferece conserto de máquina de lavar em Porto Alegre com visita técnica a domicílio.",
-      "Trabalhamos com lavadoras automáticas, semiautomáticas e tanquinhos das principais marcas. Problemas em bomba d'água, filtro, amortecedor, rolamento, placa de potência e trava de porta são diagnosticados com equipamentos adequados.",
+      "Trabalhamos com lavadoras automáticas e semiautomáticas das principais marcas. Problemas em bomba d'água, filtro, amortecedor, rolamento, placa de potência e trava de porta são diagnosticados com equipamentos adequados.",
       "Nossa equipe tem experiência de mais de 15 anos em assistência técnica de eletrodomésticos, com foco em solução definitiva — não apenas paliativa.",
     ],
     faqs: [

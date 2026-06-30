@@ -117,6 +117,12 @@ export function Hero() {
             <span>Sub-Zero</span>
             <span className="h-1.5 w-1.5 rounded-full bg-gold" />
             <span>Brastemp</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            <span>Lofra</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            <span>Tecno</span>
+            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
+            <span>Eletromec</span>
           </div>
         </div>
       </div>
