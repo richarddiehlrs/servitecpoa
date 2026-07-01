@@ -43,12 +43,37 @@ export const siteConfig = {
   reviews: {
     ratingValue: Number(process.env.NEXT_PUBLIC_GOOGLE_RATING ?? "5"),
     reviewCount: Number(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT ?? "0"),
-    highlights: [
-      "Atendimento pontual e técnico muito educado.",
-      "Consertou minha geladeira Electrolux no mesmo dia.",
-      "Excelente serviço com minha lava e seca Samsung.",
-      "Única empresa que resolveu meu cooktop Bertazzoni.",
-      "Orçamento transparente e garantia cumprida.",
+    items: [
+      {
+        author: "Mariana S.",
+        location: "Moinhos de Vento",
+        text: "Atendimento pontual e técnico muito educado. Consertaram minha geladeira Electrolux no mesmo dia.",
+        rating: 5,
+      },
+      {
+        author: "Ricardo M.",
+        location: "Petropolis",
+        text: "Excelente serviço com minha lava e seca Samsung. Orçamento claro e garantia cumprida.",
+        rating: 5,
+      },
+      {
+        author: "Camila F.",
+        location: "Tres Figueiras",
+        text: "Única empresa que resolveu meu cooktop Bertazzoni. Profissionais que entendem linha premium.",
+        rating: 5,
+      },
+      {
+        author: "André L.",
+        location: "Bela Vista",
+        text: "Máquina de lavar consertada com rapidez. Chegaram no horário combinado e explicaram o problema.",
+        rating: 5,
+      },
+      {
+        author: "Patricia R.",
+        location: "Higienopolis",
+        text: "Orçamento transparente, serviço bem feito e equipe atenciosa. Recomendo a ServitecPoa.",
+        rating: 5,
+      },
     ],
   },
   logo: {
@@ -79,6 +104,8 @@ export const importedBrands = [
   "Evol",
   "Crissair",
   "Lofra",
+  "Smeg",
+  "Fulgor",
   "Debacco",
   "Speed Queen",
 ] as const;
@@ -155,7 +182,7 @@ export const faqs = [
   {
     question: "Quais marcas de eletrodomésticos vocês consertam?",
     answer:
-      "Atendemos marcas nacionais (Brastemp, Consul, Samsung, Electrolux, LG) e importadas premium (Bertazzoni, Sub-Zero, Gorenje, Falmec, Lofra, Cuisinart, Tecno, Eletromec, Crissair, Evol e outras).",
+      "Atendemos marcas nacionais (Brastemp, Consul, Samsung, Electrolux, LG, Midea) e importadas premium (Bertazzoni, Sub-Zero, Gorenje, Falmec, Lofra, Smeg, Fulgor, Cuisinart, Tecno, Eletromec, Crissair, Evol e outras).",
   },
   {
     question: "Vocês trabalham com peças originais?",

@@ -37,6 +37,37 @@ function aggregateRating() {
   };
 }
 
+function openingHoursSpecification() {
+  const weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] as const;
+
+  return [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [...weekdays],
+      opens: "09:00",
+      closes: "12:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [...weekdays],
+      opens: "13:30",
+      closes: "17:30",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "09:00",
+      closes: "12:00",
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "13:30",
+      closes: "17:30",
+    },
+  ];
+}
+
 function serviceSchema(service: (typeof seoServices)[number]) {
   const serviceUrl = `${url}/servicos/${service.slug}`;
   return {
@@ -85,20 +116,7 @@ export function getLocalBusinessJsonLd() {
       siteConfig.primaryCategory,
       ...seoServices.map((s) => s.title),
     ],
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:30",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "17:30",
-      },
-    ],
+    openingHoursSpecification: openingHoursSpecification(),
     sameAs: sameAsLinks(),
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -367,12 +385,20 @@ export function getBlogListingJsonLd(posts: BlogPost[]) {
   ];
 }
 
-export function getAllHomeJsonLd() {
+export function getGlobalJsonLd() {
+  return getWebSiteJsonLd();
+}
+
+export function getHomePageJsonLd() {
   return [
-    getWebSiteJsonLd(),
     getHomeWebPageJsonLd(),
     getLocalBusinessJsonLd(),
     getServicesItemListJsonLd(),
     getFaqJsonLd(),
   ];
+}
+
+/** @deprecated Use getHomePageJsonLd on the home page and getGlobalJsonLd in the layout. */
+export function getAllHomeJsonLd() {
+  return [getWebSiteJsonLd(), ...getHomePageJsonLd()];
 }

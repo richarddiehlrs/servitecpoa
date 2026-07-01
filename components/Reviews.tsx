@@ -1,8 +1,20 @@
 import { siteConfig } from "@/lib/site";
 
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex gap-0.5 text-gold-dark" aria-label={`${rating} de 5 estrelas`}>
+      {Array.from({ length: 5 }).map((_, index) => (
+        <span key={index} aria-hidden>
+          {index < rating ? "★" : "☆"}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function Reviews() {
   const { reviews, social } = siteConfig;
-  const hasRating = reviews.reviewCount > 0;
+  const hasGoogleRating = reviews.reviewCount > 0;
 
   return (
     <section id="avaliacoes" className="section-muted py-24 sm:py-28">
@@ -15,41 +27,42 @@ export function Reviews() {
             O que dizem nossos clientes em Porto Alegre
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-            Confiança construída com atendimento técnico de qualidade. Veja avaliações no Google
-            Meu Negócio e deixe a sua após o serviço.
+            Depoimentos de clientes atendidos a domicílio. Confira também as avaliações públicas no
+            Google Meu Negócio e deixe a sua após o serviço.
           </p>
-          {hasRating && (
+          {hasGoogleRating ? (
             <div className="mt-6 inline-flex items-center gap-3 rounded-full border border-gold/30 bg-white px-6 py-3 shadow-elegant">
               <span className="text-2xl font-bold text-brand-orange">
                 {reviews.ratingValue.toFixed(1)}
               </span>
               <div className="text-left text-sm">
                 <p className="font-semibold text-ink">Google Meu Negócio</p>
-                <p className="text-slate-500">{reviews.reviewCount} avaliações</p>
+                <p className="text-slate-500">{reviews.reviewCount} avaliações verificadas</p>
               </div>
             </div>
+          ) : (
+            <p className="mt-6 text-sm text-slate-500">
+              Veja e deixe sua avaliação no perfil oficial da ServitecPoa no Google.
+            </p>
           )}
         </div>
 
         <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.highlights.map((quote) => (
-            <li key={quote} className="card-elevated p-7">
-              <div className="flex gap-1 text-gold-dark" aria-hidden>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i}>★</span>
-                ))}
-              </div>
+          {reviews.items.map((review) => (
+            <li key={`${review.author}-${review.location}`} className="card-elevated p-7">
+              <StarRating rating={review.rating} />
               <blockquote className="mt-4 text-sm leading-relaxed text-slate-700">
-                &ldquo;{quote}&rdquo;
+                &ldquo;{review.text}&rdquo;
               </blockquote>
-              <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Cliente ServitecPoa · Google
+              <p className="mt-4 text-sm font-semibold text-ink">{review.author}</p>
+              <p className="mt-1 text-xs font-medium uppercase tracking-wide text-slate-500">
+                {review.location} · Porto Alegre
               </p>
             </li>
           ))}
         </ul>
 
-        <div className="mt-10 text-center">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
             href={social.googleBusiness}
             target="_blank"
@@ -57,6 +70,14 @@ export function Reviews() {
             className="btn-outline-dark inline-flex"
           >
             Ver avaliações no Google
+          </a>
+          <a
+            href={social.googleMaps}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold text-brand-orange hover:underline"
+          >
+            Deixar minha avaliação →
           </a>
         </div>
       </div>

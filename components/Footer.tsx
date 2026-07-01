@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
+import { seoBrands } from "@/lib/content/brands";
 import { seoServices } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+
+const premiumBrands = seoBrands.filter((brand) => brand.isPremium);
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -11,8 +14,8 @@ export function Footer() {
     <footer className="border-t border-gold/20 bg-navy-deep py-14 text-slate-400">
       <div className="gold-rule mb-10 opacity-40" aria-hidden />
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-4">
-          <div className="lg:col-span-1">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="sm:col-span-2 lg:col-span-1">
             <BrandLogo href="/#inicio" showTagline theme="dark" size="footer" />
             <p className="mt-5 text-sm leading-relaxed text-slate-500">
               {siteConfig.primaryCategory} em Porto Alegre. Marcas nacionais e importadas,
@@ -69,6 +72,7 @@ export function Footer() {
                 { href: "/regioes", label: "Regiões" },
                 { href: "/blog", label: "Blog" },
                 { href: "/atendimento-domicilio", label: "Atendimento a domicílio" },
+                { href: "/#avaliacoes", label: "Avaliações" },
                 { href: "/#faq", label: "FAQ" },
               ].map((link) => (
                 <li key={link.href}>
@@ -85,7 +89,7 @@ export function Footer() {
               Serviços em POA
             </p>
             <ul className="mt-3 space-y-2 text-sm">
-              {seoServices.slice(0, 6).map((service) => (
+              {seoServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/servicos/${service.slug}`}
@@ -95,6 +99,29 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-gold-dark">
+              Marcas premium
+            </p>
+            <ul className="mt-3 space-y-2 text-sm">
+              {premiumBrands.map((brand) => (
+                <li key={brand.slug}>
+                  <Link
+                    href={`/marcas/${brand.slug}`}
+                    className="transition hover:text-gold-light"
+                  >
+                    {brand.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/marcas" className="font-semibold text-gold-light transition hover:text-white">
+                  Todas as marcas →
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

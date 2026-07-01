@@ -6,8 +6,10 @@ import { Features } from "@/components/Features";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { JsonLd } from "@/components/JsonLd";
 import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
+import { getHomePageJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
 
@@ -20,6 +22,7 @@ export const metadata: Metadata = createPageMetadata({
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={getHomePageJsonLd()} />
       <Header />
       <main>
         <Hero />

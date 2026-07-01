@@ -1,27 +1,45 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const VIDEO_SRC = "/videos/hero-servitecpoa.mp4";
+const POSTER_SRC = "/blog/blog-premium.png";
 
 export function HeroVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (media.matches) return;
+
+    const onChange = () => {
+      if (media.matches) {
+        videoRef.current?.pause();
+        setPlaying(false);
+      }
+    };
+
+    media.addEventListener("change", onChange);
+    return () => media.removeEventListener("change", onChange);
+  }, []);
+
+  async function startVideo() {
     const video = videoRef.current;
     if (!video) return;
 
-    if (media.matches) {
-      video.pause();
-      setPlaying(false);
-      return;
-    }
+    setVideoReady(true);
 
-    video.play().catch(() => setPlaying(false));
-  }, []);
+    try {
+      await video.play();
+      setPlaying(true);
+    } catch {
+      setPlaying(false);
+    }
+  }
 
   function toggleMute() {
     const video = videoRef.current;
@@ -33,9 +51,9 @@ export function HeroVideo() {
   function togglePlay() {
     const video = videoRef.current;
     if (!video) return;
+
     if (video.paused) {
-      void video.play();
-      setPlaying(true);
+      void video.play().then(() => setPlaying(true));
     } else {
       video.pause();
       setPlaying(false);
@@ -46,17 +64,30 @@ export function HeroVideo() {
     <div className="relative mx-auto w-full max-w-7xl px-5 pb-2 pt-24 lg:px-8 lg:pt-28">
       <div className="group relative overflow-hidden rounded-2xl shadow-premium ring-1 ring-gold/25">
         <div className="relative aspect-[16/9] w-full sm:aspect-[2/1] lg:aspect-[21/9]">
+          {!videoReady && (
+            <Image
+              src={POSTER_SRC}
+              alt="Assistência técnica de eletrodomésticos premium em Porto Alegre — ServitecPoa"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 1280px"
+              className="object-cover"
+            />
+          )}
+
           <video
             ref={videoRef}
-            className="absolute inset-0 h-full w-full object-cover"
-            autoPlay
+            className={`absolute inset-0 h-full w-full object-cover ${
+              videoReady ? "opacity-100" : "opacity-0"
+            }`}
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
+            poster={POSTER_SRC}
             aria-label="Vídeo institucional ServitecPoa — assistência técnica em eletrodomésticos"
           >
-            <source src={VIDEO_SRC} type="video/mp4" />
+            {videoReady ? <source src={VIDEO_SRC} type="video/mp4" /> : null}
           </video>
 
           <div
@@ -88,38 +119,69 @@ export function HeroVideo() {
           </div>
 
           <div className="absolute bottom-4 right-4 flex gap-2 sm:bottom-6 sm:right-6">
-            <button
-              type="button"
-              onClick={togglePlay}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-navy-deep/75 text-white backdrop-blur-md transition hover:border-gold/50"
-              aria-label={playing ? "Pausar vídeo" : "Reproduzir vídeo"}
-            >
-              {playing ? (
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z" />
-                </svg>
-              ) : (
+            {!videoReady ? (
+              <button
+                type="button"
+                onClick={() => void startVideo()}
+                className="flex h-10 items-center gap-2 rounded-full border border-white/15 bg-navy-deep/75 px-4 text-sm font-medium text-white backdrop-blur-md transition hover:border-gold/50"
+                aria-label="Reproduzir vídeo institucional"
+              >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
                   <path d="M8 5v14l11-7L8 5z" />
                 </svg>
-              )}
-            </button>
-            <button
-              type="button"
-              onClick={toggleMute}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-navy-deep/75 text-white backdrop-blur-md transition hover:border-gold/50"
-              aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
-            >
-              {muted ? (
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" d="M11 5L6 9H3v6h3l5 4V5zM19 9l-6 6M13 9l6 6" />
-                </svg>
-              ) : (
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" d="M11 5L6 9H3v6h3l5 4V5zM15 9a3 3 0 010 6M17.5 6.5a6 6 0 010 11" />
-                </svg>
-              )}
-            </button>
+                Assistir
+              </button>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={togglePlay}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-navy-deep/75 text-white backdrop-blur-md transition hover:border-gold/50"
+                  aria-label={playing ? "Pausar vídeo" : "Reproduzir vídeo"}
+                >
+                  {playing ? (
+                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z" />
+                    </svg>
+                  ) : (
+                    <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden>
+                      <path d="M8 5v14l11-7L8 5z" />
+                    </svg>
+                  )}
+                </button>
+                <button
+                  type="button"
+                  onClick={toggleMute}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-navy-deep/75 text-white backdrop-blur-md transition hover:border-gold/50"
+                  aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
+                >
+                  {muted ? (
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path strokeLinecap="round" d="M11 5L6 9H3v6h3l5 4V5zM19 9l-6 6M13 9l6 6" />
+                    </svg>
+                  ) : (
+                    <svg
+                      className="h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        d="M11 5L6 9H3v6h3l5 4V5zM15 9a3 3 0 010 6M17.5 6.5a6 6 0 010 11"
+                      />
+                    </svg>
+                  )}
+                </button>
+              </>
+            )}
           </div>
         </div>
       </div>

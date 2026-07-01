@@ -1,8 +1,20 @@
 import Link from "next/link";
 import { HeroVideo } from "@/components/HeroVideo";
 import { WaveDivider } from "@/components/WaveDivider";
+import { getBrandByName } from "@/lib/content/brands";
 import { siteConfig } from "@/lib/site";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+
+const heroBrands = [
+  "Electrolux",
+  "Samsung",
+  "Bertazzoni",
+  "Sub-Zero",
+  "Brastemp",
+  "Lofra",
+  "Tecno",
+  "Eletromec",
+] as const;
 
 export function Hero() {
   return (
@@ -107,22 +119,28 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="mt-14 hidden items-center justify-center gap-8 rounded-2xl border border-ink/8 bg-white/70 px-8 py-5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-600 shadow-elegant sm:flex">
-            <span>Electrolux</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span>Samsung</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span>Bertazzoni</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span>Sub-Zero</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span>Brastemp</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span>Lofra</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span>Tecno</span>
-            <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-            <span>Eletromec</span>
+          <div className="mt-14 hidden flex-wrap items-center justify-center gap-4 rounded-2xl border border-ink/8 bg-white/70 px-8 py-5 text-xs font-semibold uppercase tracking-[0.14em] text-slate-600 shadow-elegant sm:flex">
+            {heroBrands.map((name, index) => {
+              const brand = getBrandByName(name);
+
+              return (
+                <span key={name} className="inline-flex items-center gap-4">
+                  {index > 0 && (
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" aria-hidden />
+                  )}
+                  {brand ? (
+                    <Link
+                      href={`/marcas/${brand.slug}`}
+                      className="transition hover:text-brand-orange"
+                    >
+                      {name}
+                    </Link>
+                  ) : (
+                    name
+                  )}
+                </span>
+              );
+            })}
           </div>
         </div>
       </div>

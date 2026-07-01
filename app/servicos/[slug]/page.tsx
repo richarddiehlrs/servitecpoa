@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { BrandNameList } from "@/components/BrandNameList";
 import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -106,7 +107,8 @@ export default async function ServicoDetalhePage({ params }: Props) {
                   Marcas atendidas
                 </h2>
                 <p className="text-slate-600">
-                  Trabalhamos com {detail.brands.join(", ")} e demais marcas compatíveis.{" "}
+                  Trabalhamos com <BrandNameList brands={detail.brands} /> e demais marcas
+                  compatíveis.{" "}
                   <Link href="/marcas" className="font-semibold text-brand-orange hover:underline">
                     Ver todas as marcas
                   </Link>

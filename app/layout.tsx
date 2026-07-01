@@ -4,7 +4,7 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { JsonLd } from "@/components/JsonLd";
 import { WhatsAppConversion } from "@/components/WhatsAppConversion";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
-import { getAllHomeJsonLd } from "@/lib/json-ld";
+import { getGlobalJsonLd } from "@/lib/json-ld";
 import { seoKeywords } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -90,7 +90,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = getAllHomeJsonLd();
+  const structuredData = getGlobalJsonLd();
 
   return (
     <html lang="pt-BR" className={`${sans.variable} ${display.variable}`}>

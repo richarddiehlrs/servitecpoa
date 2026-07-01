@@ -176,6 +176,34 @@ const brandData: Omit<BrandPage, "slug">[] = [
     isPremium: true,
   },
   {
+    name: "Smeg",
+    seoTitle: "Conserto Smeg em Porto Alegre",
+    seoDescription:
+      "Assistência técnica Smeg em Porto Alegre: cooktops, fornos, geladeiras e linha retro premium. ServitecPoa — atendimento a domicílio.",
+    intro:
+      "Smeg une design italiano icônico e tecnologia de ponta. A ServitecPoa conserta Smeg em Porto Alegre com experiência em linha residencial premium e embutida.",
+    paragraphs: [
+      "Atendemos cooktops, fornos, geladeiras e eletrodomésticos Smeg. Diagnosticamos ignição, placa eletrônica, aquecimento, refrigeração e componentes específicos da marca com procedimentos adequados ao padrão europeu.",
+      "Equipamentos Smeg exigem técnico qualificado — oferecemos atendimento a domicílio em Porto Alegre, orçamento transparente e garantia de 90 dias.",
+    ],
+    services: ["Fogões e Cooktops Premium", "Geladeiras e Freezers", "Instalação de Eletrodomésticos"],
+    isPremium: true,
+  },
+  {
+    name: "Fulgor",
+    seoTitle: "Conserto Fulgor em Porto Alegre",
+    seoDescription:
+      "Assistência técnica Fulgor em Porto Alegre: fogões, cooktops e fornos italianos premium. ServitecPoa — linha built-in a domicílio.",
+    intro:
+      "Fulgor é referência em eletrodomésticos de cozinha de alto padrão. A ServitecPoa realiza conserto Fulgor em Porto Alegre com foco em linha built-in e importada.",
+    paragraphs: [
+      "Reparamos cooktops, fornos embutidos e fogões Fulgor. Tratamos falhas em ignição, queimadores, válvulas, módulos eletrônicos e sensores de temperatura com rigor técnico.",
+      "Atendimento a domicílio em Porto Alegre, instalação profissional quando necessário e garantia de 90 dias em todos os serviços.",
+    ],
+    services: ["Fogões e Cooktops Premium", "Instalação de Eletrodomésticos"],
+    isPremium: true,
+  },
+  {
     name: "Tecno",
     seoTitle: "Conserto Tecno em Porto Alegre",
     seoDescription:
@@ -282,4 +310,9 @@ export const seoBrands: BrandPage[] = brandData.map((brand) => ({
 
 export function getBrandBySlug(slug: string) {
   return seoBrands.find((brand) => brand.slug === slug);
+}
+
+export function getBrandByName(name: string) {
+  const normalized = name.trim().toLowerCase();
+  return seoBrands.find((brand) => brand.name.toLowerCase() === normalized);
 }
