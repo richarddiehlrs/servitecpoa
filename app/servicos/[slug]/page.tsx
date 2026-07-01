@@ -7,8 +7,10 @@ import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { BrandServiceLinks } from "@/components/BrandServiceLinks";
 import { LocalBairroLinks } from "@/components/LocalBairroLinks";
 import { ServiceIcon } from "@/components/icons";
+import { getBrandServicePagesForService } from "@/lib/content/brand-services";
 import {
   getBairroZonePage,
   getLocalPagesForService,
@@ -71,6 +73,7 @@ export default async function ServicoDetalhePage({ params }: Props) {
 
   const detail = getServiceDetail(slug);
   const localPages = getLocalPagesForService(service.slug);
+  const brandServiceLinks = getBrandServicePagesForService(service.slug);
   const whatsappMessage = encodeURIComponent(
     `Vim pelo site. Gostaria de agendar visita técnica para: ${service.title}.`,
   );
@@ -187,6 +190,13 @@ export default async function ServicoDetalhePage({ params }: Props) {
             title={`${service.title} por bairro em Porto Alegre`}
             description="Selecione seu bairro para ver detalhes do atendimento a domicílio na sua região."
           />
+
+          {brandServiceLinks.length > 0 && (
+            <BrandServiceLinks
+              pages={brandServiceLinks}
+              title={`${service.title} — marcas premium em Porto Alegre`}
+            />
+          )}
 
           <section className="mt-6 rounded-2xl border border-ink/8 bg-white p-6">
             <h2 className="font-display text-lg font-semibold text-ink">Atendemos sua região</h2>

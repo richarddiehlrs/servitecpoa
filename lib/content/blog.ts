@@ -896,6 +896,233 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedServices: ["conserto-de-maquina-de-lavar-em-porto-alegre"],
   },
+  {
+    slug: "cooktop-bertazzoni-nao-ignita-erros-solucao-em-porto-alegre",
+    title: "Cooktop Bertazzoni não ignita: erros comuns e solução em POA",
+    seoTitle: "Cooktop Bertazzoni não acende — causas e conserto em Porto Alegre",
+    seoDescription:
+      "Cooktop Bertazzoni não ignita? Veja causas em queimadores, válvulas e ignição eletrônica e quando chamar técnico especializado em Porto Alegre.",
+    excerpt:
+      "Entenda por que o cooktop Bertazzoni falha na ignição e como um técnico premium resolve o problema.",
+    image: "/blog/blog-fogao-nao-acende.png",
+    publishedAt: "2026-06-25",
+    updatedAt: "2026-06-30",
+    readTime: "7 min",
+    tags: ["Bertazzoni", "cooktop", "fogão premium", "assistência técnica Porto Alegre"],
+    sections: [
+      {
+        paragraphs: [
+          "Cooktops Bertazzoni combinam design italiano e sistemas de ignição precisos. Quando um ou mais queimadores não acendem, o problema pode estar no eletrodo, na válvula de gás, no módulo de ignição ou até na pressão do gás encanado.",
+        ],
+      },
+      {
+        heading: "Causas mais frequentes",
+        paragraphs: [
+          "Bicos obstruídos, faísca fraca no eletrodo, válvula travada, umidade após limpeza e falha no módulo eletrônico são as causas que mais vemos em atendimentos a domicílio em Porto Alegre. Em modelos a gás encanado, a pressão inadequada também impede a ignição correta.",
+        ],
+      },
+      {
+        heading: "O que não fazer",
+        paragraphs: [
+          "Evite forçar botões, usar chama manual com isqueiro de forma repetida ou desmontar válvulas sem conhecimento. Equipamentos premium exigem diagnóstico técnico para não comprometer a segurança nem a garantia do aparelho.",
+        ],
+      },
+      {
+        heading: "Quando chamar a ServitecPoa",
+        paragraphs: [
+          "Se a limpeza básica dos bicos não resolver ou se vários queimadores falharem ao mesmo tempo, agende visita técnica. A ServitecPoa é especializada em Bertazzoni em Porto Alegre, com garantia de 90 dias no reparo.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Cooktop Bertazzoni a indução também tem problema de 'não acende'?",
+        answer:
+          "Em indução o sintoma costuma ser painel ligado sem aquecimento. Pode envolver placa eletrônica, sensor de panela ou alimentação elétrica — também exige técnico especializado.",
+      },
+      {
+        question: "Vocês consertam Bertazzoni em Moinhos de Vento e bairros nobres?",
+        answer:
+          "Sim. Atendemos toda Porto Alegre a domicílio, com frequência em bairros como Moinhos de Vento, Petrópolis, Três Figueiras e demais regiões.",
+      },
+    ],
+    relatedServices: [
+      "conserto-de-fogao-cooktop-premium-em-porto-alegre",
+    ],
+  },
+  {
+    slug: "manutencao-preventiva-geladeira-sub-zero-em-porto-alegre",
+    title: "Manutenção preventiva em geladeira Sub-Zero: guia prático",
+    seoTitle: "Manutenção geladeira Sub-Zero em Porto Alegre — dicas e conserto",
+    seoDescription:
+      "Como cuidar da geladeira Sub-Zero e quando chamar manutenção preventiva ou conserto especializado em Porto Alegre.",
+    excerpt:
+      "Refrigeradores Sub-Zero exigem cuidados específicos. Saiba o que fazer no dia a dia e quando chamar um técnico.",
+    image: "/blog/blog-premium.png",
+    publishedAt: "2026-06-26",
+    updatedAt: "2026-06-30",
+    readTime: "8 min",
+    tags: ["Sub-Zero", "geladeira premium", "manutenção", "assistência técnica Porto Alegre"],
+    sections: [
+      {
+        paragraphs: [
+          "Geladeiras Sub-Zero são referência em refrigeração embutida e side by side. Para manter temperatura estável, eficiência e vida útil do compressor, a manutenção preventiva faz diferença — especialmente em cozinhas de alto padrão em Porto Alegre.",
+        ],
+      },
+      {
+        heading: "Cuidados recomendados",
+        paragraphs: [
+          "Mantenha a vedação limpa e íntegra, evite sobrecarga que bloqueie circulação de ar, limpe a grelha de ventilação (frontal ou superior conforme modelo) e não ignore ruídos novos no compressor ou ventilador. Em modelos com filtro de água, troque no prazo indicado pelo fabricante.",
+        ],
+      },
+      {
+        heading: "Sinais de alerta",
+        paragraphs: [
+          "Temperatura oscilando, acúmulo de gelo fora do padrão, alarme frequente, condensação externa ou consumo de energia elevado indicam necessidade de diagnóstico. Sub-Zero usa sistemas dual de refrigeração que exigem técnico familiarizado com a marca.",
+        ],
+      },
+      {
+        heading: "Assistência especializada",
+        paragraphs: [
+          "A ServitecPoa realiza conserto e manutenção de Sub-Zero a domicílio em Porto Alegre. Diagnóstico no local, peças de qualidade e garantia de 90 dias em todos os serviços.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "De quanto em quanto tempo fazer manutenção em Sub-Zero?",
+        answer:
+          "Não há regra única, mas uma revisão técnica anual ou ao primeiro sinal de mau funcionamento é prudente em equipamentos premium de uso intenso.",
+      },
+      {
+        question: "Vocês atendem Sub-Zero fora de garantia de fábrica?",
+        answer:
+          "Sim. Somos assistência técnica independente especializada em linha premium, para equipamentos fora de garantia ou quando o cliente prefere atendimento local em Porto Alegre.",
+      },
+    ],
+    relatedServices: ["conserto-de-geladeira-freezer-em-porto-alegre"],
+  },
+  {
+    slug: "instalacao-cooktop-italiano-requisitos-em-porto-alegre",
+    title: "Instalação de cooktop italiano: requisitos técnicos em POA",
+    seoTitle: "Instalação cooktop Bertazzoni, Lofra e Smeg em Porto Alegre",
+    seoDescription:
+      "O que exige a instalação correta de cooktop italiano embutido em Porto Alegre: gás, elétrica, ventilação e segurança.",
+    excerpt:
+      "Cooktop premium mal instalado gera falhas e riscos. Veja os requisitos técnicos antes de usar o aparelho.",
+    image: "/blog/blog-premium.png",
+    publishedAt: "2026-06-27",
+    updatedAt: "2026-06-30",
+    readTime: "7 min",
+    tags: [
+      "instalação",
+      "Bertazzoni",
+      "Lofra",
+      "Smeg",
+      "cooktop premium",
+      "Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Cooktops italianos como Bertazzoni, Lofra, Smeg e Fulgor exigem instalação precisa: recorte na bancada, fixação, conexão de gás ou elétrica conforme modelo e teste de estanqueidade. Em Porto Alegre, a instalação profissional evita vazamentos, mau funcionamento e perda de garantia.",
+        ],
+      },
+      {
+        heading: "Gás encanado vs botijão",
+        paragraphs: [
+          "Modelos a gás precisam de pressão e tipo de gás corretos (GN ou GLP). A conversão deve ser feita por técnico habilitado. Conexões flexíveis devem seguir normas vigentes; vazamento é risco grave e exige teste com espuma ou manômetro.",
+        ],
+      },
+      {
+        heading: "Indução e elétrica",
+        paragraphs: [
+          "Cooktops a indução demandam circuito dedicado e bitola adequada. Instalação incorreta causa desarme do disjuntor, aquecimento irregular ou falha na placa eletrônica.",
+        ],
+      },
+      {
+        heading: "ServitecPoa — instalação premium",
+        paragraphs: [
+          "Realizamos instalação de cooktops e fornos embutidos premium a domicílio em Porto Alegre, com teste de funcionamento e orientação de uso. Garantia de 90 dias no serviço de instalação.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Posso instalar cooktop italiano no mesmo dia da entrega?",
+        answer:
+          "Somente se a bancada estiver pronta, com recorte correto, e as instalações de gás ou elétrica em conformidade. Uma visita prévia evita retrabalho.",
+      },
+      {
+        question: "Vocês instalam coifa junto com o cooktop?",
+        answer:
+          "Sim. Instalamos coifas Falmec, Tecno, Eletromec e outras marcas premium, com exaustão adequada à cozinha.",
+      },
+    ],
+    relatedServices: [
+      "instalacao-de-eletrodomesticos-em-porto-alegre",
+      "conserto-de-fogao-cooktop-premium-em-porto-alegre",
+    ],
+  },
+  {
+    slug: "adega-climatizada-temperatura-errada-causas-em-porto-alegre",
+    title: "Adega climatizada com temperatura errada: causas e conserto",
+    seoTitle: "Adega climatizada não gela certo — conserto em Porto Alegre",
+    seoDescription:
+      "Adega climatizada com temperatura instável? Causas em sensor, compressor e vedação e conserto especializado em Porto Alegre.",
+    excerpt:
+      "Temperatura fora do ideal compromete seus vinhos. Entenda as causas e quando chamar técnico em adegas premium.",
+    image: "/blog/blog-geladeira-nao-gela.png",
+    publishedAt: "2026-06-28",
+    updatedAt: "2026-06-30",
+    readTime: "6 min",
+    tags: [
+      "adega climatizada",
+      "Eletromec",
+      "Evol",
+      "Crissair",
+      "eletrodomésticos premium",
+      "Porto Alegre",
+    ],
+    sections: [
+      {
+        paragraphs: [
+          "Adegas climatizadas mantêm temperatura e, em muitos modelos, umidade controlada para preservar vinhos. Quando o display mostra valor incorreto ou a câmara oscila, o problema pode estar no sensor, no termostato eletrônico, no compressor ou na vedação da porta.",
+        ],
+      },
+      {
+        heading: "Causas frequentes",
+        paragraphs: [
+          "Sensor descalibrado, acúmulo de poeira no condensador, falha no ventilador interno, vedação ressecada e sobrecarga de garrafas (bloqueando circulação de ar) são causas comuns. Em marcas como Eletromec, Evol e Crissair, a placa eletrônica também pode exigir diagnóstico específico.",
+        ],
+      },
+      {
+        heading: "Impacto nos vinhos",
+        paragraphs: [
+          "Oscilação térmica acelera o envelhecimento e pode arruinar rótulos armazenados a longo prazo. Não ignore alarmes ou variações de mais de 2 °C em relação ao setpoint.",
+        ],
+      },
+      {
+        heading: "Conserto especializado",
+        paragraphs: [
+          "A ServitecPoa conserta adegas climatizadas a domicílio em Porto Alegre, com experiência em marcas premium. Diagnóstico no local, peças adequadas e garantia de 90 dias.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Qual temperatura ideal para adega climatizada?",
+        answer:
+          "Para a maioria dos tintos e brancos de guarda, entre 12 °C e 18 °C. Consulte o manual do fabricante para modelos com zonas distintas.",
+      },
+      {
+        question: "Adega embutida em cozinha premium pode esquentar por causa da coifa?",
+        answer:
+          "Sim. Cozinhas integradas exigem ventilação adequada. O calor de cooktops próximos pode afetar o desempenho se a instalação não seguir as recomendações do fabricante.",
+      },
+    ],
+    relatedServices: ["conserto-de-adega-climatizada-em-porto-alegre"],
+  },
 ];
 
 export function getBlogPostBySlug(slug: string) {

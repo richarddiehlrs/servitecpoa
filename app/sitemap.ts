@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/content/blog";
 import { localServicePages } from "@/lib/content/local-services";
+import { brandServicePages } from "@/lib/content/brand-services";
 import { seoBrands } from "@/lib/content/brands";
 import { seoZones } from "@/lib/content/zones";
 import { seoServices } from "@/lib/seo";
@@ -32,12 +33,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const brandPages: MetadataRoute.Sitemap = seoBrands.map((brand) => ({
-    url: `${base}/marcas/${brand.slug}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.75,
-  }));
+  const brandPages: MetadataRoute.Sitemap = [
+    ...seoBrands.map((brand) => ({
+      url: `${base}/marcas/${brand.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    })),
+    ...brandServicePages.map((page) => ({
+      url: `${base}/marcas/${page.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.78,
+    })),
+  ];
 
   const zonePages: MetadataRoute.Sitemap = seoZones.map((zone) => ({
     url: `${base}/regioes/${zone.slug}`,

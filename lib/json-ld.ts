@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/lib/content/blog";
+import type { BrandServicePage } from "@/lib/content/brand-services";
 import type { BrandPage } from "@/lib/content/brands";
 import type { LocalServicePage } from "@/lib/content/local-services";
 import type { ZonePage } from "@/lib/content/zones";
@@ -383,6 +384,30 @@ export function getBlogListingJsonLd(posts: BlogPost[]) {
       { name: "Início", item: url },
       { name: "Blog", item: `${url}/blog` },
     ]),
+  ];
+}
+
+export function getBrandServicePageJsonLd(page: BrandServicePage) {
+  const pageUrl = `${url}/marcas/${page.slug}`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: page.h1,
+      description: page.seoDescription,
+      url: pageUrl,
+      provider: { "@id": orgId },
+      areaServed: areaServed(),
+      serviceType: `${page.serviceTitle} — ${page.brandName}`,
+    },
+    getBreadcrumbJsonLd([
+      { name: "Início", item: url },
+      { name: "Marcas", item: `${url}/marcas` },
+      { name: page.brandName, item: `${url}/marcas/${page.brandSlug}` },
+      { name: page.serviceTitle, item: pageUrl },
+    ]),
+    getFaqJsonLd(page.faqs),
   ];
 }
 
