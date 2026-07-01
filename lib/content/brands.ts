@@ -10,12 +10,14 @@ export type BrandPage = {
 };
 
 function brandSlug(name: string) {
-  return `conserto-${name
+  const normalized = name
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "")}-porto-alegre`;
+    .replace(/(^-|-$)/g, "");
+
+  return `conserto-de-${normalized}-em-porto-alegre`;
 }
 
 const brandData: Omit<BrandPage, "slug">[] = [

@@ -14,7 +14,7 @@ export type ZonePage = {
 
 export const seoZones: ZonePage[] = [
   {
-    slug: "zona-norte-porto-alegre",
+    slug: "zona-norte-em-porto-alegre",
     name: "Zona Norte",
     category: "zona",
     seoTitle: "Assistência técnica eletrodomésticos Zona Norte Porto Alegre",
@@ -46,7 +46,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "zona-sul-porto-alegre",
+    slug: "zona-sul-em-porto-alegre",
     name: "Zona Sul",
     category: "zona",
     seoTitle: "Assistência técnica eletrodomésticos Zona Sul Porto Alegre",
@@ -76,7 +76,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "zona-leste-porto-alegre",
+    slug: "zona-leste-em-porto-alegre",
     name: "Zona Leste",
     category: "zona",
     seoTitle: "Assistência técnica eletrodomésticos Zona Leste Porto Alegre",
@@ -106,7 +106,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "zona-oeste-porto-alegre",
+    slug: "zona-oeste-em-porto-alegre",
     name: "Zona Oeste",
     category: "zona",
     seoTitle: "Assistência técnica eletrodomésticos Zona Oeste Porto Alegre",
@@ -133,7 +133,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "centro-historico-porto-alegre",
+    slug: "centro-historico-em-porto-alegre",
     name: "Centro Histórico",
     category: "zona",
     seoTitle: "Assistência técnica eletrodomésticos Centro Histórico Porto Alegre",
@@ -157,7 +157,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "jardim-europa-porto-alegre",
+    slug: "jardim-europa-em-porto-alegre",
     name: "Jardim Europa",
     category: "bairro",
     zoneLabel: "Zona Norte",
@@ -179,7 +179,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "boa-vista-porto-alegre",
+    slug: "boa-vista-em-porto-alegre",
     name: "Boa Vista",
     category: "bairro",
     zoneLabel: "Zona Norte",
@@ -201,7 +201,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "higienopolis-porto-alegre",
+    slug: "higienopolis-em-porto-alegre",
     name: "Higienópolis",
     category: "bairro",
     zoneLabel: "Zona Norte",
@@ -223,7 +223,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "auxiliadora-porto-alegre",
+    slug: "auxiliadora-em-porto-alegre",
     name: "Auxiliadora",
     category: "bairro",
     zoneLabel: "Zona Norte",
@@ -245,7 +245,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "moinhos-de-vento-porto-alegre",
+    slug: "moinhos-de-vento-em-porto-alegre",
     name: "Moinhos de Vento",
     category: "bairro",
     zoneLabel: "Zona Leste",
@@ -267,7 +267,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "petropolis-porto-alegre",
+    slug: "petropolis-em-porto-alegre",
     name: "Petrópolis",
     category: "bairro",
     zoneLabel: "Zona Leste",
@@ -289,7 +289,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "tres-figueiras-porto-alegre",
+    slug: "tres-figueiras-em-porto-alegre",
     name: "Três Figueiras",
     category: "bairro",
     zoneLabel: "Zona Leste",
@@ -311,7 +311,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "bela-vista-porto-alegre",
+    slug: "bela-vista-em-porto-alegre",
     name: "Bela Vista",
     category: "bairro",
     zoneLabel: "Zona Leste",
@@ -333,7 +333,7 @@ export const seoZones: ZonePage[] = [
     ],
   },
   {
-    slug: "mont-serrat-porto-alegre",
+    slug: "mont-serrat-em-porto-alegre",
     name: "Mont Serrat",
     category: "bairro",
     zoneLabel: "Zona Leste",

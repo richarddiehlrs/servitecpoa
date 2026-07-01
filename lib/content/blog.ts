@@ -16,7 +16,7 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "geladeira-nao-gela-causas-quando-chamar-tecnico-porto-alegre",
+    slug: "geladeira-nao-gela-causas-quando-chamar-tecnico-em-porto-alegre",
     title: "Geladeira não gela: 5 causas e quando chamar um técnico em POA",
     seoTitle: "Geladeira não gela: causas e solução em Porto Alegre",
     seoDescription:
@@ -88,10 +88,10 @@ export const blogPosts: BlogPost[] = [
           "Depende da idade, do estado do compressor e do custo da peça. Em geladeiras com mais de 10 anos e compressor comprometido, a troca pode compensar. Fazemos o diagnóstico a domicílio em Porto Alegre antes de qualquer decisão.",
       },
     ],
-    relatedServices: ["conserto-geladeira-freezer-porto-alegre"],
+    relatedServices: ["conserto-de-geladeira-freezer-em-porto-alegre"],
   },
   {
-    slug: "quanto-custa-consertar-maquina-de-lavar-porto-alegre",
+    slug: "quanto-custa-consertar-maquina-de-lavar-em-porto-alegre",
     title: "Quanto custa consertar máquina de lavar em Porto Alegre?",
     seoTitle: "Quanto custa consertar máquina de lavar em Porto Alegre",
     seoDescription:
@@ -145,10 +145,10 @@ export const blogPosts: BlogPost[] = [
           "O valor varia conforme marca e modelo, pois a placa é uma peça específica. Por isso o diagnóstico presencial é essencial para um orçamento preciso em Porto Alegre.",
       },
     ],
-    relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
+    relatedServices: ["conserto-de-maquina-de-lavar-em-porto-alegre"],
   },
   {
-    slug: "lava-e-seca-nao-seca-como-resolver-porto-alegre",
+    slug: "lava-e-seca-nao-seca-como-resolver-em-porto-alegre",
     title: "Lava e seca não seca: como resolver em Porto Alegre",
     seoTitle: "Lava e seca não seca: solução em Porto Alegre",
     seoDescription:
@@ -190,10 +190,10 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
-    relatedServices: ["conserto-lava-e-seca-porto-alegre"],
+    relatedServices: ["conserto-de-lava-e-seca-em-porto-alegre"],
   },
   {
-    slug: "como-escolher-assistencia-tecnica-eletrodomesticos-porto-alegre",
+    slug: "como-escolher-assistencia-tecnica-eletrodomesticos-em-porto-alegre",
     title: "Como escolher assistência técnica de eletrodomésticos em Porto Alegre",
     seoTitle: "Como escolher assistência técnica de eletrodomésticos em POA",
     seoDescription:
@@ -250,7 +250,7 @@ export const blogPosts: BlogPost[] = [
     relatedServices: [],
   },
   {
-    slug: "manutencao-coifa-depurador-dicas-porto-alegre",
+    slug: "manutencao-coifa-depurador-dicas-em-porto-alegre",
     title: "Manutenção de coifa e depurador: dicas práticas",
     seoTitle: "Manutenção de coifa e depurador em Porto Alegre",
     seoDescription:
@@ -286,10 +286,10 @@ export const blogPosts: BlogPost[] = [
         ],
       },
     ],
-    relatedServices: ["conserto-coifa-depurador-porto-alegre"],
+    relatedServices: ["conserto-de-coifa-depurador-em-porto-alegre"],
   },
   {
-    slug: "conserto-eletrodomesticos-premium-bertazzoni-subzero-porto-alegre",
+    slug: "conserto-eletrodomesticos-premium-bertazzoni-subzero-em-porto-alegre",
     title: "Conserto de eletrodomésticos premium em Porto Alegre",
     seoTitle: "Conserto eletrodomésticos premium Bertazzoni e Sub-Zero POA",
     seoDescription:
@@ -340,12 +340,12 @@ export const blogPosts: BlogPost[] = [
       },
     ],
     relatedServices: [
-      "conserto-fogao-cooktop-premium-porto-alegre",
-      "conserto-geladeira-freezer-porto-alegre",
+      "conserto-de-fogao-cooktop-premium-em-porto-alegre",
+      "conserto-de-geladeira-freezer-em-porto-alegre",
     ],
   },
   {
-    slug: "geladeira-fazendo-barulho-causas-solucao-porto-alegre",
+    slug: "geladeira-fazendo-barulho-causas-solucao-em-porto-alegre",
     title: "Geladeira fazendo barulho: causas e quando se preocupar",
     seoTitle: "Geladeira fazendo barulho: causas e solução em Porto Alegre",
     seoDescription:
@@ -411,10 +411,10 @@ export const blogPosts: BlogPost[] = [
           "Pode gastar. Quando o ruído vem de compressor sobrecarregado, ventilador travado ou gelo acumulado, o aparelho trabalha mais e consome mais energia. O diagnóstico identifica a causa e evita desperdício.",
       },
     ],
-    relatedServices: ["conserto-geladeira-freezer-porto-alegre"],
+    relatedServices: ["conserto-de-geladeira-freezer-em-porto-alegre"],
   },
   {
-    slug: "maquina-de-lavar-nao-centrifuga-o-que-fazer-porto-alegre",
+    slug: "maquina-de-lavar-nao-centrifuga-o-que-fazer-em-porto-alegre",
     title: "Máquina de lavar não centrifuga: o que fazer",
     seoTitle: "Máquina de lavar não centrifuga: causas e solução em POA",
     seoDescription:
@@ -480,7 +480,7 @@ export const blogPosts: BlogPost[] = [
           "Não é recomendado. Continuar usando pode sobrecarregar o motor e a placa, agravando o defeito. O ideal é diagnosticar antes de novos ciclos.",
       },
     ],
-    relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
+    relatedServices: ["conserto-de-maquina-de-lavar-em-porto-alegre"],
   },
   {
     slug: "como-limpar-maquina-de-lavar-passo-a-passo",
@@ -549,10 +549,10 @@ export const blogPosts: BlogPost[] = [
           "Na maioria dos casos, sim. Se o cheiro persistir mesmo após a higienização, pode haver acúmulo no filtro, na bomba ou biofilme interno — situação que pede avaliação técnica.",
       },
     ],
-    relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
+    relatedServices: ["conserto-de-maquina-de-lavar-em-porto-alegre"],
   },
   {
-    slug: "fogao-cooktop-nao-acende-causas-solucao-porto-alegre",
+    slug: "fogao-cooktop-nao-acende-causas-solucao-em-porto-alegre",
     title: "Fogão ou cooktop não acende: causas e solução",
     seoTitle: "Fogão/cooktop não acende: causas e solução em Porto Alegre",
     seoDescription:
@@ -618,10 +618,10 @@ export const blogPosts: BlogPost[] = [
           "Sim. Falhas em placa eletrônica, sensores e painel touch de cooktops de indução têm reparo. Por serem componentes específicos, o diagnóstico técnico é essencial.",
       },
     ],
-    relatedServices: ["conserto-fogao-cooktop-premium-porto-alegre"],
+    relatedServices: ["conserto-de-fogao-cooktop-premium-em-porto-alegre"],
   },
   {
-    slug: "geladeira-frost-free-acumulando-gelo-causas-porto-alegre",
+    slug: "geladeira-frost-free-acumulando-gelo-causas-em-porto-alegre",
     title: "Geladeira frost free acumulando gelo: por que acontece",
     seoTitle: "Geladeira frost free juntando gelo: causas e solução em POA",
     seoDescription:
@@ -687,10 +687,10 @@ export const blogPosts: BlogPost[] = [
           "Sim. O gelo bloqueia a circulação de ar e obriga o compressor a trabalhar mais para resfriar, elevando o consumo de energia e o desgaste do aparelho.",
       },
     ],
-    relatedServices: ["conserto-geladeira-freezer-porto-alegre"],
+    relatedServices: ["conserto-de-geladeira-freezer-em-porto-alegre"],
   },
   {
-    slug: "lava-loucas-nao-seca-causas-solucao-porto-alegre",
+    slug: "lava-loucas-nao-seca-causas-solucao-em-porto-alegre",
     title: "Lava-louças não seca: causas e como resolver",
     seoTitle: "Lava-louças não seca: causas e solução em Porto Alegre",
     seoDescription:
@@ -756,10 +756,10 @@ export const blogPosts: BlogPost[] = [
           "Sim. Plásticos retêm menos calor e secam pior que vidro e louça. Uma leve umidade em potes plásticos é comum, mas louça muito molhada indica problema a investigar.",
       },
     ],
-    relatedServices: ["conserto-lava-loucas-porto-alegre"],
+    relatedServices: ["conserto-de-lava-loucas-em-porto-alegre"],
   },
   {
-    slug: "secadora-nao-aquece-nao-seca-causas-porto-alegre",
+    slug: "secadora-nao-aquece-nao-seca-causas-em-porto-alegre",
     title: "Secadora não aquece e não seca: causas comuns",
     seoTitle: "Secadora não aquece: causas e solução em Porto Alegre",
     seoDescription:
@@ -825,10 +825,10 @@ export const blogPosts: BlogPost[] = [
           "Muito. O filtro cheio é a causa mais comum de secagem ruim e superaquecimento. Limpe-o a cada ciclo e mantenha o duto de exaustão desobstruído.",
       },
     ],
-    relatedServices: ["conserto-secadora-porto-alegre"],
+    relatedServices: ["conserto-de-secadora-em-porto-alegre"],
   },
   {
-    slug: "maquina-de-lavar-vazando-agua-causas-porto-alegre",
+    slug: "maquina-de-lavar-vazando-agua-causas-em-porto-alegre",
     title: "Máquina de lavar vazando água: o que pode ser",
     seoTitle: "Máquina de lavar vazando água: causas e solução em POA",
     seoDescription:
@@ -894,7 +894,7 @@ export const blogPosts: BlogPost[] = [
           "Sim. Sabão demais gera muita espuma, que pode transbordar pelo dispenser ou pela porta. Use a dosagem recomendada pelo fabricante.",
       },
     ],
-    relatedServices: ["conserto-maquina-de-lavar-porto-alegre"],
+    relatedServices: ["conserto-de-maquina-de-lavar-em-porto-alegre"],
   },
 ];
 

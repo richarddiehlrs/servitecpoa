@@ -9,7 +9,7 @@ export type ServiceDetailContent = {
 
 export const serviceDetails: ServiceDetailContent[] = [
   {
-    slug: "conserto-geladeira-freezer-porto-alegre",
+    slug: "conserto-de-geladeira-freezer-em-porto-alegre",
     problems: [
       "Geladeira não gela ou congela em excesso",
       "Vazamento de água no interior ou atrás do equipamento",
@@ -61,7 +61,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "conserto-maquina-de-lavar-porto-alegre",
+    slug: "conserto-de-maquina-de-lavar-em-porto-alegre",
     problems: [
       "Máquina não centrifuga ou centrifuga fraco",
       "Não enche ou não drena água",
@@ -113,7 +113,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "conserto-lava-e-seca-porto-alegre",
+    slug: "conserto-de-lava-e-seca-em-porto-alegre",
     problems: [
       "Não seca ou seca parcialmente as roupas",
       "Demora excessiva nos ciclos",
@@ -165,7 +165,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "conserto-lava-loucas-porto-alegre",
+    slug: "conserto-de-lava-loucas-em-porto-alegre",
     problems: [
       "Louça saindo suja ou com resíduos",
       "Máquina não drena ou apresenta vazamento",
@@ -217,7 +217,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "conserto-fogao-cooktop-premium-porto-alegre",
+    slug: "conserto-de-fogao-cooktop-premium-em-porto-alegre",
     problems: [
       "Queimadores com chama irregular ou não acendem",
       "Cooktop de indução sem reconhecer panelas",
@@ -269,7 +269,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "conserto-secadora-porto-alegre",
+    slug: "conserto-de-secadora-em-porto-alegre",
     problems: [
       "Secadora não aquece",
       "Roupas saindo úmidas após o ciclo",
@@ -321,7 +321,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "conserto-coifa-depurador-porto-alegre",
+    slug: "conserto-de-coifa-depurador-em-porto-alegre",
     problems: [
       "Coifa com sucção fraca ou sem ventilação",
       "Barulho excessivo no motor",
@@ -373,7 +373,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "conserto-adega-climatizada-porto-alegre",
+    slug: "conserto-de-adega-climatizada-em-porto-alegre",
     problems: [
       "Temperatura fora da faixa ideal para vinhos",
       "Umidade inadequada no interior",
@@ -425,7 +425,7 @@ export const serviceDetails: ServiceDetailContent[] = [
     ],
   },
   {
-    slug: "instalacao-eletrodomesticos-porto-alegre",
+    slug: "instalacao-de-eletrodomesticos-em-porto-alegre",
     problems: [
       "Cooktop ou forno embutido precisa de instalação segura",
       "Coifa nova sem fixação adequada",
