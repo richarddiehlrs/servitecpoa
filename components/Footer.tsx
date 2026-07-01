@@ -56,6 +56,18 @@ export function Footer() {
                   Google Meu Negócio
                 </a>
               </li>
+              {siteConfig.social.instagram ? (
+                <li>
+                  <a
+                    href={siteConfig.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition hover:text-gold-light"
+                  >
+                    Instagram @servitec_poa
+                  </a>
+                </li>
+              ) : null}
               <li>CNPJ {siteConfig.cnpjDisplay}</li>
             </ul>
           </div>

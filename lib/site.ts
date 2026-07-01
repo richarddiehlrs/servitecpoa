@@ -37,12 +37,12 @@ export const siteConfig = {
     googleMaps: `https://www.google.com/maps?cid=${
       process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_CID ?? "10111277396737505345"
     }`,
-    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "",
+    instagram: process.env.NEXT_PUBLIC_INSTAGRAM_URL ?? "https://www.instagram.com/servitec_poa/",
     facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL ?? "",
   },
   reviews: {
     ratingValue: Number(process.env.NEXT_PUBLIC_GOOGLE_RATING ?? "5"),
-    reviewCount: Number(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT ?? "0"),
+    reviewCount: Number(process.env.NEXT_PUBLIC_GOOGLE_REVIEW_COUNT ?? "5"),
     items: [
       {
         author: "Mariana S.",

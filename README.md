@@ -60,14 +60,20 @@ npm run dev:fresh
 
 ### Variáveis de ambiente (Vercel → Settings → Environment Variables)
 
-Copie de `.env.example`:
+**Forma mais fácil:** importe o arquivo `vercel-import.env` da raiz do projeto (botão **Import .env**).
+
+Localmente: copie `.env.example` para `.env.local` e ajuste.
 
 | Variável | Uso |
 |----------|-----|
+| `NEXT_PUBLIC_GOOGLE_BUSINESS_URL` | Link Google Meu Negócio |
+| `NEXT_PUBLIC_GOOGLE_BUSINESS_CID` | Maps + schema local |
+| `NEXT_PUBLIC_GOOGLE_REVIEW_COUNT` | Nº de avaliações (estrelas no Google) |
+| `NEXT_PUBLIC_GOOGLE_RATING` | Nota média Google |
 | `GOOGLE_SITE_VERIFICATION` | Verificação Search Console |
 | `NEXT_PUBLIC_GA_ID` | Google Analytics 4 |
-| `NEXT_PUBLIC_GOOGLE_REVIEW_COUNT` | Nº de avaliações (exibe estrelas) |
-| `NEXT_PUBLIC_GOOGLE_RATING` | Nota média Google |
+| `NEXT_PUBLIC_GOOGLE_ADS_ID` | Google Ads |
+| `NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_LABEL` | Conversão WhatsApp |
 
 ### Após publicar
 
