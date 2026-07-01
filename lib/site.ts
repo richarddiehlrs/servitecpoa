@@ -33,7 +33,7 @@ export const siteConfig = {
   social: {
     googleBusiness:
       process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_URL ??
-      "https://share.google/r75n3fnGNGzTJW6ez",
+      "https://share.google/7zduK7VvJqk64kiGf",
     googleMaps: `https://www.google.com/maps?cid=${
       process.env.NEXT_PUBLIC_GOOGLE_BUSINESS_CID ?? "10111277396737505345"
     }`,
