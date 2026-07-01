@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Assistência Técnica de Eletrodomésticos",
   title: "Assistência Técnica de Eletrodomésticos em Porto Alegre | ServitecPoa",
   description:
-    "Assistência técnica de eletrodomésticos em Porto Alegre com atendimento a domicílio. Conserto de geladeiras, máquinas de lavar, lava e seca, coifas, adegas e linha premium. Peças originais e garantia de 90 dias.",
+    "Assistência técnica de eletrodomésticos em Porto Alegre. Conserto a domicílio de geladeiras, lavadoras, lava e seca e linha premium. Garantia de 90 dias.",
   url: "https://www.servitecpoa.com.br",
   locale: "pt_BR",
   phone: "5130514255",

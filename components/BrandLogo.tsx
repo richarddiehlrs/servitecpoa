@@ -26,12 +26,11 @@ export function BrandLogo({
     <div className={`flex flex-col gap-0.5 sm:flex-row sm:items-center sm:gap-3 ${className}`}>
       <Image
         src={siteConfig.logo.src}
-        alt=""
+        alt={siteConfig.logo.alt}
         width={logoWidth}
         height={logoHeight}
         className="h-10 w-auto object-contain sm:h-11"
         priority={isHeader}
-        aria-hidden
       />
       {showTagline && (
         <div className="leading-tight">
