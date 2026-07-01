@@ -6,6 +6,7 @@ import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { getLocalPagesForBairro } from "@/lib/content/local-services";
 import { getZoneBySlug, seoZones } from "@/lib/content/zones";
 import { getZonePageJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
@@ -39,6 +40,10 @@ export default async function RegiaoPage({ params }: Props) {
   const { slug } = await params;
   const zone = getZoneBySlug(slug);
   if (!zone) notFound();
+
+  const bairroSlug = zone.slug.replace(/-em-porto-alegre$/, "");
+  const localPages =
+    zone.category === "bairro" ? getLocalPagesForBairro(bairroSlug) : [];
 
   return (
     <>
@@ -111,6 +116,29 @@ export default async function RegiaoPage({ params }: Props) {
               ))}
             </ul>
           </section>
+
+          {localPages.length > 0 && (
+            <section className="mt-10 rounded-2xl border border-ink/8 bg-white p-6">
+              <h2 className="font-display text-xl font-semibold text-ink">
+                Serviços em {zone.name}
+              </h2>
+              <p className="mt-2 text-sm text-slate-600">
+                Páginas específicas por tipo de serviço no bairro {zone.name}.
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {localPages.map((page) => (
+                  <li key={page.slug}>
+                    <Link
+                      href={`/servicos/${page.slug}`}
+                      className="inline-flex rounded-full border border-ink/10 bg-cream px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:border-brand-orange hover:text-brand-orange"
+                    >
+                      {page.serviceTitle}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           <CtaBlock
             title={`Agendar visita em ${zone.name}`}

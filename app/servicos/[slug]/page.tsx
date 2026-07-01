@@ -7,9 +7,16 @@ import { CtaBlock } from "@/components/CtaBlock";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { JsonLd } from "@/components/JsonLd";
+import { LocalBairroLinks } from "@/components/LocalBairroLinks";
 import { ServiceIcon } from "@/components/icons";
+import {
+  getBairroZonePage,
+  getLocalPagesForService,
+  getLocalServicePage,
+  localServicePages,
+} from "@/lib/content/local-services";
 import { getServiceDetail } from "@/lib/content/service-details";
-import { getFaqJsonLd, getServicePageJsonLd } from "@/lib/json-ld";
+import { getFaqJsonLd, getLocalServicePageJsonLd, getServicePageJsonLd } from "@/lib/json-ld";
 import { createPageMetadata } from "@/lib/metadata";
 import { getServiceBySlug, seoServices } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -18,11 +25,29 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return seoServices.map((service) => ({ slug: service.slug }));
+  return [
+    ...seoServices.map((service) => ({ slug: service.slug })),
+    ...localServicePages.map((page) => ({ slug: page.slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const localPage = getLocalServicePage(slug);
+
+  if (localPage) {
+    return createPageMetadata({
+      title: localPage.seoTitle,
+      description: localPage.seoDescription,
+      path: `/servicos/${localPage.slug}`,
+      keywords: [
+        `${localPage.serviceTitle.toLowerCase()} ${localPage.bairro.name.toLowerCase()}`,
+        `conserto eletrodomésticos ${localPage.bairro.name.toLowerCase()}`,
+        `assistência técnica ${localPage.bairro.name.toLowerCase()} porto alegre`,
+      ],
+    });
+  }
+
   const service = getServiceBySlug(slug);
   if (!service) return {};
 
@@ -35,10 +60,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ServicoDetalhePage({ params }: Props) {
   const { slug } = await params;
+  const localPage = getLocalServicePage(slug);
+
+  if (localPage) {
+    return <LocalServicePageView page={localPage} />;
+  }
+
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
   const detail = getServiceDetail(slug);
+  const localPages = getLocalPagesForService(service.slug);
   const whatsappMessage = encodeURIComponent(
     `Vim pelo site. Gostaria de agendar visita técnica para: ${service.title}.`,
   );
@@ -150,7 +182,13 @@ export default async function ServicoDetalhePage({ params }: Props) {
             )}
           </div>
 
-          <section className="mt-10 rounded-2xl border border-ink/8 bg-white p-6">
+          <LocalBairroLinks
+            pages={localPages}
+            title={`${service.title} por bairro em Porto Alegre`}
+            description="Selecione seu bairro para ver detalhes do atendimento a domicílio na sua região."
+          />
+
+          <section className="mt-6 rounded-2xl border border-ink/8 bg-white p-6">
             <h2 className="font-display text-lg font-semibold text-ink">Atendemos sua região</h2>
             <p className="mt-2 text-sm text-slate-600">
               Visita técnica em toda Porto Alegre.{" "}
@@ -184,6 +222,149 @@ export default async function ServicoDetalhePage({ params }: Props) {
               ← Ver todos os serviços
             </Link>
           </p>
+        </article>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function LocalServicePageView({ page }: { page: NonNullable<ReturnType<typeof getLocalServicePage>> }) {
+  const service = getServiceBySlug(page.serviceSlug);
+  const detail = getServiceDetail(page.serviceSlug);
+  const whatsappMessage = encodeURIComponent(
+    `Vim pelo site. Gostaria de agendar visita técnica para ${page.serviceTitle} no bairro ${page.bairro.name}.`,
+  );
+  const whatsappLink = `${siteConfig.whatsappUrl}?text=${whatsappMessage}`;
+
+  return (
+    <>
+      <JsonLd data={getLocalServicePageJsonLd(page)} />
+      <Header />
+      <main className="bg-cream pt-28">
+        <article className="mx-auto max-w-4xl px-5 py-12 lg:px-8 lg:py-16">
+          <Breadcrumbs
+            items={[
+              { label: "Início", href: "/" },
+              { label: "Serviços", href: "/servicos" },
+              ...(service
+                ? [{ label: service.title, href: `/servicos/${service.slug}` }]
+                : []),
+              { label: page.bairro.name },
+            ]}
+          />
+
+          <header className="mt-8">
+            {service && (
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-gold/35 bg-gold/10 text-gold-dark">
+                <ServiceIcon name={service.icon} className="h-6 w-6" />
+              </span>
+            )}
+            <h1 className="mt-6 font-display text-4xl font-semibold text-ink sm:text-5xl">
+              {page.h1}
+            </h1>
+            <p className="mt-2 text-lg font-medium text-brand-orange">
+              {page.bairro.zoneLabel} · Porto Alegre · Atendimento a domicílio
+            </p>
+          </header>
+
+          <div className="prose prose-slate mt-8 max-w-none">
+            <p className="text-lg leading-relaxed text-slate-700">{page.intro}</p>
+            {page.paragraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)} className="leading-relaxed text-slate-600">
+                {paragraph}
+              </p>
+            ))}
+
+            {page.problems.length > 0 && (
+              <>
+                <h2 className="font-display text-2xl font-semibold text-ink">
+                  Problemas que resolvemos em {page.bairro.name}
+                </h2>
+                <ul className="list-disc space-y-2 pl-5 text-slate-600">
+                  {page.problems.map((problem) => (
+                    <li key={problem}>{problem}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+
+            {detail && (
+              <>
+                <h2 className="font-display text-2xl font-semibold text-ink">Marcas atendidas</h2>
+                <p className="text-slate-600">
+                  Trabalhamos com <BrandNameList brands={detail.brands} /> e demais marcas
+                  compatíveis em {page.bairro.name}.
+                </p>
+              </>
+            )}
+
+            <h2 className="font-display text-2xl font-semibold text-ink">
+              Perguntas frequentes — {page.bairro.name}
+            </h2>
+            {page.faqs.map((faq) => (
+              <div key={faq.question}>
+                <h3 className="font-display text-lg font-semibold text-ink">{faq.question}</h3>
+                <p className="text-slate-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+
+          <section className="mt-10 rounded-2xl border border-ink/8 bg-white p-6">
+            <h2 className="font-display text-lg font-semibold text-ink">Região e cobertura</h2>
+            <p className="mt-2 text-sm text-slate-600">
+              Atendemos {page.bairro.name} e a {page.bairro.zoneLabel}.{" "}
+              <Link
+                href={`/regioes/${page.bairro.zoneSlug}`}
+                className="font-semibold text-brand-orange hover:underline"
+              >
+                Ver {page.bairro.zoneLabel}
+              </Link>
+              {getBairroZonePage(page.bairro.slug) ? (
+                <>
+                  {" "}
+                  ou{" "}
+                  <Link
+                    href={`/regioes/${getBairroZonePage(page.bairro.slug)!.slug}`}
+                    className="font-semibold text-brand-orange hover:underline"
+                  >
+                    página do bairro {page.bairro.name}
+                  </Link>
+                </>
+              ) : null}
+              .
+            </p>
+          </section>
+
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <Link href="/atendimento-domicilio" className="btn-primary text-center">
+              Solicitar orçamento
+            </Link>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline-dark text-center"
+            >
+              WhatsApp — {siteConfig.phoneDisplay}
+            </a>
+          </div>
+
+          <CtaBlock
+            title={`Agendar ${page.serviceTitle.toLowerCase()} em ${page.bairro.name}`}
+            description={`Assistência técnica a domicílio na ${page.bairro.zoneLabel}, Porto Alegre.`}
+          />
+
+          {service && (
+            <p className="mt-8">
+              <Link
+                href={`/servicos/${service.slug}`}
+                className="text-sm font-semibold text-brand-orange hover:underline"
+              >
+                ← Ver {service.title} em toda Porto Alegre
+              </Link>
+            </p>
+          )}
         </article>
       </main>
       <Footer />

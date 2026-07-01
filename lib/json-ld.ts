@@ -1,5 +1,6 @@
 import type { BlogPost } from "@/lib/content/blog";
 import type { BrandPage } from "@/lib/content/brands";
+import type { LocalServicePage } from "@/lib/content/local-services";
 import type { ZonePage } from "@/lib/content/zones";
 import { faqs, siteConfig } from "./site";
 import { seoServices } from "./seo";
@@ -382,6 +383,42 @@ export function getBlogListingJsonLd(posts: BlogPost[]) {
       { name: "Início", item: url },
       { name: "Blog", item: `${url}/blog` },
     ]),
+  ];
+}
+
+export function getLocalServicePageJsonLd(page: LocalServicePage) {
+  const pageUrl = `${url}/servicos/${page.slug}`;
+  const service = seoServices.find((item) => item.slug === page.serviceSlug);
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: page.h1,
+      description: page.seoDescription,
+      url: pageUrl,
+      provider: { "@id": orgId },
+      areaServed: {
+        "@type": "Place",
+        name: `${page.bairro.name} — ${page.bairro.zoneLabel}`,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Porto Alegre",
+          addressRegion: "RS",
+          addressCountry: "BR",
+        },
+      },
+      serviceType: service?.title ?? siteConfig.primaryCategory,
+    },
+    getBreadcrumbJsonLd([
+      { name: "Início", item: url },
+      { name: "Serviços", item: `${url}/servicos` },
+      ...(service
+        ? [{ name: service.title, item: `${url}/servicos/${service.slug}` }]
+        : []),
+      { name: page.bairro.name, item: pageUrl },
+    ]),
+    getFaqJsonLd(page.faqs),
   ];
 }
 

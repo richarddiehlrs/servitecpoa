@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPosts } from "@/lib/content/blog";
+import { localServicePages } from "@/lib/content/local-services";
 import { seoBrands } from "@/lib/content/brands";
 import { seoZones } from "@/lib/content/zones";
 import { seoServices } from "@/lib/seo";
@@ -53,5 +54,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: post.image ? [`${base}${post.image}`] : undefined,
   }));
 
-  return [...staticPages, ...servicePages, ...brandPages, ...zonePages, ...blogPages];
+  const localServicePagesSitemap: MetadataRoute.Sitemap = localServicePages.map((page) => ({
+    url: `${base}/servicos/${page.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.72,
+  }));
+
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...localServicePagesSitemap,
+    ...brandPages,
+    ...zonePages,
+    ...blogPages,
+  ];
 }
