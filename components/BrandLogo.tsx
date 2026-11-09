@@ -46,7 +46,7 @@ export function BrandLogo({
               isLight ? "text-gold-dark" : "text-slate-400"
             }`}
           >
-            Consertos Em Eletrodomésticos
+            Assistência Técnica
           </span>
         </div>
       )}

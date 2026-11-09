@@ -22,7 +22,7 @@ export function Services() {
                   <ServiceIcon name={service.icon} className="h-5 w-5" />
                 </span>
                 <h3 className="mt-5 font-display text-lg font-semibold text-ink group-hover:text-brand-orange">
-                  {service.title}
+                  {service.conserto}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {service.description}

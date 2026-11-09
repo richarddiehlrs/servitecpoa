@@ -57,6 +57,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: service.seoTitle,
     description: service.seoDescription,
     path: `/servicos/${service.slug}`,
+    keywords: service.keywords,
   });
 }
 
@@ -103,7 +104,7 @@ export default async function ServicoDetalhePage({ params }: Props) {
               <ServiceIcon name={service.icon} className="h-6 w-6" />
             </span>
             <h1 className="mt-6 font-display text-4xl font-semibold text-ink sm:text-5xl">
-              {service.title} em Porto Alegre
+              {service.h1}
             </h1>
             <p className="mt-2 text-lg font-medium text-brand-orange">
               {siteConfig.primaryCategory} · {siteConfig.serviceArea} · Atendimento a domicílio
@@ -187,14 +188,15 @@ export default async function ServicoDetalhePage({ params }: Props) {
 
           <LocalBairroLinks
             pages={localPages}
-            title={`${service.title} por bairro em Porto Alegre`}
+            title={`${service.conserto} por bairro em Porto Alegre`}
             description="Selecione seu bairro para ver detalhes do atendimento a domicílio na sua região."
           />
 
           {brandServiceLinks.length > 0 && (
             <BrandServiceLinks
               pages={brandServiceLinks}
-              title={`${service.title} — marcas premium em Porto Alegre`}
+              title={`${service.conserto} por marca em Porto Alegre`}
+              labelBy="brand"
             />
           )}
 
@@ -225,7 +227,7 @@ export default async function ServicoDetalhePage({ params }: Props) {
             </a>
           </div>
 
-          <CtaBlock title={`Agendar ${service.title.toLowerCase()} em Porto Alegre`} />
+          <CtaBlock title={`Agendar ${service.conserto.toLowerCase()} em Porto Alegre`} />
 
           <p className="mt-8">
             <Link href="/servicos" className="text-sm font-semibold text-brand-orange hover:underline">
@@ -371,7 +373,7 @@ function LocalServicePageView({ page }: { page: NonNullable<ReturnType<typeof ge
                 href={`/servicos/${service.slug}`}
                 className="text-sm font-semibold text-brand-orange hover:underline"
               >
-                ← Ver {service.title} em toda Porto Alegre
+                ← Ver {service.conserto.toLowerCase()} em toda Porto Alegre
               </Link>
             </p>
           )}

@@ -21,7 +21,7 @@ export const siteConfig = {
   serviceArea: "Porto Alegre",
   warranty: "90 dias",
   experience: "15+ anos",
-  primaryCategory: "Assistência técnica de eletrodomésticos",
+  primaryCategory: "Serviço de conserto de eletrodomésticos",
   geo: {
     latitude: -30.0346,
     longitude: -51.2177,

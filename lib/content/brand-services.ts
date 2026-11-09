@@ -9,6 +9,9 @@ export type BrandServicePage = {
   brandName: string;
   serviceSlug: string;
   serviceTitle: string;
+  /** Forma curta do serviço, ex.: "lava e seca" */
+  serviceShort: string;
+  isPremium: boolean;
   seoTitle: string;
   seoDescription: string;
   h1: string;
@@ -78,6 +81,22 @@ const serviceMeta: Record<
   },
 };
 
+/** Dicas técnicas específicas por marca + serviço (enriquecem a página e ajudam IAs a citar) */
+const brandServiceTips: Record<string, string> = {
+  "Samsung|Lava e Seca":
+    "Nas lava e seca Samsung (incluindo linhas AddWash e EcoBubble), os códigos de erro mais comuns que atendemos em Porto Alegre são 4C/4E (falta de entrada de água), 5C/5E (falha de drenagem), UB/UE (desbalanceamento), DC/DE (porta/trava) e HC/HE (aquecimento). Quando a máquina lava mas não seca, avaliamos resistência de secagem, termistor, ventoinha e duto de condensação.",
+  "Samsung|Máquinas de Lavar":
+    "Em lavadoras Samsung, códigos como 4C (entrada de água), 5C (drenagem), UB (desbalanceamento) e DC (porta) indicam a área do defeito. O técnico confirma a causa com testes de válvula, bomba, sensor de nível e placa.",
+  "LG|Lava e Seca":
+    "Nas lava e seca LG com motor Direct Drive, os códigos mais frequentes são IE (entrada de água), OE (drenagem), UE (desbalanceamento), DE (porta), PE (sensor de pressão) e tE (sensor de temperatura). Falhas de secagem costumam envolver resistência, sensor de umidade, ventilador ou condensador obstruído por fiapos.",
+  "LG|Máquinas de Lavar":
+    "Em lavadoras LG, os erros IE, OE, UE, DE e PE são os mais comuns. Avaliamos válvula de entrada, bomba de drenagem, sensor de pressão, trava da porta e o conjunto do motor Direct Drive.",
+  "Electrolux|Lava e Seca":
+    "Nas lava e seca Electrolux, atendemos falhas de secagem, travamento de porta, erros de drenagem e ruídos no tambor. O diagnóstico inclui resistência, sensores de temperatura, bomba, rolamentos e placa de controle.",
+  "Brastemp|Lava e Seca":
+    "Nas lava e seca Brastemp, os chamados mais comuns são roupa saindo úmida, luzes piscando no painel, porta que não destrava e vazamento. Testamos resistência de secagem, termostatos, bomba de drenagem, trava e placa eletrônica.",
+};
+
 function brandKey(name: string) {
   return name
     .toLowerCase()
@@ -104,6 +123,8 @@ function buildPage(brand: BrandPage, service: ServiceItem): BrandServicePage {
   const slug = buildBrandServiceSlug(brand.name, service.title)!;
   const detail = getServiceDetail(service.slug);
   const isInstall = meta.action === "instalacao";
+  const premium = brand.isPremium;
+  const tip = brandServiceTips[`${brand.name}|${service.title}`];
 
   return {
     slug,
@@ -111,17 +132,24 @@ function buildPage(brand: BrandPage, service: ServiceItem): BrandServicePage {
     brandName: brand.name,
     serviceSlug: service.slug,
     serviceTitle: service.title,
-    seoTitle: `${meta.phrase} ${brand.name} em Porto Alegre`,
-    seoDescription: `${meta.phrase} ${brand.name} em Porto Alegre com atendimento a domicílio. Técnico especializado em linha premium, diagnóstico no local e garantia de ${siteConfig.warranty}. WhatsApp ${siteConfig.phoneDisplay}.`,
+    serviceShort: meta.short,
+    isPremium: premium,
+    seoTitle: `${meta.phrase} ${brand.name} em Porto Alegre | Técnico a Domicílio`,
+    seoDescription: `${meta.phrase} ${brand.name} em Porto Alegre com técnico a domicílio. ${premium ? "Especialistas em linha premium e importada" : `Experiência em todos os modelos ${brand.name}`}, diagnóstico no local e garantia de ${siteConfig.warranty}. WhatsApp ${siteConfig.phoneDisplay}.`,
     h1: `${meta.phrase} ${brand.name} em Porto Alegre`,
     intro: `A ServitecPoa é especializada em ${meta.phrase.toLowerCase()} ${brand.name} em Porto Alegre. Atendemos equipamentos da marca com diagnóstico técnico no local, peças de qualidade e garantia de ${siteConfig.warranty}.${
       isInstall
         ? ` Realizamos instalação profissional de ${brand.name} conforme especificações do fabricante.`
-        : ` Nossa equipe conhece as particularidades da linha premium ${brand.name}.`
+        : premium
+          ? ` Nossa equipe conhece as particularidades da linha premium ${brand.name}.`
+          : ` Atendemos os principais modelos ${brand.name} vendidos no Brasil, com orçamento antes de qualquer reparo.`
     }`,
     paragraphs: [
       brand.paragraphs[0],
-      `${isInstall ? "Instalação" : "Conserto"} de ${meta.short} ${brand.name} exige técnico com experiência em marcas importadas e built-in. Avaliamos condições elétricas, de gás ou hidráulicas quando necessário e apresentamos orçamento antes de iniciar o serviço.`,
+      ...(tip ? [tip] : []),
+      premium
+        ? `${isInstall ? "Instalação" : "Conserto"} de ${meta.short} ${brand.name} exige técnico com experiência em marcas importadas e built-in. Avaliamos condições elétricas, de gás ou hidráulicas quando necessário e apresentamos orçamento antes de iniciar o serviço.`
+        : `O conserto de ${meta.short} ${brand.name} começa por um diagnóstico completo no local: o técnico lê os códigos de erro, testa componentes elétricos e mecânicos e só então apresenta o orçamento. Se o reparo não compensar, avisamos com transparência.`,
       `Atendimento a domicílio em toda Porto Alegre, com agendamento nos turnos da manhã ou tarde. Para cobertura geral do serviço, veja também nossa página de ${service.title.toLowerCase()} na capital e a página dedicada à marca ${brand.name}.`,
     ],
     problems: detail?.problems.slice(0, 5) ?? [],
@@ -132,7 +160,9 @@ function buildPage(brand: BrandPage, service: ServiceItem): BrandServicePage {
       },
       {
         question: `Por que escolher técnico especializado em ${brand.name}?`,
-        answer: `${brand.name} é marca premium com componentes e sistemas específicos. Um técnico especializado reduz risco de diagnóstico incorreto e garante reparo ou instalação adequados ao padrão da marca.`,
+        answer: premium
+          ? `${brand.name} é marca premium com componentes e sistemas específicos. Um técnico especializado reduz risco de diagnóstico incorreto e garante reparo ou instalação adequados ao padrão da marca.`
+          : `Cada fabricante usa placas, sensores e códigos de erro próprios. Um técnico com experiência em ${brand.name} identifica o defeito mais rápido e evita troca desnecessária de peças.`,
       },
       {
         question: `O serviço em ${brand.name} tem garantia?`,
@@ -145,7 +175,7 @@ function buildPage(brand: BrandPage, service: ServiceItem): BrandServicePage {
 function buildAllBrandServicePages(): BrandServicePage[] {
   const pages: BrandServicePage[] = [];
 
-  for (const brand of seoBrands.filter((item) => item.isPremium)) {
+  for (const brand of seoBrands) {
     for (const serviceTitle of brand.services) {
       const service = seoServices.find((item) => item.title === serviceTitle);
       if (!service) continue;

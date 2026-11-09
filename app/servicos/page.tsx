@@ -52,7 +52,7 @@ export default function ServicosPage() {
                     <ServiceIcon name={service.icon} className="h-5 w-5" />
                   </span>
                   <h2 className="mt-4 font-display text-xl font-semibold text-ink group-hover:text-brand-orange">
-                    {service.title}
+                    {service.conserto}
                   </h2>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600">
                     {service.description}

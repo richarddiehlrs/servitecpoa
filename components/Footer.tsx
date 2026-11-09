@@ -107,7 +107,7 @@ export function Footer() {
                     href={`/servicos/${service.slug}`}
                     className="transition hover:text-gold-light"
                   >
-                    {service.title}
+                    {service.conserto}
                   </Link>
                 </li>
               ))}

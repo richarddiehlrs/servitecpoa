@@ -41,7 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         `${brandService.brandName.toLowerCase()} porto alegre`,
         `${brandService.serviceTitle.toLowerCase()} ${brandService.brandName.toLowerCase()}`,
         `assistência técnica ${brandService.brandName.toLowerCase()} porto alegre`,
-        "eletrodomésticos premium porto alegre",
+        `conserto de ${brandService.serviceShort} ${brandService.brandName.toLowerCase()} porto alegre`,
+        `técnico ${brandService.brandName.toLowerCase()} porto alegre`,
       ],
     });
   }
@@ -119,7 +120,7 @@ export default async function MarcaPage({ params }: Props) {
             </ul>
           </div>
 
-          {brand.isPremium && brandServiceLinks.length > 0 && (
+          {brandServiceLinks.length > 0 && (
             <BrandServiceLinks
               pages={brandServiceLinks}
               title={`${brand.name} — serviços em Porto Alegre`}
@@ -138,7 +139,7 @@ export default async function MarcaPage({ params }: Props) {
                       href={`/servicos/${service.slug}`}
                       className="rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-orange hover:text-brand-orange"
                     >
-                      {service.title}
+                      {service.conserto}
                     </Link>
                   </li>
                 ))}
@@ -195,7 +196,7 @@ function BrandServicePageView({
 
           <header className="mt-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-orange">
-              Linha premium · {page.brandName}
+              {page.isPremium ? "Linha premium" : "Assistência técnica"} · {page.brandName}
             </p>
             <h1 className="mt-4 font-display text-4xl font-semibold text-ink sm:text-5xl">
               {page.h1}
@@ -263,7 +264,7 @@ function BrandServicePageView({
                   href={`/servicos/${service.slug}`}
                   className="font-semibold text-brand-orange hover:underline"
                 >
-                  {service.title} em Porto Alegre
+                  {service.conserto} em Porto Alegre
                 </Link>
               )}
             </p>

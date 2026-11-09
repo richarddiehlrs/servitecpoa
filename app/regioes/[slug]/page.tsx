@@ -110,7 +110,7 @@ export default async function RegiaoPage({ params }: Props) {
                     href={`/servicos/${service.slug}`}
                     className="rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-orange hover:text-brand-orange"
                   >
-                    {service.title}
+                    {service.conserto}
                   </Link>
                 </li>
               ))}

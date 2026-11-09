@@ -152,9 +152,9 @@ function buildLocalPage(service: ServiceItem, bairro: LocalBairro): LocalService
     serviceSlug: service.slug,
     serviceTitle: service.title,
     bairro,
-    seoTitle: `${phrase.conserto} em ${bairro.name} — Porto Alegre`,
+    seoTitle: `${phrase.conserto} em ${bairro.name} — Porto Alegre | Técnico a Domicílio`,
     seoDescription: `${phrase.conserto} em ${bairro.name} (${bairro.zoneLabel}), Porto Alegre. Visita técnica a domicílio, diagnóstico no local e garantia de ${siteConfig.warranty}. WhatsApp ${siteConfig.phoneDisplay}.`,
-    h1: `${service.title} em ${bairro.name}`,
+    h1: `${phrase.conserto} em ${bairro.name}, Porto Alegre`,
     intro: `A ServitecPoa realiza ${phrase.conserto.toLowerCase()} no bairro ${bairro.name}, em ${bairro.zoneLabel}, Porto Alegre. Atendimento a domicílio com agendamento nos turnos da manhã ou tarde, orçamento transparente e garantia de ${siteConfig.warranty}.${premiumNote}`,
     paragraphs: [
       `Nossa equipe vai até sua residência em ${bairro.name} com equipamentos de diagnóstico e experiência em ${phrase.short} de marcas nacionais e importadas. O técnico avalia o defeito no local e apresenta o orçamento antes de iniciar o reparo.`,

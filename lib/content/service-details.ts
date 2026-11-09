@@ -115,15 +115,17 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "conserto-de-lava-e-seca-em-porto-alegre",
     problems: [
-      "Não seca ou seca parcialmente as roupas",
-      "Demora excessiva nos ciclos",
-      "Cheiro de mofo ou umidade no tambor",
-      "Erro no display ou trava na porta",
-      "Barulho anormal durante secagem",
-      "Consumo de energia elevado",
-      "Vazamento de água ou condensação",
+      "Lava mas não seca, ou roupa sai úmida no fim do ciclo",
+      "Não centrifuga ou não drena a água",
+      "Demora excessiva nos ciclos de lavagem ou secagem",
+      "Código de erro no painel (ex.: 4C, 5C, UE, OE, IE, DE)",
+      "Porta trava e não abre, ou não trava e a máquina não inicia",
+      "Barulho alto, batidas ou vibração na centrifugação",
+      "Vazamento de água ou excesso de condensação",
+      "Cheiro de mofo ou de queimado durante a secagem",
+      "Máquina não liga ou desliga no meio do ciclo",
     ],
-    brands: ["Samsung", "LG", "Electrolux", "Brastemp", "Consul", "Midea"],
+    brands: ["Samsung", "LG", "Electrolux", "Brastemp", "Consul", "Midea", "Speed Queen"],
     process: [
       {
         title: "Análise do sistema de lavagem e secagem",
@@ -150,6 +152,8 @@ export const serviceDetails: ServiceDetailContent[] = [
       "A lava e seca combina duas funções em um único equipamento, o que exige manutenção técnica mais especializada. Falhas no sistema de secagem são comuns e podem estar ligadas a sensor, resistência, ventilação ou placa.",
       "A ServitecPoa é referência em conserto de lava e seca em Porto Alegre, com atendimento a domicílio para diagnóstico preciso. Atendemos modelos front load e combinações das marcas mais vendidas no Brasil.",
       "Além do reparo, orientamos sobre uso correto e cuidados que prolongam a vida útil do aparelho — como limpeza do filtro de fiapos e ciclos de higienização.",
+      "As causas mais comuns de defeito em lava e seca são: resistência de secagem queimada, termistor (sensor de temperatura) com leitura errada, condensador ou duto obstruído por fiapos, bomba de drenagem travada, rolamentos gastos, trava da porta com defeito e falhas na placa eletrônica. Cada uma tem sintomas típicos — e o diagnóstico correto evita a troca desnecessária de peças.",
+      "Atendemos lava e seca de abertura frontal (front load) de 8 a 17 kg, incluindo modelos com motor inverter e Direct Drive. A visita técnica é feita em toda Porto Alegre — Zona Norte, Sul, Leste, Oeste e Centro — com agendamento nos turnos da manhã ou da tarde.",
     ],
     faqs: [
       {
@@ -161,6 +165,26 @@ export const serviceDetails: ServiceDetailContent[] = [
         question: "É possível consertar lava e seca no mesmo dia?",
         answer:
           "Reparos simples com peça disponível podem ser concluídos na visita. Casos que exigem componente específico têm prazo informado previamente.",
+      },
+      {
+        question: "Quanto custa o conserto de lava e seca em Porto Alegre?",
+        answer:
+          "O valor depende do defeito e da peça envolvida. O técnico faz o diagnóstico no local e apresenta o orçamento fechado antes de iniciar o serviço — você só aprova se fizer sentido. Se o conserto não compensar frente a um aparelho novo, avisamos com transparência.",
+      },
+      {
+        question: "Vale a pena consertar lava e seca ou comprar uma nova?",
+        answer:
+          "Na maioria dos casos vale a pena consertar: defeitos em resistência, sensor, bomba, trava e rolamento têm reparo com custo bem menor que um aparelho novo. Só recomendamos a troca quando há dano grave no tambor ou na placa sem peça disponível.",
+      },
+      {
+        question: "Vocês consertam lava e seca Samsung, LG e Electrolux?",
+        answer:
+          "Sim. Atendemos lava e seca Samsung, LG, Electrolux, Brastemp, Consul e Midea, além de modelos importados, com visita técnica a domicílio em toda Porto Alegre e garantia de 90 dias.",
+      },
+      {
+        question: "Minha lava e seca mostra um código de erro. O que fazer?",
+        answer:
+          "Anote o código, desligue a máquina da tomada por alguns minutos e tente novamente. Se o erro voltar, não force o uso: chame o técnico. Códigos como 4C/IE indicam entrada de água, 5C/OE drenagem, UE desbalanceamento e DE problema na porta.",
       },
     ],
   },

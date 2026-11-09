@@ -169,7 +169,7 @@ export default async function BlogPostPage({ params }: Props) {
                       href={`/servicos/${service.slug}`}
                       className="text-sm font-semibold text-brand-orange hover:underline"
                     >
-                      {service.title}
+                      {service.conserto}
                     </Link>
                   </li>
                 ))}

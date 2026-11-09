@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
-export const alt = "ServitecPoa — Consertos em Eletrodomésticos";
+export const alt = "ServitecPoa — Assistência Técnica de Eletrodomésticos";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -29,7 +29,7 @@ export default function OgImage() {
           Servitec<span style={{ color: "#f97316" }}>Poa</span>
         </h1>
         <p style={{ fontSize: 36, marginTop: 12, color: "#94a3b8", fontFamily: "system-ui" }}>
-          Consertos Em Eletrodomésticos
+          Assistência Técnica
         </p>
         <p style={{ fontSize: 22, marginTop: 40, color: "#64748b", maxWidth: 700, fontFamily: "system-ui" }}>
           Nacionais e importados · Atendimento a domicílio · {siteConfig.phoneDisplay}
