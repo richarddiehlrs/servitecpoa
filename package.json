@@ -7,7 +7,8 @@
     "dev:fresh": "node scripts/dev-fresh.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "indexnow": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "next": "^15.1.0",
